@@ -27,6 +27,7 @@ public class Card : FindTargets
         else{
             selected = true;
             canSelectTarget = true;
+            CollectTarget();
         }
     }
 
@@ -67,9 +68,11 @@ public class Card : FindTargets
         float YPos = originalPosition.y + 500;
 
         if(transform.position.y > YPos){
-            Debug.Log("Played");
+            CheckAbility(this.gameObject);
             DeckDrawing dd = FindObjectOfType<DeckDrawing>();
-            dd.StartCoroutine(dd.MoveToDiscardPile(this));
+            selected = false;
+            Drag = false;
+            onHover = false;
             cardPlayed = true;
         }
     }
@@ -78,47 +81,38 @@ public class Card : FindTargets
         transform.position = Input.mousePosition;
     }
 
-    public void CollectTarget(int index){
-        for(int i = 0; i < card.ability.Length; i++){
-            if(card.ability[index].guard != null){
-                targets = FindGoodChar();
-            }
-            else{
-                targets = FindEnemies();
-            }
-            
-            
-        }
+    public void CollectTarget(){
+        targets = FindEnemies();
     }
 
 
     public void SelectTarget(){
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Create a ray from the mouse position
+        // Create a ray from the mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             // Perform the raycast and get the hit information
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 100);
+            Debug.DrawRay(Camera.main.transform.position, Vector3.forward, Color.blue);
+            Debug.Log(hit.transform.name);
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     // Create a ray from the mouse position
+        //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            // Check if the raycast hit a 2D GameObject
-            if (hit.collider != null && hit.collider.gameObject.GetComponent<SpriteRenderer>() != null)
-            {
-                // Add the GameObject to the list of selected objects
-                for(int i = 0; i < targets.Count; i++){
-                    if(hit.collider.gameObject.tag == targets[i].tag){
-                        CheckAbility(hit.collider.gameObject);
-                    }
-                }
-            }
-        }
+        //     // Perform the raycast and get the hit information
+        //     RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 100);
+        //     Debug.Log(hit.transform.name);
+
+        //     // // Check if the raycast hit a 2D GameObject
+        //     // if (hit.collider != null)
+        //     // {
+        //     //     Debug.Log(hit.collider.name);
+        //     // }
+        // }
     }
 
     void CheckAbility(GameObject target){
-
         for(int i = 0; i < card.ability.Length; i++){
-
-        CollectTarget(i);
 
         if(card.ability[i].dealDamage != null){
             caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0,  card.ability[i].dealDamage.damageAmmount, i);
@@ -133,7 +127,17 @@ public class Card : FindTargets
         }
 
         if(card.ability[i].guard != null){
+            target = caster;
             caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0, card.ability[i].guard.guardAmmount, i);
+        }
+
+        if(card.ability[i].heal != null){
+            target = caster;
+            caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0, card.ability[i].heal.healAmmount, i);
+        }
+
+        if(card.ability[i].chilled != null){
+            caster.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].chilled.chilledStack, 0, i);
         }
 
         targets.Clear();

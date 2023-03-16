@@ -16,6 +16,7 @@ public class CharacterController : MonoBehaviour
     public int igniteAmmount;
     public int poisonStack;
     public int poisonAmmount;
+    public int chilledStack;
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,10 +30,24 @@ public class CharacterController : MonoBehaviour
     }
 
     public void TakeDamage(int ammount){
+        if(hasChilled()){
+            ammount *= 2;
+        }
+        else{
+            ammount = ammount;
+        }
+
         health -= ammount;
         if(health <= 0){
             health = 0;
             Die();
+        }
+    }
+
+    public void Heal(int ammount){
+        health += ammount;
+        if(health >= MaxHealth){
+            health = MaxHealth;
         }
     }
 
@@ -78,6 +93,18 @@ public class CharacterController : MonoBehaviour
         else{
             poisonStack = 0;
             return 0;
+        }
+    }
+
+    public bool hasChilled(){
+
+        if(chilledStack > 0){
+            chilledStack--;
+            return true;
+        }
+        else{
+            chilledStack = 0;
+            return false;
         }
     }
 }

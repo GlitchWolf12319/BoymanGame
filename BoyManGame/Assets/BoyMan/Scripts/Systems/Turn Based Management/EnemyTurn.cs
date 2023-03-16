@@ -15,7 +15,7 @@ public class EnemyTurn : ScriptableObject
     public void SetTarget(int index){
         //set appropriate target depending on the attack ability
         for(int i = 0; i < TurnMoves[index].cards.Length; i++){
-            if(TurnMoves[index].cards[i].push != null || TurnMoves[index].cards[i].retreat != null){
+            if(TurnMoves[index].cards[i].push != null || TurnMoves[index].cards[i].retreat != null || TurnMoves[index].cards[i].guard != null || TurnMoves[index].cards[i].heal != null){
                 target = Target.Enemy;
             }
 

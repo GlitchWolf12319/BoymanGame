@@ -27,7 +27,5 @@ public class FindTargets : MonoBehaviour
         else{
             return null;
         }
-
-        
     }
 }

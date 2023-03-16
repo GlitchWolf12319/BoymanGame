@@ -12,5 +12,7 @@ public class CardType : ScriptableObject
     public Push push;
     public Retreat retreat;
     public GainGuard guard;
+    public Heal heal;
+    public Chilled chilled;
     
 }

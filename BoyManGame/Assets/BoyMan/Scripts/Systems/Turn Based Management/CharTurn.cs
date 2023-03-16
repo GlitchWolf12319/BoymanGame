@@ -93,7 +93,18 @@ public class CharTurn : FindTargets
                 }
             }
         
-                //if(enemyTurn.target == EnemyTurn.Target.Enemy && enemyTurn.TurnMoves[TurnCounter].cards[i].)
+                if(enemyTurn.target == EnemyTurn.Target.Enemy && enemyTurn.TurnMoves[TurnCounter].cards[i].guard != null){
+                    GiveGuard(this.gameObject, 0, i);
+                    abilityTurnCounter++;
+                    CheckToEndTurn();
+                }
+        
+                if(enemyTurn.target == EnemyTurn.Target.Enemy && enemyTurn.TurnMoves[TurnCounter].cards[i].heal != null){
+                    GiveGuard(this.gameObject, 0, i);
+                    abilityTurnCounter++;
+                    CheckToEndTurn();
+                }
+
         }
         }
     }
@@ -162,9 +173,26 @@ public class CharTurn : FindTargets
 
     void Retreat(GameObject target1, GameObject target2, int index){}
 
-    void GiveGuard(GameObject target, int ammount){
+    void GiveGuard(GameObject target, int ammount, int index){
+        if(characterType == CharacterType.Enemy){
+            int guardAmmount = enemyTurn.TurnMoves[TurnCounter].cards[index].guard.GuardValue();
+            target.GetComponent<CharacterController>().GainGuard(guardAmmount);
+        }
+        
         if(characterType == CharacterType.Player){
             target.GetComponent<CharacterController>().GainGuard(ammount);
+        }
+    }
+
+    void Heal(GameObject target, int ammount, int index){
+        if(characterType == CharacterType.Enemy){
+            int healAmmount = enemyTurn.TurnMoves[TurnCounter].cards[index].heal.GetHealValue();
+            target.GetComponent<CharacterController>().Heal(healAmmount);
+        }
+
+        if(characterType == CharacterType.Player){
+            int healAmmount = ammount;
+            target.GetComponent<CharacterController>().Heal(healAmmount);
         }
     }
 
@@ -193,13 +221,21 @@ public class CharTurn : FindTargets
         }
     }
 
-    void Poison(GameObject target, int index){
+    void Poison(GameObject target, int index, int ammount, int stack){
         if(characterType == CharacterType.Enemy){
                 target.GetComponent<CharacterController>().poisonAmmount = enemyTurn.TurnMoves[TurnCounter].cards[index].poisonEffect.poisonAmmount;
                 target.GetComponent<CharacterController>().poisonStack += enemyTurn.TurnMoves[TurnCounter].cards[index].poisonEffect.poisonStack;
         }
+
+        if(characterType == CharacterType.Player){
+            target.GetComponent<CharacterController>().poisonAmmount = ammount;
+            target.GetComponent<CharacterController>().poisonStack += stack;
+        }
     }
 
+    void Chilled(GameObject target, int stack, int index){
+        target.GetComponent<CharacterController>().chilledStack += stack;
+    }
 
     public void GainCardInfo(CardTemplate card, GameObject target, int stack, int ammount, int index){
         if(characterType == CharacterType.Player){
@@ -212,8 +248,20 @@ public class CharTurn : FindTargets
                  Ignite(target, index, ammount, stack);   
             }
 
+            if(card.ability[index].poisonEffect != null){
+                 Poison(target, index, ammount, stack);   
+            }
+
             if(card.ability[index].guard != null){
-                 GiveGuard(target, ammount);  
+                 GiveGuard(target, ammount, index);  
+            }
+
+            if(card.ability[index].heal != null){
+                 Heal(target, ammount, index);  
+            }
+
+            if(card.ability[index].chilled != null){
+                 Chilled(target, stack, index);  
             }
         }
     }

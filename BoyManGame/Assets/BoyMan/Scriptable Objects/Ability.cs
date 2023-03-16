@@ -21,7 +21,6 @@ public class Ability : ScriptableObject
         public enum target {Self, Enemy, allEnemies}
         public target Target;
 
-
         public List<GameObject> ReturnTargets(){
                 List<GameObject> targetsInScene = new List<GameObject>();
                 if(Target == target.Enemy){
@@ -33,4 +32,4 @@ public class Ability : ScriptableObject
                 }
                 return targetsInScene;
         }
-}
+}      

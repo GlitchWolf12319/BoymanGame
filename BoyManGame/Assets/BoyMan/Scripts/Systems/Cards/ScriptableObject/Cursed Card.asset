@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
-  m_Name: Card1Test
+  m_Name: Cursed Card
   m_EditorClassIdentifier: 
-  Name: Damage 15
-  APCost: 3
-  Description: Deals 15 Damage
+  Name: Cursed Card
+  APCost: 2
+  Description: Apply 2 Chilled
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
   Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
   ability:
-  - {fileID: 11400000, guid: 6beea1507f8955742b0a4aafdb5a5b5d, type: 2}
-  - {fileID: 11400000, guid: 3f66bd53c378e1e4eb4ad3e60a297117, type: 2}
-  - {fileID: 11400000, guid: 67635d0ced0aa5a44a4eb935dda18200, type: 2}
-  - {fileID: 11400000, guid: bbc19e36cf1437949ad5c3b1d0a75d5b, type: 2}
+  - {fileID: 11400000, guid: 70ab63e233547e4418340239c652496b, type: 2}
   attackMethod: 1

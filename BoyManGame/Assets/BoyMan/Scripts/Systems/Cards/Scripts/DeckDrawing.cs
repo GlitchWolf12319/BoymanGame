@@ -53,7 +53,7 @@ public class DeckDrawing : MonoBehaviour
         hand.RemoveAt(index);
         discardPile.Add(card);
         card.transform.DOMoveX(card.transform.position.x + 2000, 0.5f);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         card.transform.position = originalPosition;
     }
 
