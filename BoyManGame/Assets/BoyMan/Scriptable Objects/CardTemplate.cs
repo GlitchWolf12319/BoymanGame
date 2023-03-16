@@ -13,5 +13,8 @@ public class CardTemplate : ScriptableObject
         public string Description;
         public Sprite Border;
         public Sprite Artwork;
-        public Ability ability;
+        public CardType[] ability;
+
+        public enum AttackMethod {Drag, Arrow}
+        public AttackMethod attackMethod;
 }

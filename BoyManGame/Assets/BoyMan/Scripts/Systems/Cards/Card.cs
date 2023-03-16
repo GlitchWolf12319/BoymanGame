@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Card : MonoBehaviour
+public class Card : FindTargets
 {
     [SerializeField] private CardTemplate card;
     [SerializeField]private bool selected;
     public Vector3 originalPosition;
     public int index;
-
+    public Vector3 cardRotation;
     private List<Card> CloseCards = new List<Card>();
     private List<Card> FarCards = new List<Card>();
     private bool canSelectTarget;
     [SerializeField]private List<GameObject> targets = new List<GameObject>();
+    private bool cardPlayed = false;
+    [SerializeField]private bool onHover = false;
+    [SerializeField]private bool Drag = false;
+    [SerializeField] GameObject caster;
     
     public void CardSelected(){
         if(selected){
@@ -23,7 +27,6 @@ public class Card : MonoBehaviour
         else{
             selected = true;
             canSelectTarget = true;
-            CollectTarget();
         }
     }
 
@@ -31,10 +34,61 @@ public class Card : MonoBehaviour
         if(canSelectTarget){
             SelectTarget();
         }
+
+        if(Input.GetMouseButtonDown(0) && onHover){
+            if(card.attackMethod == CardTemplate.AttackMethod.Drag){
+                Drag = true;
+            }
+        }
+        
+        if(Input.GetMouseButtonUp(0)){
+
+            if(card.attackMethod == CardTemplate.AttackMethod.Drag){
+                Drag = false;
+                CheckIfCardIsPlayed();
+            }
+        }
+
+        if(Input.GetMouseButtonDown(1) && onHover){
+            if(card.attackMethod == CardTemplate.AttackMethod.Drag){
+                Drag = false;
+                transform.DOMove(originalPosition, 0.5f);
+            }
+            
+        }
+
+        if(Drag){
+            MoveCardByMouse();
+        }
+        
     }
 
-    public void CollectTarget(){
-        targets = card.ability.ReturnTargets();
+    void CheckIfCardIsPlayed(){
+        float YPos = originalPosition.y + 500;
+
+        if(transform.position.y > YPos){
+            Debug.Log("Played");
+            DeckDrawing dd = FindObjectOfType<DeckDrawing>();
+            dd.StartCoroutine(dd.MoveToDiscardPile(this));
+            cardPlayed = true;
+        }
+    }
+
+    void MoveCardByMouse(){
+        transform.position = Input.mousePosition;
+    }
+
+    public void CollectTarget(int index){
+        for(int i = 0; i < card.ability.Length; i++){
+            if(card.ability[index].guard != null){
+                targets = FindGoodChar();
+            }
+            else{
+                targets = FindEnemies();
+            }
+            
+            
+        }
     }
 
 
@@ -61,22 +115,35 @@ public class Card : MonoBehaviour
     }
 
     void CheckAbility(GameObject target){
+
+        for(int i = 0; i < card.ability.Length; i++){
+
+        CollectTarget(i);
+
+        if(card.ability[i].dealDamage != null){
+            caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0,  card.ability[i].dealDamage.damageAmmount, i);
+        }
+
+        if(card.ability[i].igniteEffect != null){
+            caster.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].igniteEffect.IgniteStack, card.ability[i].igniteEffect.IgniteAmmount, i);
+        }
+
+        if(card.ability[i].poisonEffect != null){
+            caster.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].poisonEffect.poisonStack, card.ability[i].poisonEffect.poisonAmmount, i);
+        }
+
+        if(card.ability[i].guard != null){
+            caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0, card.ability[i].guard.guardAmmount, i);
+        }
+
+        targets.Clear();
+
+    }
+
         DeckDrawing dd = FindObjectOfType<DeckDrawing>();
         canSelectTarget = false;
         targets.Clear();
-        dd.MoveToDiscardPile(this);
-
-        if(card.ability.cardAbility == Ability.CardAbility.Damage){
-            target.GetComponent<EnemyController>().TakeDamage(card.ability.damageAmmount);
-        }
-
-        if(card.ability.cardAbility == Ability.CardAbility.Ignite){
-            target.GetComponent<EnemyController>().igniteStack += 2;
-        }
-
-        if(card.ability.cardAbility == Ability.CardAbility.Poison){
-            target.GetComponent<EnemyController>().poisonStack += 2;
-        }
+        dd.StartCoroutine(dd.MoveToDiscardPile(this));
     }
 
     
@@ -84,10 +151,24 @@ public class Card : MonoBehaviour
 
 
     public void Hover(){
-        DeckDrawing dd = FindObjectOfType<DeckDrawing>();
 
+        if(!Drag && !cardPlayed){
+
+        DeckDrawing dd = FindObjectOfType<DeckDrawing>();
+        onHover = true;
+
+        cardRotation = transform.eulerAngles;
         transform.DOScale(new Vector3(1.5f,1.5f,1.5f), 0.5f);
         transform.DOMoveY(transform.position.y + 100, 0.5f);
+        transform.DORotate(new Vector3(0,0,0), 0.5f);
+        int LastIndex = dd.hand.Count - 1;
+
+        if(dd.hand[0].transform.name == transform.name){
+            dd.hand[0].transform.DOMoveY(transform.position.y + 225, 0.5f);
+        }
+        if(dd.hand[LastIndex].transform.name == transform.name){
+            dd.hand[LastIndex].transform.DOMoveY(transform.position.y + 225, 0.5f);
+        }
 
         for(int i = 0; i < dd.hand.Count; i++){
 
@@ -119,12 +200,17 @@ public class Card : MonoBehaviour
                 FarCards[i].transform.DOMoveX(Faroffset[1], 0.5f);
             }
         }
+
+        }
     
     }
 
     public void NoHover(){
+        if(!Drag && !cardPlayed){
+        onHover = false;
         transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
         transform.DOMove(originalPosition, 0.5f);
+        transform.DORotate(cardRotation, 0.5f);
         CloseCards.Clear();
         FarCards.Clear();
 
@@ -132,5 +218,8 @@ public class Card : MonoBehaviour
         for(int i = 0; i < dd.hand.Count; i++){
             dd.hand[i].transform.DOMove(dd.hand[i].originalPosition, 0.5f);
         }
+
+    }
+
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95678761e75fe84ca47b089aea396f9, type: 3}
   m_Name: SkullBat
   m_EditorClassIdentifier: 
-  CharacterName: 
-  startingHealth: 0
-  MaxHealth: 0
+  CharacterName: SkullBat
+  startingHealth: 100
+  MaxHealth: 100
   startingAP: 0
   MaxAP: 0

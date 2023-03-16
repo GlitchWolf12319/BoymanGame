@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class EnemyController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     [SerializeField] CharacterStats CS;
     [SerializeField] private string CharName;
     [SerializeField] private int health;
     [SerializeField] private int MaxHealth;
+    [SerializeField] private int guard;
 
     [Header("Status Effects")]
     public int igniteStack;
+    public int igniteAmmount;
     public int poisonStack;
+    public int poisonAmmount;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         AssignStats();
     }
@@ -33,14 +36,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void GainGuard(int ammount){
+        guard += ammount;
+    }
+
     void Die(){
         transform.DOScale(new Vector3(0,0,0), 0.5f);
+        transform.GetComponent<CharTurn>().tbm.RemoveFromTurnOrder(this.gameObject);
         Destroy(this.gameObject, 0.7f);
     }
 
     public void CheckStatusEffects(){
         TakeDamage(IgniteDamage(5));
-        TakeDamage(poisonDamage(8));
+        TakeDamage(poisonDamage(poisonAmmount));
     }
 
     void Update(){

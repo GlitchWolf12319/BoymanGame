@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Card2Test
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: {fileID: 0}
+  Name: Damage10
+  APCost: 1
+  Description: Deal 10 Damage
+  Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
+  Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
+  ability: {fileID: 11400000, guid: c0111cd3dc1d7b74e9bef9acbb40b1ad, type: 2}

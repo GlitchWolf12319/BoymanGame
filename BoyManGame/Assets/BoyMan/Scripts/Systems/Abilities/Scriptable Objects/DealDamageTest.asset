@@ -10,13 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2b8df4b270eb584b823d1e8e87d7550, type: 3}
-  m_Name: Damage15
+  m_Name: DealDamageTest
   m_EditorClassIdentifier: 
   dealDamage: {fileID: 11400000}
   poisonEffect: {fileID: 0}
-  igniteEffect: {fileID: 0}
-  pull: {fileID: 0}
-  push: {fileID: 0}
-  retreat: {fileID: 0}
-  guard: {fileID: 0}
-  damageAmmount: 15
+  damageAmmount: 5
