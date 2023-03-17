@@ -2,58 +2,49 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
-using UnityEngine.SceneManagement;
+
 public class EventTrigger : MonoBehaviour
 {
-     [Header("Edit Title Text")]
-
+    [Header("Edit Title Text")]
     [SerializeField] private string titleInfo;
-
-      [Header("Edit Description Text")]
+    [Header("Use this if spawning new map")]
+    [SerializeField, HideInInspector] private GameObject spawnRoom;
+    [Header("Use this if need player")]
+    [SerializeField, HideInInspector] private GameObject player;
+    [Header("Use this if need Transtion")]
+    [SerializeField] private GameObject Transiton;
+    [Header("Edit Description Text")]
     public ColorCodedTextField[] DescriptionFields;
-      [Header("Edit Option One Text")]
+    [Header("Edit Option One Text")]
     public ColorCodedTextField[] Option_One_Fields;
     [Header("Edit Option Two Text")]
-
     public ColorCodedTextField[] Option_Two_Fields;
-
-   [Header("Gameplay Variables Button 1")]
- [SerializeField]private string sceneName;
-  [SerializeField, ] private bool Changemap;
-[SerializeField, Range(0, 100)] private int B1_healProbability = 25;
-[SerializeField, Range(0, 100)] private int B1_healAmount = 100;
-[SerializeField, Range(0, 100)] private int B1_DamageProbability = 25;
-[SerializeField, Range(0, 100)] private int B1_damage = 10;
-
-
-
-[Header("Gameplay Variables Button 2")]
-[SerializeField, Range(0, 100)] private int B2_healProbability = 25;
-[SerializeField, Range(0, 100)] private int B2_healAmount = 10;
-[SerializeField, Range(0, 100)] private int B2_damageProbability = 25;
-[SerializeField, Range(0, 100)] private int B2_damage = 10;
-
-
-        [Header("UI References")]
+    [Header("Gameplay Variables Button 1")]
+    [SerializeField] private bool Changemap;
+    [SerializeField, Range(0, 100)] private int B1_healProbability = 25;
+    [SerializeField, Range(0, 100)] private int B1_healAmount = 100;
+    [SerializeField, Range(0, 100)] private int B1_DamageProbability = 25;
+    [SerializeField, Range(0, 100)] private int B1_damage = 10;
+    [Header("Gameplay Variables Button 2")]
+    [SerializeField, Range(0, 100)] private int B2_healProbability = 25;
+    [SerializeField, Range(0, 100)] private int B2_healAmount = 10;
+    [SerializeField, Range(0, 100)] private int B2_damageProbability = 25;
+    [SerializeField, Range(0, 100)] private int B2_damage = 10;
+    [Header("UI References")]
     [SerializeField] private GameObject panel;
-    [SerializeField, ] private TextMeshProUGUI button1Text;
-    [SerializeField, ] private TextMeshProUGUI button2Text;
-    [SerializeField, ] private TextMeshProUGUI descriptionText;
-    [SerializeField, ] private Image image;
+    [SerializeField] private TextMeshProUGUI button1Text;
+    [SerializeField] private TextMeshProUGUI button2Text;
+    [SerializeField] private TextMeshProUGUI descriptionText;
+    [SerializeField] private Image image;
     [SerializeField] private Sprite sprite;
-    [SerializeField, ] private Button button1;
-    [SerializeField, ] private Button button2;
-    [SerializeField, ] private TextMeshProUGUI titleText;
- 
+    [SerializeField] private Button button1;
+    [SerializeField] private Button button2;
+    [SerializeField] private TextMeshProUGUI titleText;
     [Header("Animation")]
     [SerializeField, HideInInspector] private float fadeDuration = 1.0f;
- 
 
-
-   // Color-coded text fields for description and button text
+    // Color-coded text fields for description and button text
     [System.Serializable]
-
-    
     public class ColorCodedTextField
     {
         public string text;
@@ -62,10 +53,23 @@ public class EventTrigger : MonoBehaviour
         public int length;
     }
 
-
+    public void Start()
+    {
+        panel = GameObject.Find("Panel");
+        button1Text = GameObject.Find("Button1Text").GetComponent<TextMeshProUGUI>();
+        button2Text = GameObject.Find("Button2Text").GetComponent<TextMeshProUGUI>();
+        descriptionText = GameObject.Find("DescriptionText").GetComponent<TextMeshProUGUI>();
+        image = GameObject.Find("Image").GetComponent<Image>();
+        button1 = GameObject.Find("Button1").GetComponent<Button>();
+        button2 = GameObject.Find("Button2").GetComponent<Button>();
+        titleText = GameObject.Find("TitleText").GetComponent<TextMeshProUGUI>();
+         player = GameObject.FindGameObjectWithTag("Player");
+    }
 
 public void OnButton1Click()
 {
+  
+
     int chance = Random.Range(1, 101);
     if (chance <= B1_DamageProbability)
     {
@@ -83,10 +87,15 @@ public void OnButton1Click()
     }
     else if(Changemap)
     {
-        SceneManager.LoadScene(sceneName);
-        Debug.Log("LOADING SCENE" + sceneName);
-
+        Instantiate(Transiton);
+        
+         // Find the GameObject with the "SpawnNextRoom" tag
+        spawnRoom = GameObject.FindGameObjectWithTag("SpawnNextRoom");
+        if(spawnRoom != null){          
+    //  Set the spawn chance of room 0 to 100%
+         spawnRoom.GetComponent<SpawnRoom>().SetSpawnChanceTo100(0);
       
+        }   
     }
     else{
   Debug.Log("Button 1 does nothing.");
@@ -97,6 +106,7 @@ public void OnButton1Click()
 
  public void OnButton2Click()
 {
+     
     int chance = Random.Range(1, 101);
     if (chance <= B2_damageProbability)
     {
@@ -110,17 +120,20 @@ public void OnButton1Click()
         B2_healAmount += B2_healAmount;
 
     }
-    else
+    else    
     {
         Debug.Log("Button 2 does nothing.");
     }
-
     StartCoroutine(FadeOutPanel());
+
 }
 
 // Coroutine to fade out the panel and all its contents
 private IEnumerator FadeOutPanel()
 {
+          
+    
+
     // Disable buttons before fade-out
     button1.interactable = false;
     button2.interactable = false;
@@ -147,7 +160,8 @@ private IEnumerator FadeOutPanel()
         yield return null;
         t += Time.deltaTime;
     }
-
+//  Set the spawn chance of room 0 to 100%
+         player.GetComponent<MoveRight>().Move();
     // Destroy this game object
     Destroy(gameObject);
 }
@@ -156,11 +170,12 @@ private IEnumerator FadeOutPanel()
     // Called when the script is enabled
     private void OnEnable()
     {
-
         Color titleColor = titleText.color;
         titleColor.a = 0;
       titleText.color = titleColor;
       titleText.text = titleInfo;
+
+      
 
 
               // Assign the sprite to image2
@@ -246,5 +261,6 @@ private IEnumerator FadeInPanel()
     button1.interactable = true;
     button2.interactable = true;
 }
+
 
 }

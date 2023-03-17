@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 434929781}
   m_Layer: 0
   m_Name: Jane_walk_0 (1)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,7 +1296,7 @@ BoxCollider:
   m_GameObject: {fileID: 434929777}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10.261099, y: 18.37, z: 0.2}
   m_Center: {x: -0.0000076293945, y: 0, z: 0}
@@ -2753,9 +2753,10 @@ GameObject:
   - component: {fileID: 1846658680}
   - component: {fileID: 1846658681}
   - component: {fileID: 1846658682}
+  - component: {fileID: 1846658683}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2809,6 +2810,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1846658683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846658679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.63233, y: 4.4248085, z: 0.2599964}
+  m_Center: {x: 0.05211544, y: 0.042100906, z: 0.007824898}
 --- !u!1 &1898737150
 GameObject:
   m_ObjectHideFlags: 0

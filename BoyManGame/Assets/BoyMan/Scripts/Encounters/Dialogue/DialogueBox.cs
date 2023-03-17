@@ -15,7 +15,8 @@ public class DialogueBox : MonoBehaviour
     public float typingSpeed;
     private bool isTyping = false;
     public float fadeSpeed = 1.0f;
-
+   [Header("Use this if need player")]
+    [SerializeField,HideInInspector] private GameObject player;
     public CanvasGroup canvasGroup;
 
    void Start(){
@@ -66,11 +67,16 @@ public void NextSentence()
 IEnumerator FadeOut()
 {
         yield return new WaitForSeconds(0.1f);
+        
     // Fade out images and text
     imageDisplay.CrossFadeAlpha(0.0f, 1f, false);
     Panel.CrossFadeAlpha(0.0f, 1f, false);
     Textbox.CrossFadeAlpha(0.0f, 1f, false);
-
+  player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null){         
+    //  Set the spawn chance of room 0 to 100%
+         player.GetComponent<MoveRight>().Move();
+        }
     // Wait for fade to complete
 
     // Hide the dialogue box

@@ -3,7 +3,7 @@ using UnityEngine;
 public class EventCollider : MonoBehaviour
 {
     public GameObject[] prefabsToInstantiate;
-    public float[] spawnChances;
+    [SerializeField,HideInInspector]public float[] spawnChances;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,15 +32,15 @@ public class EventCollider : MonoBehaviour
             if (objectIndex >= 0 && objectIndex < prefabsToInstantiate.Length)
             {
                 GameObject canvasGameObject = GameObject.FindGameObjectWithTag("canvas");
-               
+
                 if (canvasGameObject != null)
                 {
                     Canvas canvas = canvasGameObject.GetComponent<Canvas>();
                     if (canvas != null)
                     {
-                        
+
                         GameObject instantiatedPrefab = Instantiate(prefabsToInstantiate[objectIndex], canvas.transform);
-                      
+
                     }
                 }
             }
@@ -48,5 +48,33 @@ public class EventCollider : MonoBehaviour
             // Destroy the GameObject that has the EventCollider component attached
             Destroy(gameObject);
         }
+    }
+
+    private void UpdateSpawnChances()
+    {
+        if (spawnChances.Length != prefabsToInstantiate.Length)
+        {
+            spawnChances = new float[prefabsToInstantiate.Length];
+            for (int i = 0; i < spawnChances.Length; i++)
+            {
+                spawnChances[i] = 1f / spawnChances.Length;
+            }
+        }
+
+        float totalSpawnChance = 0f;
+        for (int i = 0; i < prefabsToInstantiate.Length; i++)
+        {
+            totalSpawnChance += spawnChances[i];
+        }
+
+        for (int i = 0; i < prefabsToInstantiate.Length; i++)
+        {
+            spawnChances[i] = spawnChances[i] / totalSpawnChance * 100;
+        }
+    }
+
+    private void OnValidate()
+    {
+        UpdateSpawnChances();
     }
 }

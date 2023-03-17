@@ -19,8 +19,10 @@ public class MoveRight : MonoBehaviour
         }
     }
 
-    private void Move()
+    
+    public void Move()
     {
+        
         // Calculate the distance to move
         float distance = moveTarget.position.x - transform.position.x;
 
