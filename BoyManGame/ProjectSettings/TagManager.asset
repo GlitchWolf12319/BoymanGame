@@ -6,6 +6,9 @@ TagManager:
   tags:
   - canvas
   - decentCounter
+  - Enemy
+  - BoymanCards
+  - JaneCards
   layers:
   - Default
   - TransparentFX

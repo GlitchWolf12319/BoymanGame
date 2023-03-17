@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private int MaxHealth;
     [SerializeField] private int guard;
+    [SerializeField] private int Coins;
 
     [Header("Status Effects")]
     public int igniteStack;
@@ -17,6 +18,7 @@ public class CharacterController : MonoBehaviour
     public int poisonStack;
     public int poisonAmmount;
     public int chilledStack;
+    public int invisibleStack;
     // Start is called before the first frame update
     void Awake()
     {
@@ -61,15 +63,40 @@ public class CharacterController : MonoBehaviour
         Destroy(this.gameObject, 0.7f);
     }
 
+    public void GiveCoins(int ammount){
+        Coins += ammount;
+    }
+
+    public void Invisible(){
+        Color spriteColour = transform.GetComponent<SpriteRenderer>().color;
+        spriteColour.a = 0.2f;
+        transform.GetComponent<SpriteRenderer>().color = spriteColour;
+    }
+
+    public void Visible(){
+        Color spriteColour = transform.GetComponent<SpriteRenderer>().color;
+        spriteColour.a = 1f;
+        transform.GetComponent<SpriteRenderer>().color = spriteColour;
+    }
+
     public void CheckStatusEffects(){
         TakeDamage(IgniteDamage(5));
         TakeDamage(poisonDamage(poisonAmmount));
+        hasChilled();
+
+        if(!isInvisible()){
+            Visible();
+        }
     }
 
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Space)){
-            CheckStatusEffects();
-        }
+    public void RemoveNegativeEffects(){
+        igniteStack = 0;
+        igniteAmmount = 0;
+        poisonStack = 0;
+        poisonAmmount = 0;
+        chilledStack = 0;
+        invisibleStack = 0;
+        Visible();
     }
 
     public int IgniteDamage(int damage){
@@ -107,4 +134,17 @@ public class CharacterController : MonoBehaviour
             return false;
         }
     }
+
+    public bool isInvisible(){
+
+        if(invisibleStack > 0){
+            invisibleStack--;
+            return true;
+        }
+        else{
+            invisibleStack = 0;
+            return false;
+        }
+    }
+
 }

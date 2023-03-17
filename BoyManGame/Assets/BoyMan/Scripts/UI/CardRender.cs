@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CardRender : MonoBehaviour
 {
-    [SerializeField] private CardTemplate card;
+    public CardTemplate card;
     [SerializeField] private Text APCost;
     [SerializeField] private Text CardName;
     [SerializeField] private Text CardDescription;
@@ -16,7 +16,7 @@ public class CardRender : MonoBehaviour
         RenderCardInformation();
     }
 
-    void RenderCardInformation(){
+    public void RenderCardInformation(){
         APCost.text = card.APCost.ToString();
         CardName.text = card.Name;
         CardDescription.text = card.Description;
