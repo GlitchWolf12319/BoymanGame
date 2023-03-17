@@ -14,5 +14,9 @@ public class CardType : ScriptableObject
     public GainGuard guard;
     public Heal heal;
     public Chilled chilled;
+    public Invisible invisible;
+    public DealPartyDamage dealPartyDamage;
+    public HealParty healParty;
+    public IgniteParty igniteParty;
     
 }

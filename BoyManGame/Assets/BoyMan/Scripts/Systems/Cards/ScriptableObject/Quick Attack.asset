@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
+  m_Name: Quick Attack
+  m_EditorClassIdentifier: 
+  Name: Quick Attack
+  APCost: 3
+  Description: Deal 12 Damage
+  Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
+  Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
+  ability:
+  - {fileID: 11400000, guid: ab5d4eeda862f8e40bedeed0b7436931, type: 2}
+  attackMethod: 1

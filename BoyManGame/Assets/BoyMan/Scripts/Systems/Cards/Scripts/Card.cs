@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Card : FindTargets
 {
-    [SerializeField] private CardTemplate card;
+    public CardTemplate card;
     [SerializeField]private bool selected;
     public Vector3 originalPosition;
     public int index;
@@ -17,6 +17,7 @@ public class Card : FindTargets
     private bool cardPlayed = false;
     [SerializeField]private bool onHover = false;
     [SerializeField]private bool Drag = false;
+    public bool canHover;
     [SerializeField] GameObject caster;
     
     public void CardSelected(){
@@ -69,7 +70,7 @@ public class Card : FindTargets
 
         if(transform.position.y > YPos){
             CheckAbility(this.gameObject);
-            DeckDrawing dd = FindObjectOfType<DeckDrawing>();
+            DeckDrawing dd = caster.GetComponent<DeckDrawing>();
             selected = false;
             Drag = false;
             onHover = false;
@@ -85,30 +86,25 @@ public class Card : FindTargets
         targets = FindEnemies();
     }
 
-
     public void SelectTarget(){
-        // Create a ray from the mouse position
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Create a ray from the mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             // Perform the raycast and get the hit information
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 100);
-            Debug.DrawRay(Camera.main.transform.position, Vector3.forward, Color.blue);
-            Debug.Log(hit.transform.name);
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     // Create a ray from the mouse position
-        //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit, 100)){
 
-        //     // Perform the raycast and get the hit information
-        //     RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 100);
-        //     Debug.Log(hit.transform.name);
-
-        //     // // Check if the raycast hit a 2D GameObject
-        //     // if (hit.collider != null)
-        //     // {
-        //     //     Debug.Log(hit.collider.name);
-        //     // }
-        // }
+                for(int i = 0; i < targets.Count; i++){
+                    if(hit.transform.name == targets[i].name){
+                        CheckAbility(hit.transform.gameObject);
+                    }
+                }    
+            
+            }
+        }
     }
 
     void CheckAbility(GameObject target){
@@ -116,6 +112,10 @@ public class Card : FindTargets
 
         if(card.ability[i].dealDamage != null){
             caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0,  card.ability[i].dealDamage.damageAmmount, i);
+        }
+
+        if(card.ability[i].dealPartyDamage != null){
+            caster.GetComponent<CharTurn>().GainCardInfo(card, null, 0,  card.ability[i].dealPartyDamage.damageAmmount, i);
         }
 
         if(card.ability[i].igniteEffect != null){
@@ -133,32 +133,47 @@ public class Card : FindTargets
 
         if(card.ability[i].heal != null){
             target = caster;
-            caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0, card.ability[i].heal.healAmmount, i);
+            target.GetComponent<CharTurn>().GainCardInfo(card, target, 0, card.ability[i].heal.healAmmount, i);
+        }
+
+        if(card.ability[i].healParty != null){
+            caster.GetComponent<CharTurn>().GainCardInfo(card, null, 0,  card.ability[i].healParty.healAmmount, i);
         }
 
         if(card.ability[i].chilled != null){
-            caster.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].chilled.chilledStack, 0, i);
+            target.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].chilled.chilledStack, 0, i);
+        }
+
+        if(card.ability[i].invisible != null){
+            target = caster;
+            target.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].invisible.invisibleStack, 0, i);
+        }
+
+        if(card.ability[i].retreat != null){
+            target = caster;
+            target.GetComponent<CharTurn>().GainCardInfo(card, target, 0, 0, i);
+        }
+
+        if(card.ability[i].igniteParty != null){
+            target = caster;
+            target.GetComponent<CharTurn>().GainCardInfo(card, null, card.ability[i].igniteParty.IgniteStack, card.ability[i].igniteParty.IgniteAmmount, i);
         }
 
         targets.Clear();
 
     }
 
-        DeckDrawing dd = FindObjectOfType<DeckDrawing>();
+        DeckDrawing dd = caster.GetComponent<DeckDrawing>();
         canSelectTarget = false;
         targets.Clear();
         dd.StartCoroutine(dd.MoveToDiscardPile(this));
     }
 
-    
-
-
-
     public void Hover(){
 
-        if(!Drag && !cardPlayed){
+        if(!Drag && !cardPlayed && canHover){
 
-        DeckDrawing dd = FindObjectOfType<DeckDrawing>();
+        DeckDrawing dd = caster.GetComponent<DeckDrawing>();
         onHover = true;
 
         cardRotation = transform.eulerAngles;
@@ -210,7 +225,7 @@ public class Card : FindTargets
     }
 
     public void NoHover(){
-        if(!Drag && !cardPlayed){
+        if(!Drag && !cardPlayed && canHover){
         onHover = false;
         transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
         transform.DOMove(originalPosition, 0.5f);
@@ -218,7 +233,7 @@ public class Card : FindTargets
         CloseCards.Clear();
         FarCards.Clear();
 
-        DeckDrawing dd = FindObjectOfType<DeckDrawing>();
+        DeckDrawing dd = caster.GetComponent<DeckDrawing>();
         for(int i = 0; i < dd.hand.Count; i++){
             dd.hand[i].transform.DOMove(dd.hand[i].originalPosition, 0.5f);
         }
@@ -226,4 +241,5 @@ public class Card : FindTargets
     }
 
     }
+
 }

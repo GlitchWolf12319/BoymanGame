@@ -10,7 +10,9 @@ public class CharTurn : FindTargets
     public EnemyTurn enemyTurn;
     public TurnBaseManager tbm;
     public int TurnCounter;
+    public int indexCounter;
     public int abilityTurnCounter;
+    public GameObject deck;
 
 
     void Start(){
@@ -21,18 +23,20 @@ public class CharTurn : FindTargets
 
     public IEnumerator StartTurn(){
         TurnCounter++;
-        transform.GetComponent<CharacterController>().CheckStatusEffects();
+        this.GetComponent<CharacterController>().CheckStatusEffects();
         if(characterType == CharacterType.Enemy){
-            enemyTurn.SetTarget(TurnCounter);
-            if(TurnCounter > enemyTurn.TurnMoves[TurnCounter].cards.Length){
+
+            if(TurnCounter > enemyTurn.TurnMoves.Length - 1){
                 TurnCounter = 0;
             }
+            enemyTurn.SetTarget(TurnCounter);
             yield return new WaitForSeconds(enemyTurn.thinkTime);
             StartCoroutine(GetTarget());
         }
 
         if(characterType == CharacterType.Player){
-                
+            deck.SetActive(true);
+            transform.GetComponent<DeckDrawing>().DrawCards(5);
         }
     }
 
@@ -42,6 +46,7 @@ public class CharTurn : FindTargets
             for(int i = 0; i < enemyTurn.TurnMoves[TurnCounter].cards.Length; i++){
                 if(enemyTurn.target == EnemyTurn.Target.Player && enemyTurn.TurnMoves[TurnCounter].cards[i].dealDamage != null){
                     List<GameObject> targets = FindGoodChar();
+
                     if(targets != null){
                         int randomChoice = Random.Range(0, targets.Count);
                         GameObject target = targets[randomChoice];
@@ -155,7 +160,7 @@ public class CharTurn : FindTargets
 
     void CheckToEndTurn(){
         if(abilityTurnCounter == enemyTurn.TurnMoves[TurnCounter].cards.Length){
-            EndTurn();
+            StartCoroutine(EndTurn());
         }
     }
 
@@ -171,7 +176,11 @@ public class CharTurn : FindTargets
             target2.transform.DOMoveX(target1Pos.x, 0.5f);
     }
 
-    void Retreat(GameObject target1, GameObject target2, int index){}
+    void Retreat(GameObject target, GameObject target2, int index){
+        Vector3 target1Pos = target.transform.position;
+        target.transform.DOMoveX(target2.transform.position.x, 0.5f);
+        target2.transform.DOMoveX(target1Pos.x, 0.5f);
+    }
 
     void GiveGuard(GameObject target, int ammount, int index){
         if(characterType == CharacterType.Enemy){
@@ -237,6 +246,42 @@ public class CharTurn : FindTargets
         target.GetComponent<CharacterController>().chilledStack += stack;
     }
 
+    void Invisible(GameObject target, int stack, int index){
+        target.GetComponent<CharacterController>().invisibleStack = stack;
+        target.GetComponent<CharacterController>().Invisible();
+    }
+
+    void DealPartyDamage(int ammount){
+        if(characterType == CharacterType.Player){
+            List<GameObject> targets = FindEnemies();
+
+            for(int i = 0; i < targets.Count; i++){
+                targets[i].GetComponent<CharacterController>().TakeDamage(ammount);
+            }
+        }
+    }
+   
+    void IgniteAllEnemies(int ammount, int stack){
+        if(characterType == CharacterType.Player){
+            List<GameObject> targets = FindEnemies();
+            for(int i = 0; i < targets.Count; i++){
+                targets[i].GetComponent<CharacterController>().igniteAmmount = ammount;
+                targets[i].GetComponent<CharacterController>().igniteStack += stack;
+            }
+            
+        }
+    }
+   void HealParty(int ammount){
+        if(characterType == CharacterType.Player){
+            Debug.Log("Healing Party");
+            List<GameObject> targets = FindGoodChar();
+
+            for(int i = 0; i < targets.Count; i++){
+                targets[i].GetComponent<CharacterController>().Heal(ammount);
+            }
+        }
+   }
+   
     public void GainCardInfo(CardTemplate card, GameObject target, int stack, int ammount, int index){
         if(characterType == CharacterType.Player){
 
@@ -263,15 +308,57 @@ public class CharTurn : FindTargets
             if(card.ability[index].chilled != null){
                  Chilled(target, stack, index);  
             }
+
+            if(card.ability[index].invisible != null){
+                 Invisible(target, stack, index);  
+            }
+
+            if(card.ability[index].retreat != null){
+                List<GameObject> possibleTargets = FindGoodChar();
+                if(possibleTargets != null){
+                    GameObject RetreatTarget = null;
+                    while(RetreatTarget == null){
+                        int randomChoice = Random.Range(0, possibleTargets.Count);
+                        if(possibleTargets[randomChoice].transform.name != this.transform.name){
+                            RetreatTarget = possibleTargets[randomChoice];
+                        }
+                    }
+
+                    if(RetreatTarget != null){
+                        Retreat(target, RetreatTarget, 0);
+                        possibleTargets.Clear();
+                     }
+                }
+            }
+        
+            if(card.ability[index].dealPartyDamage != null){
+                DealPartyDamage(ammount);
+            }
+        
+            if(card.ability[index].healParty != null){
+                HealParty(ammount);
+            }
+        
+            if(card.ability[index].igniteParty != null){
+                IgniteAllEnemies(ammount, stack);
+            }
         }
     }
 
 
-
-    void EndTurn(){
+    public void EndTurnButton(){
+        StartCoroutine(EndTurn());
+    }
+    public IEnumerator EndTurn(){
         if(tbm != null){
             abilityTurnCounter = 0;
+            yield return new WaitForSeconds(1);
             tbm.ChangeTurn();
+            yield return new WaitForSeconds(1);
+            if(characterType == CharacterType.Player){
+                deck.SetActive(false);
+            }
+            
         }
     }
 }

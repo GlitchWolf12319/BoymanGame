@@ -18,7 +18,10 @@ public class FindTargets : MonoBehaviour
         List<GameObject> goodCharsinScene = new List<GameObject>();
 
         foreach(GameObject players in GameObject.FindGameObjectsWithTag("Player")){
-            goodCharsinScene.Add(players);
+            if(players.GetComponent<CharacterController>().invisibleStack <= 0){
+                goodCharsinScene.Add(players);
+            }
+            
         }
 
         if(goodCharsinScene.Count > 0){
