@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class CharTurn : FindTargets
 {
@@ -10,15 +11,26 @@ public class CharTurn : FindTargets
     public EnemyTurn enemyTurn;
     public TurnBaseManager tbm;
     public int TurnCounter;
-    public int indexCounter;
     public int abilityTurnCounter;
     public GameObject deck;
+    public int ActionPoints;
+    public TMP_Text APText;
 
 
     void Start(){
+        
+        tbm = FindObjectOfType<TurnBaseManager>();
         if(characterType == CharacterType.Player){
             enemyTurn = null;
+            ActionPoints = this.GetComponent<CharacterController>().CS.startingAP;
         }
+    }
+
+    void Update(){
+        if(characterType == CharacterType.Player){
+            APText.text = ActionPoints + "/" + transform.GetComponent<CharacterController>().CS.MaxAP.ToString();
+        }
+        
     }
 
     public IEnumerator StartTurn(){
@@ -35,6 +47,7 @@ public class CharTurn : FindTargets
         }
 
         if(characterType == CharacterType.Player){
+            ActionPoints = this.GetComponent<CharacterController>().CS.MaxAP;
             deck.SetActive(true);
             transform.GetComponent<DeckDrawing>().DrawCards(5);
         }
@@ -282,38 +295,45 @@ public class CharTurn : FindTargets
         }
    }
    
-    public void GainCardInfo(CardTemplate card, GameObject target, int stack, int ammount, int index){
+    public void GainCardInfo(CardTemplate cardTemp, Card card, GameObject target, int stack, int ammount, int index, int APCost){
         if(characterType == CharacterType.Player){
 
-            if(card.ability[index].dealDamage != null){
+            if(ActionPoints >= APCost){
+                ActionPoints -= APCost;
+                card.canSelectTarget = false;
+                card.selected = false;
+                card.targets.Clear();
+                this.GetComponent<DeckDrawing>().StartCoroutine(this.GetComponent<DeckDrawing>().MoveToDiscardPile(card));
+
+            if(cardTemp.ability[index].dealDamage != null){
                 DealDamage(target, index, ammount);
             }
 
-            if(card.ability[index].igniteEffect != null){
+            if(cardTemp.ability[index].igniteEffect != null){
                  Ignite(target, index, ammount, stack);   
             }
 
-            if(card.ability[index].poisonEffect != null){
+            if(cardTemp.ability[index].poisonEffect != null){
                  Poison(target, index, ammount, stack);   
             }
 
-            if(card.ability[index].guard != null){
+            if(cardTemp.ability[index].guard != null){
                  GiveGuard(target, ammount, index);  
             }
 
-            if(card.ability[index].heal != null){
+            if(cardTemp.ability[index].heal != null){
                  Heal(target, ammount, index);  
             }
 
-            if(card.ability[index].chilled != null){
+            if(cardTemp.ability[index].chilled != null){
                  Chilled(target, stack, index);  
             }
 
-            if(card.ability[index].invisible != null){
+            if(cardTemp.ability[index].invisible != null){
                  Invisible(target, stack, index);  
             }
 
-            if(card.ability[index].retreat != null){
+            if(cardTemp.ability[index].retreat != null){
                 List<GameObject> possibleTargets = FindGoodChar();
                 if(possibleTargets != null){
                     GameObject RetreatTarget = null;
@@ -331,17 +351,19 @@ public class CharTurn : FindTargets
                 }
             }
         
-            if(card.ability[index].dealPartyDamage != null){
+            if(cardTemp.ability[index].dealPartyDamage != null){
                 DealPartyDamage(ammount);
             }
         
-            if(card.ability[index].healParty != null){
+            if(cardTemp.ability[index].healParty != null){
                 HealParty(ammount);
             }
         
-            if(card.ability[index].igniteParty != null){
+            if(cardTemp.ability[index].igniteParty != null){
                 IgniteAllEnemies(ammount, stack);
             }
+        }
+
         }
     }
 

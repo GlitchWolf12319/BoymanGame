@@ -6,14 +6,14 @@ using DG.Tweening;
 public class Card : FindTargets
 {
     public CardTemplate card;
-    [SerializeField]private bool selected;
+    public bool selected;
     public Vector3 originalPosition;
     public int index;
     public Vector3 cardRotation;
     private List<Card> CloseCards = new List<Card>();
     private List<Card> FarCards = new List<Card>();
-    private bool canSelectTarget;
-    [SerializeField]private List<GameObject> targets = new List<GameObject>();
+    public bool canSelectTarget;
+    public List<GameObject> targets = new List<GameObject>();
     private bool cardPlayed = false;
     [SerializeField]private bool onHover = false;
     [SerializeField]private bool Drag = false;
@@ -30,6 +30,11 @@ public class Card : FindTargets
             canSelectTarget = true;
             CollectTarget();
         }
+    }
+
+    public void AssingCaster(){
+        Transform CardsParent = this.transform.parent;
+        caster = CardsParent.parent.gameObject;
     }
 
     void Update(){
@@ -96,7 +101,7 @@ public class Card : FindTargets
             // Perform the raycast and get the hit information
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, 100)){
-
+                Debug.Log("hit " + hit.transform.name);
                 for(int i = 0; i < targets.Count; i++){
                     if(hit.transform.name == targets[i].name){
                         CheckAbility(hit.transform.gameObject);
@@ -111,62 +116,57 @@ public class Card : FindTargets
         for(int i = 0; i < card.ability.Length; i++){
 
         if(card.ability[i].dealDamage != null){
-            caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0,  card.ability[i].dealDamage.damageAmmount, i);
+            caster.GetComponent<CharTurn>().GainCardInfo(card, this, target, 0,  card.ability[i].dealDamage.damageAmmount, i, card.APCost);
         }
 
         if(card.ability[i].dealPartyDamage != null){
-            caster.GetComponent<CharTurn>().GainCardInfo(card, null, 0,  card.ability[i].dealPartyDamage.damageAmmount, i);
+            caster.GetComponent<CharTurn>().GainCardInfo(card, this, null, 0,  card.ability[i].dealPartyDamage.damageAmmount, i, card.APCost);
         }
 
         if(card.ability[i].igniteEffect != null){
-            caster.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].igniteEffect.IgniteStack, card.ability[i].igniteEffect.IgniteAmmount, i);
+            caster.GetComponent<CharTurn>().GainCardInfo(card, this, target, card.ability[i].igniteEffect.IgniteStack, card.ability[i].igniteEffect.IgniteAmmount, i, card.APCost);
         }
 
         if(card.ability[i].poisonEffect != null){
-            caster.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].poisonEffect.poisonStack, card.ability[i].poisonEffect.poisonAmmount, i);
+            caster.GetComponent<CharTurn>().GainCardInfo(card, this, target, card.ability[i].poisonEffect.poisonStack, card.ability[i].poisonEffect.poisonAmmount, i, card.APCost);
         }
 
         if(card.ability[i].guard != null){
             target = caster;
-            caster.GetComponent<CharTurn>().GainCardInfo(card, target, 0, card.ability[i].guard.guardAmmount, i);
+            caster.GetComponent<CharTurn>().GainCardInfo(card, this, target, 0, card.ability[i].guard.guardAmmount, i, card.APCost);
         }
 
         if(card.ability[i].heal != null){
             target = caster;
-            target.GetComponent<CharTurn>().GainCardInfo(card, target, 0, card.ability[i].heal.healAmmount, i);
+            target.GetComponent<CharTurn>().GainCardInfo(card, this, target, 0, card.ability[i].heal.healAmmount, i, card.APCost);
         }
 
         if(card.ability[i].healParty != null){
-            caster.GetComponent<CharTurn>().GainCardInfo(card, null, 0,  card.ability[i].healParty.healAmmount, i);
+            caster.GetComponent<CharTurn>().GainCardInfo(card, this, null, 0,  card.ability[i].healParty.healAmmount, i, card.APCost);
         }
 
         if(card.ability[i].chilled != null){
-            target.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].chilled.chilledStack, 0, i);
+            target.GetComponent<CharTurn>().GainCardInfo(card, this, target, card.ability[i].chilled.chilledStack, 0, i, card.APCost);
         }
 
         if(card.ability[i].invisible != null){
             target = caster;
-            target.GetComponent<CharTurn>().GainCardInfo(card, target, card.ability[i].invisible.invisibleStack, 0, i);
+            target.GetComponent<CharTurn>().GainCardInfo(card, this, target, card.ability[i].invisible.invisibleStack, 0, i, card.APCost);
         }
 
         if(card.ability[i].retreat != null){
             target = caster;
-            target.GetComponent<CharTurn>().GainCardInfo(card, target, 0, 0, i);
+            target.GetComponent<CharTurn>().GainCardInfo(card, this,  target, 0, 0, i, card.APCost);
         }
 
         if(card.ability[i].igniteParty != null){
             target = caster;
-            target.GetComponent<CharTurn>().GainCardInfo(card, null, card.ability[i].igniteParty.IgniteStack, card.ability[i].igniteParty.IgniteAmmount, i);
+            target.GetComponent<CharTurn>().GainCardInfo(card, this, null, card.ability[i].igniteParty.IgniteStack, card.ability[i].igniteParty.IgniteAmmount, i, card.APCost);
         }
 
         targets.Clear();
 
     }
-
-        DeckDrawing dd = caster.GetComponent<DeckDrawing>();
-        canSelectTarget = false;
-        targets.Clear();
-        dd.StartCoroutine(dd.MoveToDiscardPile(this));
     }
 
     public void Hover(){

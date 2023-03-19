@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterStats : ScriptableObject
 {
     public string CharacterName;
-    public int startingHealth;
     public int MaxHealth;
     public int startingAP;
     public int MaxAP;

@@ -75,7 +75,10 @@ IEnumerator FadeOut()
   player = GameObject.FindGameObjectWithTag("Player");
         if(player != null){         
     //  Set the spawn chance of room 0 to 100%
-         player.GetComponent<MoveRight>().Move();
+         MoveRight[] move = FindObjectsOfType<MoveRight>();
+         foreach(MoveRight Move in move){
+            Move.Move();
+         }
         }
     // Wait for fade to complete
 

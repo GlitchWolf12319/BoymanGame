@@ -14,6 +14,8 @@ public class RewardSystemUI : MonoBehaviour
    public Button2 button2Option;
    public GameObject Button2Text;
 
+    public enum rewardReciever {Boyman, Jane}
+    public rewardReciever RewardReciever;
    public GameObject caster;
    public GameObject cardScreen;
 
@@ -25,6 +27,11 @@ public class RewardSystemUI : MonoBehaviour
 
     void Start(){
         AssingValues();
+        DisplayRewards();
+    }
+
+    void DisplayRewards(){
+        transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f);
     }
 
    public void AssingValues(){
@@ -34,7 +41,13 @@ public class RewardSystemUI : MonoBehaviour
 
    public void Button1Button(){
         if(button1Option == Button1.Gold){
-            caster.GetComponent<CharacterController>().GiveCoins(10);
+            if(RewardReciever == rewardReciever.Boyman){
+                GameObject.Find("Boyman").GetComponent<CharacterController>().GiveCoins(10);
+            }
+
+            if(RewardReciever == rewardReciever.Boyman){
+                GameObject.Find("Jane").GetComponent<CharacterController>().GiveCoins(10);
+            }
             Button1Text.transform.DOScale(new Vector3(0,0,0), 0.5f);
             Destroy(Button1Text, 0.6f);
         }
@@ -51,11 +64,37 @@ public class RewardSystemUI : MonoBehaviour
 
    public void Button2Button(){
         if(button2Option == Button2.Gold){
-            caster.GetComponent<CharacterController>().GiveCoins(10);
+            if(RewardReciever == rewardReciever.Boyman){
+                GameObject.Find("BoyMan").GetComponent<CharacterController>().GiveCoins(10);
+            }
+
+            if(RewardReciever == rewardReciever.Boyman){
+                GameObject.Find("Jane").GetComponent<CharacterController>().GiveCoins(10);
+            }
             Button2Text.transform.DOScale(new Vector3(0,0,0), 0.5f);
             Destroy(Button2Text, 0.6f);
         }
+
+        if(button2Option == Button2.Card){
+            //caster.GetComponent<CharacterController>().GiveCoins(10);
+            Button2Text.transform.DOScale(new Vector3(0,0,0), 0.5f);
+            transform.DOScale(new Vector3(0,0,0), 0.5f);
+            Destroy(Button2Text, 0.6f);
+            cardScreen.transform.DOScale(new Vector3(4, 1.7f, 0), 0.5f);
+            Invoke("DisplayCard", 0.6f);
+        }
    }
+
+   public void BoymanSelected(){
+        RewardReciever = rewardReciever.Boyman;
+   }
+
+   public void JaneSelected(){
+        RewardReciever = rewardReciever.Jane;
+   }
+
+   
+
 
    public void DisplayCard(){
         for(int i = 0; i < 3; i++){
@@ -98,14 +137,38 @@ public class RewardSystemUI : MonoBehaviour
         addedCard.GetComponent<CardRender>().RenderCardInformation();
         addedCard.GetComponent<Card>().card = template;
         addedCard.name = template.name;
-        addedCard.transform.SetParent(GameObject.FindGameObjectWithTag("BoymanCards").transform);
-        GameObject.Find("boyman").GetComponent<DeckDrawing>().deck.Add(addedCard.GetComponent<Card>());
 
+        if(RewardReciever == rewardReciever.Boyman){
+            GameObject.Find("BoyMan").GetComponent<DeckDrawing>().deck.Add(addedCard.GetComponent<Card>());
+            Canvas cardCanvas = GameObject.Find("BoyMan").GetComponentInChildren<Canvas>();
+            foreach(Transform child in cardCanvas.gameObject.transform){
+                if(child.name == "Deck"){
+                    addedCard.transform.SetParent(child);
+                }
+            }
+            //addedCard.transform.SetParent(GameObject.FindGameObjectWithTag("BoymanCards").transform);
+        }
+
+        if(RewardReciever == rewardReciever.Jane){
+            GameObject.Find("Jane").GetComponent<DeckDrawing>().deck.Add(addedCard.GetComponent<Card>());
+            Canvas cardCanvas = GameObject.Find("Jane").GetComponentInChildren<Canvas>();
+            foreach(Transform child in cardCanvas.gameObject.transform){
+                if(child.name == "Deck"){
+                    addedCard.transform.SetParent(child);
+                }
+            }
+        }
+
+        addedCard.GetComponent<Card>().AssingCaster();
+        
    }
 
    public void Leave(){
         transform.DOScale(new Vector3(0,0,0), 0.5f);
         Destroy(transform.parent.gameObject, 0.7f);
+
+        GameObject.Find("BoyMan").GetComponent<MoveRight>().Move();
+        GameObject.Find("Jane").GetComponent<MoveRight>().Move();
    }
 
    public string button1String(){

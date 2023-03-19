@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] CharacterStats CS;
+    public CharacterStats CS;
     [SerializeField] private string CharName;
     [SerializeField] private int health;
     [SerializeField] private int MaxHealth;
@@ -74,9 +75,9 @@ public class CharacterController : MonoBehaviour
     }
 
     public void Visible(){
-        Color spriteColour = transform.GetComponent<SpriteRenderer>().color;
+        Color spriteColour = transform.GetComponentInChildren<SpriteRenderer>().color;
         spriteColour.a = 1f;
-        transform.GetComponent<SpriteRenderer>().color = spriteColour;
+        transform.GetComponentInChildren<SpriteRenderer>().color = spriteColour;
     }
 
     public void CheckStatusEffects(){

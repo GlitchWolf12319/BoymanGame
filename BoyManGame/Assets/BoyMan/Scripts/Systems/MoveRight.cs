@@ -10,6 +10,13 @@ public class MoveRight : MonoBehaviour
 
     private bool canMove = true; // Flag to prevent multiple movements at the same time
 
+    [SerializeField] private Animator anim;
+
+
+    private void Start(){
+        anim = GetComponentInChildren<Animator>();
+    }
+
     private void Update()
     {
         // Listen for keyboard input
@@ -30,7 +37,9 @@ public class MoveRight : MonoBehaviour
         transform.DOMoveX(moveTarget.position.x, moveDuration).OnComplete(() =>
         {
             canMove = true; // Set the flag to allow movement again
+            anim.SetBool("isIdle", canMove);
         });
         canMove = false; // Set the flag to prevent multiple movements at the same time
+        anim.SetBool("isIdle", canMove);
     }
 }

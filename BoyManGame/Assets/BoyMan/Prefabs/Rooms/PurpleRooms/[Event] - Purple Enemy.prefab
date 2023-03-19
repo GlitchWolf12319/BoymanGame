@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 742909310947118385}
   - component: {fileID: 9012830458900648865}
-  - component: {fileID: 2482122866011222785}
-  m_Layer: 0
+  - component: {fileID: 2383922691148391502}
+  m_Layer: 6
   m_Name: EventTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2482122866011222785
+--- !u!114 &2383922691148391502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,17 +55,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2587107546147413655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e510be9e70518814eae14ac6afdca591, type: 3}
+  m_Script: {fileID: 11500000, guid: d9ab541507468cb4580ffd29c71f021d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToInstantiate:
-  - {fileID: 4370800046772037202, guid: 468d229c4e67fbb42a5147b2a0d6ca8a, type: 3}
-  - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
-  - {fileID: 1085338602065725093, guid: 5c11ead997d28464288f0f6b33c3528b, type: 3}
-  spawnChances:
-  - 0
-  - 0
-  - 100
+  enemyPrefab:
+  - {fileID: 6320966231526336066, guid: 026c203e111106544aa327f890bf489c, type: 3}
+  - {fileID: 6320966231526336066, guid: 026c203e111106544aa327f890bf489c, type: 3}
+  spawnDistance: 15
+  enemySpawnDistance: 5
+  player: {fileID: 0}
+  tbm: {fileID: 0}
 --- !u!1 &3411574322290068192
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +76,7 @@ GameObject:
   - component: {fileID: 830898484071799378}
   - component: {fileID: 1945596581103286269}
   - component: {fileID: 6713931545053086185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnNextRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,12 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 100
-  - 0
+  - 0.5
+  - 0.5
   spawnPosition: {fileID: 5932021491750453924}
   counterText: {fileID: 0}
   objectsToSpawn:
-  - {fileID: 3672122524016186361, guid: a776e977ff8e67c4e83c218b682c1959, type: 3}
+  - {fileID: 3672122524016186361, guid: 71ea9dfcad1c63d41b5a03658f55c467, type: 3}
   - {fileID: 3672122524016186361, guid: f2800458f8312314daefe58d5d686aa9, type: 3}
 --- !u!65 &6713931545053086185
 BoxCollider:
@@ -130,8 +129,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.12972538, y: 1, z: 1}
+  m_Center: {x: 0.4351371, y: 0, z: 0}
 --- !u!1 &3672122522583720664
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3672122522583720671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +257,7 @@ GameObject:
   - component: {fileID: 3672122522795528266}
   - component: {fileID: 3672122522795528267}
   - component: {fileID: 3672122522795528260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3672122522804521834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coffin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +410,7 @@ GameObject:
   - component: {fileID: 3672122523221936386}
   - component: {fileID: 3672122523221936387}
   - component: {fileID: 3672122523221936444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3672122523345915613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +561,7 @@ GameObject:
   - component: {fileID: 3672122523490071514}
   - component: {fileID: 3672122523490071515}
   - component: {fileID: 3672122523490071508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3672122523714085866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +730,7 @@ GameObject:
   - component: {fileID: 3672122523885437810}
   - component: {fileID: 3672122523885437811}
   - component: {fileID: 3672122523885437804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,8 +845,8 @@ GameObject:
   - component: {fileID: 3672122524016186360}
   - component: {fileID: 1285398812}
   - component: {fileID: 1285398813}
-  m_Layer: 0
-  m_Name: '[Event] - Purple'
+  m_Layer: 6
+  m_Name: '[Event] - Purple Enemy'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -913,7 +912,7 @@ GameObject:
   - component: {fileID: 3672122524469453697}
   - component: {fileID: 3672122524469453698}
   - component: {fileID: 3672122524469453699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3672122524574800767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1060,7 +1059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8739263250862711735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnRoomLoc
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1169,6 +1168,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877355955572880 stripped
@@ -1263,6 +1272,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -1359,6 +1378,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355920353838 stripped
@@ -1453,6 +1482,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -1549,6 +1588,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355860688839 stripped
@@ -1643,6 +1692,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -1739,6 +1798,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877355825939062 stripped
@@ -1833,6 +1902,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -1929,6 +2008,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (78)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355817044269 stripped
@@ -2023,6 +2112,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -2119,6 +2218,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877355809997751 stripped
@@ -2213,6 +2322,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (82)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -2309,6 +2428,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355731114676 stripped
@@ -2403,6 +2532,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -2499,6 +2638,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877355702383101 stripped
@@ -2593,6 +2742,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -2689,6 +2848,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355649340395 stripped
@@ -2783,6 +2952,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -2879,6 +3058,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (83)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355619607089 stripped
@@ -2973,6 +3162,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -3069,6 +3268,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355562153490 stripped
@@ -3163,6 +3372,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -3259,6 +3478,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355543963669 stripped
@@ -3353,6 +3582,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (85)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -3449,6 +3688,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877355487818050 stripped
@@ -3544,6 +3793,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355493099596 stripped
@@ -3638,6 +3897,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -3739,6 +4008,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690865294307777087, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477445922158330542, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1614c6392e36b845be03aeae6f59667, type: 3}
 --- !u!4 &3854877355507134661 stripped
@@ -3833,6 +4117,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -3929,6 +4223,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355499935664 stripped
@@ -4023,6 +4327,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -4119,6 +4433,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355357461780 stripped
@@ -4213,6 +4537,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -4309,6 +4643,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355376030688 stripped
@@ -4403,6 +4747,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -4499,6 +4853,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355322597891 stripped
@@ -4593,6 +4957,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -4689,6 +5063,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355284733507 stripped
@@ -4783,6 +5167,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -4884,6 +5278,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690865294307777087, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477445922158330542, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1614c6392e36b845be03aeae6f59667, type: 3}
 --- !u!4 &3854877355296355700 stripped
@@ -4978,6 +5387,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -5074,6 +5493,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355216291824 stripped
@@ -5168,6 +5597,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -5264,6 +5703,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355195821323 stripped
@@ -5358,6 +5807,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -5454,6 +5913,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355092635381 stripped
@@ -5548,6 +6017,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -5644,6 +6123,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877355109467640 stripped
@@ -5739,6 +6228,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355093781344 stripped
@@ -5833,6 +6332,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: add844642bd65774fad1922f6d26395e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: add844642bd65774fad1922f6d26395e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add844642bd65774fad1922f6d26395e, type: 3}
@@ -5934,6 +6443,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690865294307777087, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477445922158330542, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1614c6392e36b845be03aeae6f59667, type: 3}
 --- !u!4 &3854877355020662051 stripped
@@ -6028,6 +6552,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -6124,6 +6658,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877355026304780 stripped
@@ -6218,6 +6762,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -6314,6 +6868,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354995098448 stripped
@@ -6408,6 +6972,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -6504,6 +7078,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354922374764 stripped
@@ -6598,6 +7182,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -6694,6 +7288,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354904892879 stripped
@@ -6789,6 +7393,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354897652336 stripped
@@ -6883,6 +7497,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -6984,6 +7608,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690865294307777087, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477445922158330542, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1614c6392e36b845be03aeae6f59667, type: 3}
 --- !u!4 &3854877354855243848 stripped
@@ -7084,6 +7723,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690865294307777087, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477445922158330542, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1614c6392e36b845be03aeae6f59667, type: 3}
 --- !u!4 &3854877354867722133 stripped
@@ -7178,6 +7832,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -7274,6 +7938,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877354859495761 stripped
@@ -7368,6 +8042,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -7464,6 +8148,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354800999645 stripped
@@ -7558,6 +8252,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -7654,6 +8358,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354754543127 stripped
@@ -7748,6 +8462,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -7844,6 +8568,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354739871547 stripped
@@ -7938,6 +8672,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -8034,6 +8778,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (77)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354671551284 stripped
@@ -8128,6 +8882,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -8224,6 +8988,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877354613685375 stripped
@@ -8318,6 +9092,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -8414,6 +9198,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877354575490058 stripped
@@ -8508,6 +9302,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -8604,6 +9408,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354508110970 stripped
@@ -8698,6 +9512,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -8794,6 +9618,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354491455427 stripped
@@ -8888,6 +9722,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -8984,6 +9828,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354442342049 stripped
@@ -9078,6 +9932,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -9174,6 +10038,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877354469748383 stripped
@@ -9269,6 +10143,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354413075027 stripped
@@ -9363,6 +10247,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -9464,6 +10358,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690865294307777087, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477445922158330542, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1614c6392e36b845be03aeae6f59667, type: 3}
 --- !u!4 &3854877354353368202 stripped
@@ -9558,6 +10467,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -9654,6 +10573,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354221999729 stripped
@@ -9748,6 +10677,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -9844,6 +10783,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_low (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
 --- !u!4 &3854877354199077512 stripped
@@ -9938,6 +10887,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -10034,6 +10993,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354160472247 stripped
@@ -10128,6 +11097,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -10224,6 +11203,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354079569166 stripped
@@ -10318,6 +11307,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -10414,6 +11413,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354086893280 stripped
@@ -10508,6 +11517,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -10604,6 +11623,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877354037865995 stripped
@@ -10698,6 +11727,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -10794,6 +11833,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877353979680317 stripped
@@ -10888,6 +11937,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -10984,6 +12043,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877353935425217 stripped
@@ -11078,6 +12147,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -11174,6 +12253,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877353912427841 stripped
@@ -11268,6 +12357,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -11364,6 +12463,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877353925319110 stripped
@@ -11458,6 +12567,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -11554,6 +12673,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877353870498525 stripped
@@ -11648,6 +12777,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wood (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: add844642bd65774fad1922f6d26395e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: add844642bd65774fad1922f6d26395e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add844642bd65774fad1922f6d26395e, type: 3}
@@ -11744,6 +12883,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: add844642bd65774fad1922f6d26395e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: add844642bd65774fad1922f6d26395e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add844642bd65774fad1922f6d26395e, type: 3}
 --- !u!4 &3854877353897142754 stripped
@@ -11838,6 +12987,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_low (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2f0905a15d245244b92759391d87de42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0905a15d245244b92759391d87de42, type: 3}
@@ -11939,6 +13098,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690865294307777087, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477445922158330542, guid: c1614c6392e36b845be03aeae6f59667,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1614c6392e36b845be03aeae6f59667, type: 3}
 --- !u!4 &3854877353850629940 stripped
@@ -12033,6 +13207,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
@@ -12129,6 +13313,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Skull (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}
 --- !u!4 &3854877353862567124 stripped
@@ -12223,6 +13417,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LP_Skull (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c2d16f004936d8a4ebf2e261c6cca879,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d16f004936d8a4ebf2e261c6cca879, type: 3}

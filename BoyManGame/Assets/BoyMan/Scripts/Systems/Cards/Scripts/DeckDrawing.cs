@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class DeckDrawing : MonoBehaviour
 {
     public List<Card> deck;
-    [SerializeField] private List<Card> discardPile;
+    public TMP_Text deckText;
+    public List<Card> discardPile;
+    public TMP_Text discardText;
     public List<Card> hand;
     [SerializeField] private List<Transform> cardPosition;
     private const int handSize = 5;
@@ -15,6 +18,11 @@ public class DeckDrawing : MonoBehaviour
     void Start(){
         //DrawCards(handSize);
         originalPosition = new Vector3(-1461f, -443, 0);
+    }
+
+    void Update(){
+        deckText.text = deck.Count.ToString();
+        discardText.text = discardPile.Count.ToString();
     }
 
     public void DrawCards(int ammount){

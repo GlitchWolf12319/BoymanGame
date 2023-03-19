@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: SkullBat
   m_EditorClassIdentifier: 
   CharacterName: SkullBat
-  startingHealth: 100
   MaxHealth: 100
   startingAP: 0
   MaxAP: 0
