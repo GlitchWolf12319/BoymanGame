@@ -61,11 +61,11 @@ MonoBehaviour:
   prefabsToInstantiate:
   - {fileID: 4370800046772037202, guid: 468d229c4e67fbb42a5147b2a0d6ca8a, type: 3}
   - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
-  - {fileID: 1085338602065725093, guid: 5c11ead997d28464288f0f6b33c3528b, type: 3}
+  - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
   spawnChances:
   - 0
-  - 0
   - 100
+  - 0
 --- !u!1 &3411574322290068192
 GameObject:
   m_ObjectHideFlags: 0

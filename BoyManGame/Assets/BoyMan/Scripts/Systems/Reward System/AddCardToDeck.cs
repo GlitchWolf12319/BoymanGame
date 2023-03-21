@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class AddCardToDeck : MonoBehaviour
 {
-    public RewardSystemUI rsUI;
+    public RewardSystem RS;
+    public int index;
    public void Clicked(){
-        if(rsUI != null){
-            rsUI.AddCardToDeck(this.gameObject, this.GetComponent<CardRender>().card);
+        if(RS != null){
+            RS.AddCardToDeck(this.gameObject, this.GetComponent<CardRender>().card);
         }
+   }
+
+   void Start(){
+        transform.position = RS.cardSlots[index].transform.position;
    }
 }

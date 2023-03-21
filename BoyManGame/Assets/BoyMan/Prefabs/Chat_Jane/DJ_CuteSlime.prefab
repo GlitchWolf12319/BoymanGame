@@ -173,13 +173,19 @@ MonoBehaviour:
   sentences:
   - Dam these god dam slimes
   - THERE SO CUTE !
+  - Well, maybe they're just trying to make up for their slimy ways with their irresistible
+    cuteness.
+  - Who knows, they might even be plotting to take over the world with their charm!
   images:
   - {fileID: 21300000, guid: 7c477c808d3a4a14e8da463f811b7adc, type: 3}
   - {fileID: 21300000, guid: 2c01504736381224f861862da0d7b84b, type: 3}
+  - {fileID: 21300000, guid: 7d54a4dcbe6e30c4789a3000ce455dcb, type: 3}
+  - {fileID: 21300000, guid: 574a2d2d35fe34c4e906023636a5e259, type: 3}
   Textbox: {fileID: 4370800046202380477}
   Panel: {fileID: 4370800046772037200}
   typingSpeed: 0.01
   fadeSpeed: 2
+  player: {fileID: 0}
   canvasGroup: {fileID: 4370800047041946356}
 --- !u!1 &4370800046928611404
 GameObject:

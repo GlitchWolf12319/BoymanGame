@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Card : FindTargets
 {
@@ -15,22 +16,15 @@ public class Card : FindTargets
     public bool canSelectTarget;
     public List<GameObject> targets = new List<GameObject>();
     private bool cardPlayed = false;
-    [SerializeField]private bool onHover = false;
+    [SerializeField]public bool onHover = false;
     [SerializeField]private bool Drag = false;
+    public bool Arrow = false;
     public bool canHover;
     [SerializeField] GameObject caster;
-    
-    public void CardSelected(){
-        if(selected){
-            selected = false;
-            canSelectTarget = false;
-        }
-        else{
-            selected = true;
-            canSelectTarget = true;
-            CollectTarget();
-        }
-    }
+    public GameObject arrow;
+    public GameObject speechBubblePrefab;
+    public Color canUseColor;
+    public Color cantUseColor;
 
     public void AssingCaster(){
         Transform CardsParent = this.transform.parent;
@@ -43,8 +37,26 @@ public class Card : FindTargets
         }
 
         if(Input.GetMouseButtonDown(0) && onHover){
+            selected = true;
+            canSelectTarget = true;
+            CollectTarget();
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
-                Drag = true;
+                if(caster.GetComponent<CharTurn>().ActionPoints >= card.APCost){
+                    Drag = true;
+                }
+                else{
+                    StartCoroutine(cantUseCard());
+                }
+            }
+
+            if(card.attackMethod == CardTemplate.AttackMethod.Arrow){
+                if(caster.GetComponent<CharTurn>().ActionPoints >= card.APCost){
+                    Arrow = true;
+                }
+                else{
+                    StartCoroutine(cantUseCard());
+                }
+                
             }
         }
         
@@ -57,9 +69,15 @@ public class Card : FindTargets
         }
 
         if(Input.GetMouseButtonDown(1) && onHover){
+            selected = false;
+            canSelectTarget = false;
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
                 Drag = false;
                 transform.DOMove(originalPosition, 0.5f);
+            }
+
+            if(card.attackMethod == CardTemplate.AttackMethod.Arrow){
+                Arrow = false;
             }
             
         }
@@ -67,7 +85,51 @@ public class Card : FindTargets
         if(Drag){
             MoveCardByMouse();
         }
+
+        if(Arrow){
+            arrow.SetActive(true);
+        }
+        else{
+            arrow.SetActive(false);
+        }
         
+    }
+
+    IEnumerator cantUseCard(){
+        Vector3 upPos = new Vector3(0, originalPosition.y + 200, 0);
+        Vector3 downPos = new Vector3(0,upPos.y - 100 , 0);
+
+        transform.DOMoveY(upPos.y, 0.5f);
+        yield return new WaitForSeconds(0.2f);
+        transform.DOMoveY(downPos.y, 0.5f);
+
+        GameObject bubble = Instantiate(speechBubblePrefab, caster.transform.position, Quaternion.identity);
+        bubble.transform.position = new Vector3(bubble.transform.position.x + 1, bubble.transform.position.y + 2, bubble.transform.position.z);
+        Destroy(bubble, 5);
+    }
+
+    public void CheckCurrentAPAgainstCard(){
+
+        if(card.APCost > caster.GetComponent<CharTurn>().ActionPoints){
+            foreach(Transform children in this.transform){
+                if(children.name.Contains("Outline")){
+                    Image ImageOutline = children.GetComponent<Image>();
+                    ImageOutline.color = cantUseColor;
+                }
+            }
+
+            this.GetComponent<CardRender>().APCost.color = cantUseColor;
+        }
+        else if(card.APCost <= caster.GetComponent<CharTurn>().ActionPoints){
+            foreach(Transform children in this.transform){
+                if(children.name.Contains("Outline")){
+                    Image ImageOutline = children.GetComponent<Image>();
+                    ImageOutline.color = canUseColor;
+                }
+            }
+
+            this.GetComponent<CardRender>().APCost.color = Color.white;
+        }
     }
 
     void CheckIfCardIsPlayed(){
@@ -164,6 +226,11 @@ public class Card : FindTargets
             target.GetComponent<CharTurn>().GainCardInfo(card, this, null, card.ability[i].igniteParty.IgniteStack, card.ability[i].igniteParty.IgniteAmmount, i, card.APCost);
         }
 
+        DeckDrawing dd = caster.GetComponent<DeckDrawing>();
+        for(int c = 0; c < dd.hand.Count; c++){
+            dd.hand[c].transform.DOMove(dd.hand[c].originalPosition, 0.5f);
+        }
+
         targets.Clear();
 
     }
@@ -171,7 +238,7 @@ public class Card : FindTargets
 
     public void Hover(){
 
-        if(!Drag && !cardPlayed && canHover){
+        if(!Drag && !cardPlayed && canHover && !Arrow){
 
         DeckDrawing dd = caster.GetComponent<DeckDrawing>();
         onHover = true;
@@ -225,7 +292,7 @@ public class Card : FindTargets
     }
 
     public void NoHover(){
-        if(!Drag && !cardPlayed && canHover){
+        if(!Drag && !cardPlayed && canHover && !Arrow){
         onHover = false;
         transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
         transform.DOMove(originalPosition, 0.5f);

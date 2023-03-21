@@ -79,7 +79,7 @@ public void OnButton1Click()
          CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
         foreach(CharacterController cc in chars){
             if(cc.gameObject.tag == "Player"){
-                cc.TakeDamage(B1_damage);
+                cc.TakeDamage(B1_damage, "Damage");
             }
         }
 
@@ -128,7 +128,7 @@ public void OnButton1Click()
          CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
         foreach(CharacterController cc in chars){
             if(cc.gameObject.tag == "Player"){
-                cc.TakeDamage(B2_damage);
+                cc.TakeDamage(B2_damage, "Damage");
             }
         }
 

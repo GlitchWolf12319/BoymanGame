@@ -6,14 +6,14 @@ using TMPro;
 
 public class TurnBanner : MonoBehaviour
 {
-    public enum Turn { Player, Enemy };
+    public enum Turn {Player, Enemy };
     public Turn currentTurn = Turn.Player;
-       [SerializeField] private TextMeshProUGUI turnText;
+       public TextMeshProUGUI turnText;
+       public TextMeshProUGUI turnCounterText;
 
     void Start()
     {
         turnText.text = "Player's Turn";
-        EndTurn();
     }
 
     public void EndTurn()

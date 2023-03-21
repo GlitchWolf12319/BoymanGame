@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
 
 public class CharTurn : FindTargets
 {
@@ -15,7 +16,10 @@ public class CharTurn : FindTargets
     public GameObject deck;
     public int ActionPoints;
     public TMP_Text APText;
-
+    public GameObject turnBanner;
+    private int cardCompleteCounter;
+    public GameObject shieldIconPrefab;
+    public GameObject attackIconPrefab;
 
     void Start(){
         
@@ -35,22 +39,36 @@ public class CharTurn : FindTargets
 
     public IEnumerator StartTurn(){
         TurnCounter++;
+
+        turnBanner = GameObject.FindGameObjectWithTag("TurnBanner");
+
+
         this.GetComponent<CharacterController>().CheckStatusEffects();
+
         if(characterType == CharacterType.Enemy){
 
-            if(TurnCounter > enemyTurn.TurnMoves.Length - 1){
-                TurnCounter = 0;
-            }
+            turnBanner.GetComponent<TurnBanner>().currentTurn = TurnBanner.Turn.Enemy;
+            turnBanner.GetComponent<TurnBanner>().turnText.text = "Enemies Turn";
+            int displayTurn = TurnCounter + 1;
+            turnBanner.GetComponent<TurnBanner>().turnCounterText.text = "Turn " + displayTurn;
+            
+
             enemyTurn.SetTarget(TurnCounter);
             yield return new WaitForSeconds(enemyTurn.thinkTime);
             StartCoroutine(GetTarget());
         }
 
         if(characterType == CharacterType.Player){
+            turnBanner.GetComponent<TurnBanner>().currentTurn = TurnBanner.Turn.Player;
+            turnBanner.GetComponent<TurnBanner>().turnText.text = "Player's Turn";
+            int displayTurn = TurnCounter + 1;
+            turnBanner.GetComponent<TurnBanner>().turnCounterText.text = "Turn " + displayTurn;
             ActionPoints = this.GetComponent<CharacterController>().CS.MaxAP;
             deck.SetActive(true);
             transform.GetComponent<DeckDrawing>().DrawCards(5);
         }
+
+        turnBanner.GetComponent<Animator>().Play("PlayerTurn");
     }
 
     IEnumerator GetTarget(){
@@ -127,53 +145,10 @@ public class CharTurn : FindTargets
         }
     }
 
-    // IEnumerator UseAbility(GameObject target, GameObject target2, int index){
-    //     if(characterType == CharacterType.Enemy){
-
-    //         if(enemyTurn.TurnMoves[TurnCounter].cards[index] != null && enemyTurn.TurnMoves[TurnCounter].cards[index].dealDamage != null){
-    //             target.GetComponent<CharacterController>().TakeDamage(enemyTurn.TurnMoves[TurnCounter].cards[index].dealDamage.damageAmmount);
-    //         }
-
-    //         yield return new WaitForSeconds(1);
-
-    //         if(enemyTurn.TurnMoves[TurnCounter].cards[index] != null && enemyTurn.TurnMoves[TurnCounter].cards[index].poisonEffect != null){
-    //             target.GetComponent<CharacterController>().poisonAmmount = enemyTurn.TurnMoves[TurnCounter].cards[index].poisonEffect.poisonAmmount;
-    //             target.GetComponent<CharacterController>().poisonStack += enemyTurn.TurnMoves[TurnCounter].cards[index].poisonEffect.poisonStack;
-    //         }
-
-    //         yield return new WaitForSeconds(1);
-
-    //         if(enemyTurn.TurnMoves[TurnCounter].cards[index] != null && enemyTurn.TurnMoves[TurnCounter].cards[index].igniteEffect != null){
-    //             target.GetComponent<CharacterController>().igniteAmmount = enemyTurn.TurnMoves[TurnCounter].cards[index].igniteEffect.IgniteAmmount;
-    //             target.GetComponent<CharacterController>().igniteStack += enemyTurn.TurnMoves[TurnCounter].cards[index].igniteEffect.IgniteStack;
-    //         }
-
-    //         yield return new WaitForSeconds(1);
-
-    //         if(enemyTurn.TurnMoves[TurnCounter].cards[index] != null && enemyTurn.TurnMoves[TurnCounter].cards[index].pull != null || enemyTurn.TurnMoves[TurnCounter].cards[index].push != null){
-    //             Vector3 target1Pos = target.transform.position;
-    //             target.transform.DOMoveX(target2.transform.position.x, 0.5f);
-    //             target2.transform.DOMoveX(target1Pos.x, 0.5f);
-    //         }
-
-    //         yield return new WaitForSeconds(1);
-
-    //         if(enemyTurn.TurnMoves[TurnCounter].cards[index] != null && enemyTurn.TurnMoves[TurnCounter].cards[index].retreat != null){
-    //             Vector3 target1Pos = target.transform.position;
-    //             target.transform.DOMoveX(target2.transform.position.x, 0.5f);
-    //             target2.transform.DOMoveX(target1Pos.x, 0.5f);
-    //         }
-
-    //         yield return new WaitForSeconds(enemyTurn.thinkTime);
-    //         if(abilityTurnCounter == enemyTurn.TurnMoves[TurnCounter].cards.Length){
-    //             EndTurn();
-    //         }
-    //     }
-    // }
-
     void CheckToEndTurn(){
         if(abilityTurnCounter == enemyTurn.TurnMoves[TurnCounter].cards.Length){
             StartCoroutine(EndTurn());
+
         }
     }
 
@@ -196,6 +171,9 @@ public class CharTurn : FindTargets
     }
 
     void GiveGuard(GameObject target, int ammount, int index){
+
+        GameObject shield = Instantiate(shieldIconPrefab, transform.position, Quaternion.identity);
+
         if(characterType == CharacterType.Enemy){
             int guardAmmount = enemyTurn.TurnMoves[TurnCounter].cards[index].guard.GuardValue();
             target.GetComponent<CharacterController>().GainGuard(guardAmmount);
@@ -219,14 +197,16 @@ public class CharTurn : FindTargets
     }
 
     public void DealDamage(GameObject target, int index, int ammount){
+        GameObject sword = Instantiate(attackIconPrefab, transform.position, Quaternion.identity);
+
         if(characterType == CharacterType.Enemy){
             int damageAmmount = enemyTurn.TurnMoves[TurnCounter].cards[index].dealDamage.GetDamageValue();
-            target.GetComponent<CharacterController>().TakeDamage(damageAmmount);
+            target.GetComponent<CharacterController>().TakeDamage(damageAmmount, "Damage");
         }
 
         if(characterType == CharacterType.Player){
             int damageAmmount = ammount;
-            target.GetComponent<CharacterController>().TakeDamage(damageAmmount);
+            target.GetComponent<CharacterController>().TakeDamage(damageAmmount, "Damage");
         }
         
     }
@@ -269,7 +249,7 @@ public class CharTurn : FindTargets
             List<GameObject> targets = FindEnemies();
 
             for(int i = 0; i < targets.Count; i++){
-                targets[i].GetComponent<CharacterController>().TakeDamage(ammount);
+                targets[i].GetComponent<CharacterController>().TakeDamage(ammount, "Damage");
             }
         }
     }
@@ -295,15 +275,62 @@ public class CharTurn : FindTargets
         }
    }
    
+   public IEnumerator CameraAttack(CardTemplate cardTemp, GameObject targetPos){
+        Debug.Log("test");
+        Vector3 ogPos = transform.position;
+        Camera cam = Camera.main;
+        cam.GetComponent<CameraZoom>().shouldZoomIn = true;
+        transform.DOMove(cam.GetComponent<CameraZoom>().target.position, 1);
+        yield return new WaitForSeconds(1);
+        if(cardTemp.AttackEffect != null){
+                Debug.Log("test");
+                GameObject effect = Instantiate(cardTemp.AttackEffect, targetPos.transform.position, Quaternion.identity);
+                Destroy(effect, 1.6f);
+                
+            }
+
+        yield return new WaitForSeconds(2);
+        cam.GetComponent<CameraZoom>().shouldZoomIn = false;
+        transform.DOMove(ogPos, 1);
+   }
+
+   public IEnumerator CardAnimation(GameObject card){
+        Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+        card.transform.DOMove(middle, 1);
+        yield return new WaitForSeconds(0.5f);
+        card.transform.DOScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        card.transform.DORotate(new Vector3(0, 0, -145), 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1);
+   }
+
     public void GainCardInfo(CardTemplate cardTemp, Card card, GameObject target, int stack, int ammount, int index, int APCost){
         if(characterType == CharacterType.Player){
 
             if(ActionPoints >= APCost){
-                ActionPoints -= APCost;
-                card.canSelectTarget = false;
-                card.selected = false;
-                card.targets.Clear();
-                this.GetComponent<DeckDrawing>().StartCoroutine(this.GetComponent<DeckDrawing>().MoveToDiscardPile(card));
+
+
+                cardCompleteCounter++;
+                if(cardCompleteCounter == cardTemp.ability.Length){
+                    ActionPoints -= APCost;
+                    StartCoroutine(CardAnimation(card.gameObject));
+                    this.GetComponent<DeckDrawing>().StartCoroutine(this.GetComponent<DeckDrawing>().MoveToDiscardPile(card));
+                    card.canSelectTarget = false;
+                    card.selected = false;
+                    card.canHover = false;
+                    card.onHover = false;
+                    card.Arrow = false;
+                    if(target.tag != "Player"){
+                        StartCoroutine(CameraAttack(cardTemp, target));
+                    }
+                    card.targets.Clear();
+                    cardCompleteCounter = 0;
+
+                    for(int i = 0; i < this.GetComponent<DeckDrawing>().hand.Count; i++){
+                        this.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().CheckCurrentAPAgainstCard();
+                    }
+                }
 
             if(cardTemp.ability[index].dealDamage != null){
                 DealDamage(target, index, ammount);
@@ -380,7 +407,7 @@ public class CharTurn : FindTargets
             if(characterType == CharacterType.Player){
                 deck.SetActive(false);
             }
-            
+
         }
     }
 }

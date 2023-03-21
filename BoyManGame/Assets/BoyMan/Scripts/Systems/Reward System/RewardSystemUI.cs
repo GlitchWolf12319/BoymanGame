@@ -111,7 +111,7 @@ public class RewardSystemUI : MonoBehaviour
             cards.GetComponent<CardRender>().card = cardsChosen[i];
             cards.name = cardsChosen[i].name;
             cards.transform.SetParent(GameObject.Find("CardOptions").transform);
-            cards.GetComponent<AddCardToDeck>().rsUI = this;
+            //cards.GetComponent<AddCardToDeck>().rsUI = this;
         }
    }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6534328651796939037}
   - component: {fileID: 6534328651796939036}
   m_Layer: 0
-  m_Name: BattleStarter
+  m_Name: Bat&Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 6320966231526336066, guid: 026c203e111106544aa327f890bf489c, type: 3}
-  - {fileID: 6320966231526336066, guid: 026c203e111106544aa327f890bf489c, type: 3}
-  spawnDistance: 45
+  - {fileID: 2320215925050070901, guid: 4df860bfdc40fc747b5fcbe95ba03b10, type: 3}
+  ScaleSize:
+  - {x: 0.25, y: 0.25, z: 0.25}
+  - {x: 0.31, y: 0.31, z: 0.31}
+  spawnDistance: 20
   enemySpawnDistance: 5
   player: {fileID: 0}
+  tbm: {fileID: 0}

@@ -8,6 +8,7 @@ public class EnemySpawner : FindTargets
 
     [Header("Place enemies to spawn in battle here")]
     public GameObject[] enemyPrefab;
+    public Vector3[] ScaleSize;
 
     // The list of enemies spawned by this spawner
     private List<GameObject> spawnedEnemies = new List<GameObject>();
@@ -26,6 +27,7 @@ public class EnemySpawner : FindTargets
     void Start(){
         spawnerPosition = transform.position;
         tbm = FindObjectOfType<TurnBaseManager>();
+        BattleStarter();
     }
 
     void Update(){
@@ -36,6 +38,9 @@ public class EnemySpawner : FindTargets
 
     public void BattleStarter(){
         player = GameObject.Find("BoyMan");
+        if(player == null){
+            player = GameObject.Find("Jane");
+        }
         SpawnEnemies();
         tbm.SetTurnOrder();
         tbm.ChangeTurn();
@@ -74,7 +79,7 @@ public class EnemySpawner : FindTargets
 
             // Instantiate the enemy prefab at the spawn position
             GameObject enemy = Instantiate(enemyPrefab[i], enemySpawnPosition, Quaternion.identity);
-            enemy.transform.DOScale(new Vector3(0.23102f,0.23102f,0.23102f), 0.5f);
+            enemy.transform.DOScale(ScaleSize[i], 0.5f);
 
             // Add the enemy to the spawnedEnemies list
             spawnedEnemies.Add(enemy);

@@ -17,4 +17,6 @@ public class CardTemplate : ScriptableObject
 
         public enum AttackMethod {Drag, Arrow}
         public AttackMethod attackMethod;
+
+        public GameObject AttackEffect;
 }

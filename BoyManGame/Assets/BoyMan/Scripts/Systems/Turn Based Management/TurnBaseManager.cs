@@ -62,6 +62,7 @@ public class TurnBaseManager : FindTargets
 
     public IEnumerator FinishBattle(){
         turns.Clear();
+        yield return new WaitForSeconds(3);
         Instantiate(RewardSystem);
         yield return new WaitForSeconds(3);
         for(int i = 0; i < heroesInBattle.Count; i++){

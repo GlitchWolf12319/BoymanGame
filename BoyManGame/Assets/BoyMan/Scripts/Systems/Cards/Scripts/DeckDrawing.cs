@@ -34,6 +34,7 @@ public class DeckDrawing : MonoBehaviour
             for(int i = 0; i < ammount; i++){
                 int randomCard = Random.Range(0, deck.Count);
                 hand.Add(deck[randomCard]);
+                hand[i].gameObject.SetActive(true);
                 hand[i].transform.DOMove(cardPosition[i].position, speedValues[i]);
                 hand[i].GetComponent<Card>().originalPosition = cardPosition[i].position;
                 hand[i].GetComponent<Card>().index = i;
@@ -57,6 +58,15 @@ public class DeckDrawing : MonoBehaviour
             }
             DrawCards(ammount);
         }
+
+
+        for(int i = 0; i < discardPile.Count; i++){
+            discardPile[i].gameObject.SetActive(false);
+        }
+
+        for(int i = 0; i < deck.Count; i++){
+            deck[i].gameObject.SetActive(false);
+        }
     }
 
     public IEnumerator MoveToDiscardPile(Card card){
@@ -64,9 +74,9 @@ public class DeckDrawing : MonoBehaviour
         var index = hand.IndexOf(card);
         hand.RemoveAt(index);
         discardPile.Add(card);
-        card.transform.DOMoveX(card.transform.position.x + 2000, 0.5f);
+        //card.transform.DOMoveX(card.transform.position.x + 2000, 0.5f);
         yield return new WaitForSeconds(1);
-        card.transform.position = originalPosition;
+        //card.transform.position = originalPosition;
     }
 
     public void MoveDeckToDiscardPile(){

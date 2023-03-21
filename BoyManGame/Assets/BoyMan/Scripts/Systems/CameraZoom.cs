@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class CameraZoom : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    public Transform target;
     [SerializeField] private float zoomSpeed = 2f;
     [SerializeField] private float minOrthoSize = 1f;
     [SerializeField] private float maxOrthoSize = 20f;
