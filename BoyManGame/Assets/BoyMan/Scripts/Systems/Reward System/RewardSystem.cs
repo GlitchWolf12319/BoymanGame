@@ -49,6 +49,7 @@ public class RewardSystem : FindTargets
     public GameObject AddedCardPrefab;
     public Transform[] cardSlots;
     public string currentClaimer;
+    
 
 
     void Start(){

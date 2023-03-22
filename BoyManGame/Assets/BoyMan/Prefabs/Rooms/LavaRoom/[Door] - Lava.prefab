@@ -14979,7 +14979,7 @@ MonoBehaviour:
   spawnPosition: {fileID: 5932021491750453924}
   counterText: {fileID: 0}
   objectsToSpawn:
-  - {fileID: 3672122524016186361, guid: bc117d99090a66040af2ba4da0a6bb71, type: 3}
+  - {fileID: 3672122524016186361, guid: 27d0b5ce0623e85469a9faee9f0d839c, type: 3}
   - {fileID: 3672122524016186361, guid: a776e977ff8e67c4e83c218b682c1959, type: 3}
   - {fileID: 3672122524016186361, guid: 1d513f3aa55cb91408608fb9790efa7f, type: 3}
 --- !u!65 &6713931545053086185
