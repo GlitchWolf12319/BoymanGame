@@ -7705,14 +7705,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 0
-  - 0
-  - 0
-  - 100
+  - 46.477238
+  - 7.045526
+  - 46.477238
   spawnPosition: {fileID: 477652101}
   counterText: {fileID: 325270958}
   objectsToSpawn:
-  - {fileID: 1229514972}
   - {fileID: 3672122524016186361, guid: 1d513f3aa55cb91408608fb9790efa7f, type: 3}
   - {fileID: 3672122524016186361, guid: f2800458f8312314daefe58d5d686aa9, type: 3}
   - {fileID: 3672122524016186361, guid: a776e977ff8e67c4e83c218b682c1959, type: 3}
@@ -30769,11 +30767,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2934715155009488773, guid: 8f1bc3250107114479e8af165676bdac,
         type: 3}
-    - target: {fileID: 3030079028283040197, guid: f1f009aab26fc57469a0980bcee90d7f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3175168125690019385, guid: f1f009aab26fc57469a0980bcee90d7f,
         type: 3}
       propertyPath: m_LocalScale.x
