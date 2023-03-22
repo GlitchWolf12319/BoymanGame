@@ -61,8 +61,11 @@ public class CharTurn : FindTargets
                 turnMoveCounter = 0;
             }
             enemyTurn.SetTarget(turnMoveCounter);
+            turnBanner.GetComponent<Animator>().Play("PlayerTurn");
             yield return new WaitForSeconds(enemyTurn.thinkTime);
 
+
+            //checks if targets are there to be attacked
             List<GameObject> anyTargets = FindGoodChar();
             int counter = 0;
             for(int i = 0; i < anyTargets.Count; i++){
@@ -88,8 +91,6 @@ public class CharTurn : FindTargets
             turnUI.SetActive(true);
             transform.GetComponent<DeckDrawing>().DrawCards(5);
         }
-
-        turnBanner.GetComponent<Animator>().Play("PlayerTurn");
     }
 
     IEnumerator GetTarget(){
@@ -219,8 +220,8 @@ public class CharTurn : FindTargets
 
     public void DealDamage(GameObject target, int index, int ammount){
         GameObject sword = Instantiate(attackIconPrefab, transform.position, Quaternion.identity);
-
         if(characterType == CharacterType.Enemy){
+            StartCoroutine(EnemyCameraAttack());
             int damageAmmount = enemyTurn.TurnMoves[turnMoveCounter].cards[index].dealDamage.GetDamageValue();
             if(target != null){
                 target.GetComponent<CharacterController>().TakeDamage(damageAmmount, "Damage");
@@ -300,19 +301,27 @@ public class CharTurn : FindTargets
    }
    
    public IEnumerator CameraAttack(CardTemplate cardTemp, GameObject targetPos){
-        Debug.Log("test");
         Vector3 ogPos = transform.position;
         Camera cam = Camera.main;
         cam.GetComponent<CameraZoom>().shouldZoomIn = true;
         transform.DOMove(cam.GetComponent<CameraZoom>().target.position, 1);
         yield return new WaitForSeconds(1);
         if(cardTemp.AttackEffect != null){
-                Debug.Log("test");
                 GameObject effect = Instantiate(cardTemp.AttackEffect, targetPos.transform.position, Quaternion.identity);
                 Destroy(effect, 1.6f);
                 
             }
 
+        yield return new WaitForSeconds(2);
+        cam.GetComponent<CameraZoom>().shouldZoomIn = false;
+        transform.DOMove(ogPos, 1);
+   }
+
+   public IEnumerator EnemyCameraAttack(){
+        Vector3 ogPos = transform.position;
+        Camera cam = Camera.main;
+        cam.GetComponent<CameraZoom>().shouldZoomIn = true;
+        transform.DOMove(cam.GetComponent<CameraZoom>().target.position, 1);
         yield return new WaitForSeconds(2);
         cam.GetComponent<CameraZoom>().shouldZoomIn = false;
         transform.DOMove(ogPos, 1);

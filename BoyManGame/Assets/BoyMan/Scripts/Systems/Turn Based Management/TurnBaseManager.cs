@@ -12,16 +12,6 @@ public class TurnBaseManager : FindTargets
     [SerializeField] private GameObject RewardSystem;
     public bool battleInProgress;
 
-    void Update(){
-
-        if(Input.GetKeyDown(KeyCode.Return)){
-            SetTurnOrder();
-        }
-
-        if(Input.GetKeyDown(KeyCode.Space)){
-            ChangeTurn();
-        }
-    }
 
     public void ChangeTurn(){
         turnCounter++;

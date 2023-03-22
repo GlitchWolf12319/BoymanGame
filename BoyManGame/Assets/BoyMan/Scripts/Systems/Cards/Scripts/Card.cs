@@ -40,7 +40,7 @@ public class Card : FindTargets
             SelectTarget();
         }
         
-        if(Input.GetMouseButtonDown(0) && onHover && !selected && canSelect && !selected){
+        if(Input.GetMouseButtonDown(0) && onHover && !selected && canSelect && !selected && caster.GetComponent<CharTurn>().ActionPoints >= card.APCost){
 
 
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
@@ -50,7 +50,7 @@ public class Card : FindTargets
                     for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
                         caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect = false;
                         caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().disableHovering = true;
-                        Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
+                        //Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
                     }
                 }
                 else{
@@ -281,11 +281,6 @@ public class Card : FindTargets
             target = caster;
             target.GetComponent<CharTurn>().GainCardInfo(card, this, null, card.ability[i].igniteParty.IgniteStack, card.ability[i].igniteParty.IgniteAmmount, i, card.APCost);
         }
-
-        // DeckDrawing dd = caster.GetComponent<DeckDrawing>();
-        // for(int c = 0; c < dd.hand.Count; c++){
-        //     dd.hand[c].transform.DOMove(dd.hand[c].originalPosition, 0.5f);
-        // }
 
         targets.Clear();
 

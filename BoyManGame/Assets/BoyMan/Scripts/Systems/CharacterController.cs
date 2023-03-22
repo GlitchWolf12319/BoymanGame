@@ -85,6 +85,7 @@ public class CharacterController : FindTargets
     public void TakeDamage(int ammount, string DamageType){
         if(guard < ammount){
             health -= ammount;
+            guard -= ammount;
         }
         
 
