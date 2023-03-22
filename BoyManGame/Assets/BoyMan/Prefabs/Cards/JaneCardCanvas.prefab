@@ -31,8 +31,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2452027971724995877}
-  m_Father: {fileID: 5589316051414409012}
-  m_RootOrder: 15
+  m_Father: {fileID: 7033818173301496656}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -105,8 +105,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7227255937144527151}
-  m_Father: {fileID: 5589316051414409012}
-  m_RootOrder: 16
+  m_Father: {fileID: 7033818173301496656}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -178,8 +178,8 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5589316051414409012}
-  m_RootOrder: 18
+  m_Father: {fileID: 7033818173301496656}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -252,8 +252,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6490663462397202592}
-  m_Father: {fileID: 5589316051414409012}
-  m_RootOrder: 17
+  m_Father: {fileID: 7033818173301496656}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -295,6 +295,46 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1 &33227068839467597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7033818173301496656}
+  m_Layer: 5
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7033818173301496656
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33227068839467597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 127597301}
+  - {fileID: 173118579}
+  - {fileID: 1361352566}
+  - {fileID: 833444327}
+  m_Father: {fileID: 1345056049924950005}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &335058321008470736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,6 +2258,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056048960740576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2393,6 +2435,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056049017551813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2568,6 +2612,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056049063719083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2935,6 +2981,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056049137848484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3454,6 +3502,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056049268938743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4217,6 +4267,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056049469632452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4948,6 +5000,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056049803003438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5239,6 +5293,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5589316051414409012}
+  - {fileID: 7033818173301496656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6140,6 +6195,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056050421123846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6391,6 +6448,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056050465127853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6662,6 +6721,8 @@ MonoBehaviour:
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0.18386817, b: 1, a: 1}
   cantUseColor: {r: 1, g: 0, b: 0, a: 1}
+  canSelect: 0
+  disableHovering: 0
 --- !u!61 &1345056050508617822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7950,10 +8011,6 @@ RectTransform:
   - {fileID: 1345056049975881270}
   - {fileID: 1345056049319441983}
   - {fileID: 1345056049302940067}
-  - {fileID: 127597301}
-  - {fileID: 173118579}
-  - {fileID: 1361352566}
-  - {fileID: 833444327}
   m_Father: {fileID: 1345056049924950005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

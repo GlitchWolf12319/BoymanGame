@@ -76,9 +76,10 @@ public void OnButton1Click()
         Debug.Log("Button 1 deals " + B1_damage + " damage.");
         B1_healAmount -= B1_damage;
 
-         CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
+        CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
         foreach(CharacterController cc in chars){
             if(cc.gameObject.tag == "Player"){
+                Debug.Log(cc.gameObject.name);
                 cc.TakeDamage(B1_damage, "Damage");
             }
 

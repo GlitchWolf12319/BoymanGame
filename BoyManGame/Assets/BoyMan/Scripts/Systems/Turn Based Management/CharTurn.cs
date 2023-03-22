@@ -21,6 +21,7 @@ public class CharTurn : FindTargets
     public GameObject shieldIconPrefab;
     public GameObject attackIconPrefab;
     public int turnMoveCounter;
+    public GameObject turnUI;
 
     void Start(){
         
@@ -59,7 +60,19 @@ public class CharTurn : FindTargets
             }
             enemyTurn.SetTarget(turnMoveCounter);
             yield return new WaitForSeconds(enemyTurn.thinkTime);
-            StartCoroutine(GetTarget());
+
+            List<GameObject> anyTargets = FindGoodChar();
+            int counter = 0;
+            for(int i = 0; i < anyTargets.Count; i++){
+                if(anyTargets[i].GetComponent<CharacterController>().dead){
+                    counter++;
+                }
+            }
+
+            if(counter < anyTargets.Count){
+                StartCoroutine(GetTarget());
+            }
+            
         }
 
         if(characterType == CharacterType.Player){
@@ -68,7 +81,9 @@ public class CharTurn : FindTargets
             int displayTurn = TurnCounter + 1;
             turnBanner.GetComponent<TurnBanner>().turnCounterText.text = "Turn " + displayTurn;
             ActionPoints = this.GetComponent<CharacterController>().CS.MaxAP;
+            yield return new WaitForSeconds(1);
             deck.SetActive(true);
+            turnUI.SetActive(true);
             transform.GetComponent<DeckDrawing>().DrawCards(5);
         }
 
@@ -205,7 +220,10 @@ public class CharTurn : FindTargets
 
         if(characterType == CharacterType.Enemy){
             int damageAmmount = enemyTurn.TurnMoves[turnMoveCounter].cards[index].dealDamage.GetDamageValue();
-            target.GetComponent<CharacterController>().TakeDamage(damageAmmount, "Damage");
+            if(target != null){
+                target.GetComponent<CharacterController>().TakeDamage(damageAmmount, "Damage");
+            }
+            
         }
 
         if(characterType == CharacterType.Player){
@@ -413,12 +431,26 @@ public class CharTurn : FindTargets
 
 
     public void EndTurnButton(){
-        StartCoroutine(EndTurn());
+        int counter = 0;
+        for(int i = 0; i < transform.GetComponent<DeckDrawing>().hand.Count; i++){
+            if(transform.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().selected == true){
+                counter++;
+            }
+        }
+
+        if(counter == 0){
+            Debug.Log("canSkip");
+            StartCoroutine(EndTurn());
+        }
+        
     }
 
 
     public IEnumerator EndTurn(){
         if(tbm != null){
+            if(characterType == CharacterType.Player){
+                turnUI.SetActive(false);
+            }
             abilityTurnCounter = 0;
             yield return new WaitForSeconds(1.5f);
             tbm.ChangeTurn();

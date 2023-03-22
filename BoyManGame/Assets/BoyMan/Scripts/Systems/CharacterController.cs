@@ -5,7 +5,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine.UI;
 
-public class CharacterController : MonoBehaviour
+public class CharacterController : FindTargets
 {
     public CharacterStats CS;
     [SerializeField] private string CharName;
@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private int Coins;
     public Animator anim;
     [SerializeField] private GameObject damageTextPrefab;
+    public bool dead;
 
     [Header("Status Effects")]
     public int igniteStack;
@@ -82,12 +83,14 @@ public class CharacterController : MonoBehaviour
     }
 
     public void TakeDamage(int ammount, string DamageType){
-        Debug.Log("tete");
-        health -= ammount;
+        if(guard < ammount){
+            health -= ammount;
+        }
+        
 
         DamageIdicator damageIdicator = Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIdicator>();
 
-        if(ammount > 0){
+        if(ammount > 0 && guard < ammount){
             damageIdicator.SetDamageText(ammount);
             StartCoroutine(DamageColor());
         }
@@ -133,10 +136,40 @@ public class CharacterController : MonoBehaviour
     }
 
     void Die(){
+        dead = true;
         //transform.GetComponent<CharTurn>().tbm.ChangeTurn();
         transform.DOScale(new Vector3(0,0,0), 0.5f);
-        transform.GetComponent<CharTurn>().tbm.RemoveFromTurnOrder(this.gameObject);
+        GameObject.Find("RestartScreen").GetComponent<Restart>().removeTarget(this.gameObject);
+
+        TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
+        if(tbm.battleInProgress){
+            transform.GetComponent<CharTurn>().tbm.RemoveFromTurnOrder(this.gameObject);
+        }
+
+        GameObject jane = GameObject.Find("Jane");
+        GameObject boyman = GameObject.Find("BoyMan");
+        if(jane != null){
+            if(jane.GetComponent<CharacterController>().dead){
+                Camera mainCam = Camera.main;
+                if(boyman != null){
+                    mainCam.GetComponent<CameraFollow>().player = GameObject.Find("BoyCamFollow").transform;
+                }
+                
+            }
+        }
+
+        if(boyman != null){
+            if(boyman.GetComponent<CharacterController>().dead){
+                if(jane != null && jane.GetComponent<CharacterController>().dead == false){
+                    Vector3 newPos = transform.position;
+                    jane.transform.DOMove(newPos, 0.5f);
+                }
+            }
+        }
+        
         Destroy(this.gameObject, 10f);
+
+
     }
 
     public void GiveCoins(int ammount){

@@ -358,7 +358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTarget: {fileID: 0}
   moveDuration: 1
-  anim: {fileID: 0}
 --- !u!1 &3557552876345363583
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +848,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTarget: {fileID: 3557552876418378121}
   moveDuration: 10
-  anim: {fileID: 0}
 --- !u!54 &3557552877303968075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -921,6 +919,7 @@ MonoBehaviour:
   MaxHealth: 0
   guard: 0
   Coins: 0
+  anim: {fileID: 0}
   damageTextPrefab: {fileID: 0}
   igniteStack: 0
   igniteAmmount: 0
@@ -1553,6 +1552,11 @@ PrefabInstance:
       propertyPath: caster
       value: 
       objectReference: {fileID: 3557552877303968073}
+    - target: {fileID: 1969189781487790605, guid: b03c024b8d0c76d4faf5455dc94af023,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1969189781630934038, guid: b03c024b8d0c76d4faf5455dc94af023,
         type: 3}
       propertyPath: caster

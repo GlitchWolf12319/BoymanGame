@@ -40,7 +40,7 @@ public class Card : FindTargets
             SelectTarget();
         }
         
-        if(Input.GetMouseButtonDown(0) && onHover && !selected && canSelect){
+        if(Input.GetMouseButtonDown(0) && onHover && !selected && canSelect && !selected){
 
 
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
@@ -75,28 +75,31 @@ public class Card : FindTargets
             }
 
             selected = true;
+            Debug.Log("selected true");
             canSelectTarget = true;
             CollectTarget();
         }
         
         if(Input.GetMouseButtonUp(0) && selected){
 
-            selected = false;
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
+                selected = false;
+                Debug.Log("selected false");
                 Drag = false;
                 CheckIfCardIsPlayed();
 
                 for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
                     caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect = true;
                     caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().disableHovering = false;
-                    Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
+                    //Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
                     
                 }
             }
         }
 
-        if(Input.GetMouseButtonDown(1) && onHover && selected){
+        if(Input.GetMouseButtonDown(1) && onHover){
             selected = false;
+            Debug.Log("selected false");
             canSelectTarget = false;
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
                 Drag = false;
@@ -172,6 +175,7 @@ public class Card : FindTargets
             CheckAbility(this.gameObject);
             DeckDrawing dd = caster.GetComponent<DeckDrawing>();
             selected = false;
+            Debug.Log("selected false");
             Drag = false;
             onHover = false;
             cardPlayed = true;

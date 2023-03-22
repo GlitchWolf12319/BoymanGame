@@ -178,6 +178,62 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &1919265122659780419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1669025977190552283}
+  - component: {fileID: 374040615094829263}
+  m_Layer: 0
+  m_Name: StatusEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1669025977190552283
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919265122659780419}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0056052, y: 1.0056052, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5519323509800177756}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -15, y: -48.3}
+  m_SizeDelta: {x: 390.87, y: 30.57}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &374040615094829263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919265122659780419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeea54a01821c034cb2e7a07fc1a281b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusEffectPrefab: {fileID: 6324991928591399443, guid: 933bdd3b077c8e541a55cbd624ddd33e,
+    type: 3}
+  statusEffectSprites:
+  - {fileID: 21300000, guid: 70fd9e6cd96c365438864d920338c1a7, type: 3}
+  - {fileID: 21300000, guid: 304d5ff0ea37a264980c62bd601161bb, type: 3}
+  - {fileID: 21300000, guid: 3df60dac6cd26c745903784f60b18b03, type: 3}
+  characterController: {fileID: 6320966231526336071}
 --- !u!1 &3449576661640598652
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +424,7 @@ RectTransform:
   - {fileID: 1384812048088433243}
   - {fileID: 7250564089135590662}
   - {fileID: 4875170755951844804}
+  - {fileID: 1669025977190552283}
   m_Father: {fileID: 2746850179315458843}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -645,8 +702,10 @@ MonoBehaviour:
   MaxHealth: 0
   guard: 0
   Coins: 0
+  anim: {fileID: 0}
   damageTextPrefab: {fileID: 1971629707595618004, guid: 5755d7c612701d547accb5e991a3c4e6,
     type: 3}
+  dead: 0
   igniteStack: 0
   igniteAmmount: 0
   poisonStack: 0
@@ -679,6 +738,7 @@ MonoBehaviour:
   attackIconPrefab: {fileID: 8927898832268383401, guid: ac5a14e6d4b904648a143769589615fb,
     type: 3}
   turnMoveCounter: 0
+  turnUI: {fileID: 0}
 --- !u!65 &6320966231526336073
 BoxCollider:
   m_ObjectHideFlags: 0

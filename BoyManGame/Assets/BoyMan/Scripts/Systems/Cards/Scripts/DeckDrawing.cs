@@ -26,6 +26,7 @@ public class DeckDrawing : MonoBehaviour
     }
 
     public void DrawCards(int ammount){
+        Debug.Log("Deck Drawing");        
         float[] rotateValues = {13.3f, 8.9f, 0f, -8.9f, -13.3f};
         float[] speedValues = {0.05f, 0.15f, 0.2f, 0.25f, 0.3f};
         var deckSize = deck.Count;
@@ -80,7 +81,19 @@ public class DeckDrawing : MonoBehaviour
     }
 
     public void moveDeckToDiscard(){
-        StartCoroutine(MoveDeckToDiscardPile());
+        int counter = 0;
+        for(int i = 0; i < hand.Count; i++){
+            if(hand[i].GetComponent<Card>().selected == true){
+                counter++;
+            }
+        }
+
+        if(counter == 0){
+            Debug.Log("canSkip");
+            //StartCoroutine(EndTurn());
+            StartCoroutine(MoveDeckToDiscardPile());
+        }
+        
     }
 
     public IEnumerator MoveDeckToDiscardPile(){

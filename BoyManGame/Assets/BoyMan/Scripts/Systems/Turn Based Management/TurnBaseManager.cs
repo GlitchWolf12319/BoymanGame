@@ -10,6 +10,7 @@ public class TurnBaseManager : FindTargets
     [SerializeField] private List<GameObject> heroesInBattle;
     [SerializeField] private List<GameObject> totalCharsInBattle;
     [SerializeField] private GameObject RewardSystem;
+    public bool battleInProgress;
 
     void Update(){
 
@@ -43,10 +44,14 @@ public class TurnBaseManager : FindTargets
             turns.Add(totalCharsInBattle[randomChoice].GetComponent<CharTurn>());
             totalCharsInBattle.RemoveAt(randomChoice);
         }
+
+        battleInProgress = true;
     }
 
     public void RemoveFromTurnOrder(GameObject DeadTarget){
+        Debug.Log("Removing " + DeadTarget.name);
         turns.RemoveAt(turns.IndexOf(DeadTarget.GetComponent<CharTurn>()));
+        
         if(DeadTarget.GetComponent<CharTurn>().characterType == CharTurn.CharacterType.Player){
             heroesInBattle.Remove(DeadTarget);
         }
@@ -57,6 +62,7 @@ public class TurnBaseManager : FindTargets
 
         if(isBattleFinished() && heroesInBattle.Count > 0){
             StartCoroutine(FinishBattle());
+            battleInProgress = false;
         }
     }
 
