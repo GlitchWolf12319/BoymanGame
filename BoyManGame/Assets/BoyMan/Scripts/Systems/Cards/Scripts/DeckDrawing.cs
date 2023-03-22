@@ -79,13 +79,41 @@ public class DeckDrawing : MonoBehaviour
         //card.transform.position = originalPosition;
     }
 
-    public void MoveDeckToDiscardPile(){
+    public void moveDeckToDiscard(){
+        StartCoroutine(MoveDeckToDiscardPile());
+    }
+
+    public IEnumerator MoveDeckToDiscardPile(){
         foreach(var card in hand){
             for(int i = 0; i < hand.Count; i++){
                 card.GetComponent<Card>().canHover = false;
             }
             discardPile.Add(card);
-            card.transform.DOMoveX(card.transform.position.x + 2000, 0.5f);
+
+            // card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1).OnComplete(() =>
+            // {
+            //     card.transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
+            //     card.transform.eulerAngles = new Vector3(0,0,0);
+            //     card.transform.position = new Vector3(card.GetComponent<Card>().originalPosition.x - 1600, card.GetComponent<Card>().originalPosition.y, card.GetComponent<Card>().originalPosition.z);
+            // });
+            // card.transform.DOMoveX(card.transform.position.x + 2000, 0.5f);
+
+            Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+            card.transform.DOMove(middle, .1f);
+            yield return new WaitForSeconds(0.1f);
+            card.transform.DOScale(new Vector3(0.3f, 0.3f, 0.3f), 0.1f);
+            //card.GetComponent<Card>().trail.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            card.transform.DORotate(new Vector3(0, 0, -145), 0.1f);
+            yield return new WaitForSeconds(0.1f);
+            //card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1);
+   
+            card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1).OnComplete(() =>
+            {
+                card.transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
+                card.transform.eulerAngles = new Vector3(0,0,0);
+                card.transform.position = new Vector3(card.GetComponent<Card>().originalPosition.x - 1600, card.GetComponent<Card>().originalPosition.y, card.GetComponent<Card>().originalPosition.z);
+            });
         }
 
         hand.Clear();

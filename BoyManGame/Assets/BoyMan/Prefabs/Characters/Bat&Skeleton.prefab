@@ -50,7 +50,7 @@ MonoBehaviour:
   ScaleSize:
   - {x: 0.25, y: 0.25, z: 0.25}
   - {x: 0.31, y: 0.31, z: 0.31}
-  spawnDistance: 20
+  spawnDistance: 10
   enemySpawnDistance: 5
   player: {fileID: 0}
   tbm: {fileID: 0}

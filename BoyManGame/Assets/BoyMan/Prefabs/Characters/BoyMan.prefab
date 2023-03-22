@@ -33,6 +33,7 @@ RectTransform:
   - {fileID: 6116326390668054421}
   - {fileID: 7709296155673270220}
   - {fileID: 6617188814386545421}
+  - {fileID: 3945453407611245092}
   m_Father: {fileID: 8373638060780759307}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -899,6 +900,9 @@ MonoBehaviour:
   ActionPoints: 0
   APText: {fileID: 3557552877477774681}
   turnBanner: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
+  attackIconPrefab: {fileID: 0}
+  turnMoveCounter: 0
 --- !u!114 &3557552877303968079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,6 +1462,60 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &9198984094379512032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3945453407611245092}
+  - component: {fileID: 1341992495511245455}
+  m_Layer: 0
+  m_Name: StatusEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3945453407611245092
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198984094379512032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6705607683672715648}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.001297, y: 6}
+  m_SizeDelta: {x: 390.87, y: 30.57}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1341992495511245455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198984094379512032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeea54a01821c034cb2e7a07fc1a281b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusEffectPrefab: {fileID: 6324991928591399443, guid: 933bdd3b077c8e541a55cbd624ddd33e,
+    type: 3}
+  statusEffectSprites:
+  - {fileID: 21300000, guid: 70fd9e6cd96c365438864d920338c1a7, type: 3}
+  characterController: {fileID: 3557552877303968079}
 --- !u!1001 &3557552877125979080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1635,6 +1693,16 @@ PrefabInstance:
       propertyPath: caster
       value: 
       objectReference: {fileID: 3557552877303968073}
+    - target: {fileID: 6083393030189512174, guid: b03c024b8d0c76d4faf5455dc94af023,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083393030189512174, guid: b03c024b8d0c76d4faf5455dc94af023,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -145
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b03c024b8d0c76d4faf5455dc94af023, type: 3}
 --- !u!114 &3030079026459883557 stripped

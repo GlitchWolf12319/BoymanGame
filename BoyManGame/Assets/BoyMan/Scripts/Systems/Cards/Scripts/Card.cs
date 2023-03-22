@@ -25,6 +25,9 @@ public class Card : FindTargets
     public GameObject speechBubblePrefab;
     public Color canUseColor;
     public Color cantUseColor;
+    public bool canSelect;
+    public bool disableHovering;
+    //public GameObject trail;
 
     public void AssingCaster(){
         Transform CardsParent = this.transform.parent;
@@ -32,17 +35,23 @@ public class Card : FindTargets
     }
 
     void Update(){
+
         if(canSelectTarget){
             SelectTarget();
         }
+        
+        if(Input.GetMouseButtonDown(0) && onHover && !selected && canSelect){
 
-        if(Input.GetMouseButtonDown(0) && onHover){
-            selected = true;
-            canSelectTarget = true;
-            CollectTarget();
+
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
                 if(caster.GetComponent<CharTurn>().ActionPoints >= card.APCost){
                     Drag = true;
+                    //Disables cards being selected if a card in players hand is selected
+                    for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
+                        caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect = false;
+                        caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().disableHovering = true;
+                        Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
+                    }
                 }
                 else{
                     StartCoroutine(cantUseCard());
@@ -52,23 +61,41 @@ public class Card : FindTargets
             if(card.attackMethod == CardTemplate.AttackMethod.Arrow){
                 if(caster.GetComponent<CharTurn>().ActionPoints >= card.APCost){
                     Arrow = true;
+                    //Disables cards being selected if a card in players hand is selected
+                    for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
+                        caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect = false;
+                        caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().disableHovering = true;
+                        Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
+                    }
                 }
                 else{
                     StartCoroutine(cantUseCard());
                 }
                 
             }
+
+            selected = true;
+            canSelectTarget = true;
+            CollectTarget();
         }
         
-        if(Input.GetMouseButtonUp(0)){
+        if(Input.GetMouseButtonUp(0) && selected){
 
+            selected = false;
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
                 Drag = false;
                 CheckIfCardIsPlayed();
+
+                for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
+                    caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect = true;
+                    caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().disableHovering = false;
+                    Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
+                    
+                }
             }
         }
 
-        if(Input.GetMouseButtonDown(1) && onHover){
+        if(Input.GetMouseButtonDown(1) && onHover && selected){
             selected = false;
             canSelectTarget = false;
             if(card.attackMethod == CardTemplate.AttackMethod.Drag){
@@ -79,6 +106,12 @@ public class Card : FindTargets
             if(card.attackMethod == CardTemplate.AttackMethod.Arrow){
                 Arrow = false;
             }
+
+            for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
+                    caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect = true;
+                    caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().disableHovering = false;
+                    Debug.Log(caster.GetComponent<DeckDrawing>().hand[i].name + " " + caster.GetComponent<DeckDrawing>().hand[i].GetComponent<Card>().canSelect);
+                }
             
         }
 
@@ -157,6 +190,7 @@ public class Card : FindTargets
         
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Click");
             // Create a ray from the mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -233,12 +267,22 @@ public class Card : FindTargets
 
         targets.Clear();
 
+        for(int d = 0; d < caster.GetComponent<DeckDrawing>().discardPile.Count; d++){
+            caster.GetComponent<DeckDrawing>().discardPile[d].GetComponent<Card>().canSelect = true;
+            caster.GetComponent<DeckDrawing>().discardPile[d].GetComponent<Card>().disableHovering = false;
+        }
+
+        for(int h = 0; h < caster.GetComponent<DeckDrawing>().hand.Count; h++){
+            caster.GetComponent<DeckDrawing>().hand[h].GetComponent<Card>().canSelect = true;
+            caster.GetComponent<DeckDrawing>().hand[h].GetComponent<Card>().disableHovering = false;
+        }
+
     }
     }
 
     public void Hover(){
 
-        if(!Drag && !cardPlayed && canHover && !Arrow){
+        if(!Drag && !cardPlayed && canHover && !Arrow && !disableHovering){
 
         DeckDrawing dd = caster.GetComponent<DeckDrawing>();
         onHover = true;
@@ -292,7 +336,7 @@ public class Card : FindTargets
     }
 
     public void NoHover(){
-        if(!Drag && !cardPlayed && canHover && !Arrow){
+        if(!Drag && !cardPlayed && canHover && !Arrow && !disableHovering){
         onHover = false;
         transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
         transform.DOMove(originalPosition, 0.5f);

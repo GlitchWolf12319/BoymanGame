@@ -9,6 +9,12 @@ public class EventCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
+            CharacterController[] cc = FindObjectsOfType<CharacterController>();
+            foreach(CharacterController CharController in cc){
+                CharController.anim.SetBool("isIdle", true);
+            }
+
             float totalSpawnChance = 0f;
             for (int i = 0; i < prefabsToInstantiate.Length; i++)
             {

@@ -81,6 +81,8 @@ public void OnButton1Click()
             if(cc.gameObject.tag == "Player"){
                 cc.TakeDamage(B1_damage, "Damage");
             }
+
+            cc.anim.SetBool("isIdle", false);
         }
 
         }
@@ -94,6 +96,8 @@ public void OnButton1Click()
             if(cc.gameObject.tag == "Player"){
                 cc.Heal(B1_healAmount);
             }
+
+            cc.anim.SetBool("isIdle", false);
         }
 
 
@@ -112,6 +116,10 @@ public void OnButton1Click()
     }
     else{
   Debug.Log("Button 1 does nothing.");
+        CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
+        foreach(CharacterController cc in chars){
+            cc.anim.SetBool("isIdle", false);
+        }
     }
 
     StartCoroutine(FadeOutPanel());
@@ -130,6 +138,8 @@ public void OnButton1Click()
             if(cc.gameObject.tag == "Player"){
                 cc.TakeDamage(B2_damage, "Damage");
             }
+
+            cc.anim.SetBool("isIdle", false);
         }
 
     }
@@ -142,12 +152,19 @@ public void OnButton1Click()
             if(cc.gameObject.tag == "Player"){
                 cc.Heal(B2_healAmount);
             }
+
+            cc.anim.SetBool("isIdle", false);
         }
 
     }
     else    
     {
         Debug.Log("Button 2 does nothing.");
+        CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
+        foreach(CharacterController cc in chars){
+            cc.anim.SetBool("isIdle", false);
+        }
+        
     }
     StartCoroutine(FadeOutPanel());
 

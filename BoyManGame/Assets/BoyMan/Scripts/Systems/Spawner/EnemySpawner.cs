@@ -27,16 +27,12 @@ public class EnemySpawner : FindTargets
     void Start(){
         spawnerPosition = transform.position;
         tbm = FindObjectOfType<TurnBaseManager>();
-        BattleStarter();
+        StartCoroutine(BattleStarter());
     }
 
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Alpha1)){
-            BattleStarter();
-        }
-    }
 
-    public void BattleStarter(){
+    public IEnumerator BattleStarter(){
+        yield return new WaitForSeconds(3);
         player = GameObject.Find("BoyMan");
         if(player == null){
             player = GameObject.Find("Jane");
@@ -46,13 +42,13 @@ public class EnemySpawner : FindTargets
         tbm.ChangeTurn();
     }
 
-    public void OnTriggerEnter(Collider other){
-        if(other.tag == "Player"){
-            player = other.gameObject;
-            BattleStarter();
-            this.GetComponent<BoxCollider>().enabled = false;
-        }
-    }
+    // public void OnTriggerEnter(Collider other){
+    //     if(other.tag == "Player"){
+    //         player = other.gameObject;
+    //         BattleStarter();
+    //         this.GetComponent<BoxCollider>().enabled = false;
+    //     }
+    // }
 
     private void SpawnEnemies()
     {
@@ -79,7 +75,7 @@ public class EnemySpawner : FindTargets
 
             // Instantiate the enemy prefab at the spawn position
             GameObject enemy = Instantiate(enemyPrefab[i], enemySpawnPosition, Quaternion.identity);
-            enemy.transform.DOScale(ScaleSize[i], 0.5f);
+            enemy.transform.DOScale(ScaleSize[i], 1f);
 
             // Add the enemy to the spawnedEnemies list
             spawnedEnemies.Add(enemy);

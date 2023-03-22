@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour
     public int MaxHealth;
     public int guard;
     [SerializeField] private int Coins;
+    public Animator anim;
     [SerializeField] private GameObject damageTextPrefab;
 
     [Header("Status Effects")]

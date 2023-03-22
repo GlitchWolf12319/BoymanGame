@@ -72,14 +72,19 @@ IEnumerator FadeOut()
     imageDisplay.CrossFadeAlpha(0.0f, 1f, false);
     Panel.CrossFadeAlpha(0.0f, 1f, false);
     Textbox.CrossFadeAlpha(0.0f, 1f, false);
-  player = GameObject.FindGameObjectWithTag("Player");
+    player = GameObject.FindGameObjectWithTag("Player");
         if(player != null){         
     //  Set the spawn chance of room 0 to 100%
          MoveRight[] move = FindObjectsOfType<MoveRight>();
          foreach(MoveRight Move in move){
             Move.Move();
          }
-        }
+
+         CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         foreach(CharacterController charController in cc){
+            charController.anim.SetBool("isIdle", false);
+         }
+    }
     // Wait for fade to complete
 
     // Hide the dialogue box

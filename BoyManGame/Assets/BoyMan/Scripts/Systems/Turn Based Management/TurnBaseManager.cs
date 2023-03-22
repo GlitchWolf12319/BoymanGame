@@ -55,7 +55,7 @@ public class TurnBaseManager : FindTargets
         }
 
 
-        if(isBattleFinished()){
+        if(isBattleFinished() && heroesInBattle.Count > 0){
             StartCoroutine(FinishBattle());
         }
     }
