@@ -36,6 +36,7 @@ public class DeckDrawing : MonoBehaviour
                 int randomCard = Random.Range(0, deck.Count);
                 hand.Add(deck[randomCard]);
                 hand[i].gameObject.SetActive(true);
+                hand[i].CheckCurrentAPAgainstCard();
                 hand[i].transform.DOMove(cardPosition[i].position, speedValues[i]);
                 hand[i].GetComponent<Card>().originalPosition = cardPosition[i].position;
                 hand[i].GetComponent<Card>().index = i;
@@ -43,8 +44,6 @@ public class DeckDrawing : MonoBehaviour
                 hand[i].transform.SetSiblingIndex(i);
                 hand[i].GetComponent<Card>().canHover = true;
                 deck.RemoveAt(randomCard);
-
-                
             }   
         }
         else{
@@ -111,6 +110,8 @@ public class DeckDrawing : MonoBehaviour
             // });
             // card.transform.DOMoveX(card.transform.position.x + 2000, 0.5f);
 
+
+            Debug.Log("deck animation");
             Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
             card.transform.DOMove(middle, .1f);
             yield return new WaitForSeconds(0.1f);

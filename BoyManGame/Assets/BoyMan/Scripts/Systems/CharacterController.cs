@@ -139,6 +139,8 @@ public class CharacterController : FindTargets
         dead = true;
         //transform.GetComponent<CharTurn>().tbm.ChangeTurn();
         transform.DOScale(new Vector3(0,0,0), 0.5f);
+
+        
         GameObject.Find("RestartScreen").GetComponent<Restart>().removeTarget(this.gameObject);
 
         TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();

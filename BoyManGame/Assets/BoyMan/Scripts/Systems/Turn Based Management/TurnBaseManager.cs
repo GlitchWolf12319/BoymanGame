@@ -67,17 +67,21 @@ public class TurnBaseManager : FindTargets
     }
 
     public IEnumerator FinishBattle(){
+
         turns.Clear();
         yield return new WaitForSeconds(3);
-        Instantiate(RewardSystem);
-        yield return new WaitForSeconds(3);
+        GameObject RS = Instantiate(RewardSystem);
+        RS.transform.SetAsFirstSibling();
+
         for(int i = 0; i < heroesInBattle.Count; i++){
-                heroesInBattle[i].GetComponent<DeckDrawing>().MoveDeckToDiscardPile();
-                
+                heroesInBattle[i].GetComponent<DeckDrawing>().moveDeckToDiscard();
+                heroesInBattle[i].GetComponent<CharTurn>().turnUI.SetActive(false);
+
                 foreach(var card in heroesInBattle[i].GetComponent<DeckDrawing>().discardPile){
                     heroesInBattle[i].GetComponent<DeckDrawing>().deck.Add(card);
                 }
-            }
+        }
+        
 
     }  
 

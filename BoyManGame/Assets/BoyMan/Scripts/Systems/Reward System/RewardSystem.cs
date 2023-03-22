@@ -245,6 +245,7 @@ public class RewardSystem : FindTargets
 
    public void Leave(){
         rewardScreen.transform.DOScale(new Vector3(0,0,0), 0.5f);
+
         Destroy(this.gameObject, 0.7f);
 
         MoveRight[] move = FindObjectsOfType<MoveRight>();
