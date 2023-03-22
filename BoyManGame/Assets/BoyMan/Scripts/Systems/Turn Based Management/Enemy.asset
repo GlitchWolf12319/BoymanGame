@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   thinkTime: 5
-  target: 1
+  target: 0
   TurnMoves:
   - cards:
     - {fileID: 11400000, guid: bfe02190a4462484b8c147326438b6fc, type: 2}
+  - cards:
+    - {fileID: 11400000, guid: 67635d0ced0aa5a44a4eb935dda18200, type: 2}
