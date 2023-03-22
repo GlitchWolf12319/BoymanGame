@@ -45,16 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a4430c38dcbd0448686dd862bafe01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - {fileID: 3672122524016186361}
-  - {fileID: 3672122524016186361, guid: 1d513f3aa55cb91408608fb9790efa7f, type: 3}
-  - {fileID: 3672122524016186361, guid: f2800458f8312314daefe58d5d686aa9, type: 3}
   spawnChances:
-  - 65
-  - 35
-  - 10
+  - 0.5
+  - 0.5
   spawnPosition: {fileID: 5932021491750453924}
   counterText: {fileID: 0}
+  objectsToSpawn:
+  - {fileID: 3672122524016186361}
+  - {fileID: 3672122524016186361, guid: 81b4702eed1625748abd3ee102abb023, type: 3}
 --- !u!65 &6713931545053086185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -771,6 +769,7 @@ Transform:
   - {fileID: 8739263250862711735}
   - {fileID: 101525801854292412}
   - {fileID: 7824662250718220750}
+  - {fileID: 5783474220441084563}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -980,6 +979,70 @@ Transform:
   m_Father: {fileID: 3672122524016186360}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8750698832676510139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5783474220441084563}
+  - component: {fileID: 3555865103543974377}
+  - component: {fileID: 378325670527614640}
+  m_Layer: 6
+  m_Name: EventTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5783474220441084563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750698832676510139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -46.67, y: 11.99, z: -47.4}
+  m_LocalScale: {x: 1, y: 15.229, z: 19.699}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3672122524016186360}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3555865103543974377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750698832676510139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &378325670527614640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750698832676510139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e510be9e70518814eae14ac6afdca591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabsToInstantiate:
+  - {fileID: 6534328651796939035, guid: 76f0711ea05c9f24ab8feed6224e45cd, type: 3}
+  - {fileID: 6534328651796939035, guid: d5e4252dc31e1df48a4093c49012503e, type: 3}
+  spawnChances:
+  - 50
+  - 50
 --- !u!1001 &2903068818170033090
 PrefabInstance:
   m_ObjectHideFlags: 0

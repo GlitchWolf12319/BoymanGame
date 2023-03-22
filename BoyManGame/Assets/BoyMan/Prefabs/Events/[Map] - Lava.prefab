@@ -167,7 +167,7 @@ MonoBehaviour:
   button2Text: {fileID: 8788595414953758738}
   descriptionText: {fileID: 8788595415079621431}
   image: {fileID: 8788595414688906604}
-  sprite: {fileID: 21300000, guid: c180a32a5efc41f4db8ce67d021d5b1d, type: 3}
+  sprite: {fileID: 21300000, guid: 5212da1e6852d4446833098ca59b9d24, type: 3}
   button1: {fileID: 8788595413898882022}
   button2: {fileID: 8788595414095272326}
   titleText: {fileID: 8788595414249527866}

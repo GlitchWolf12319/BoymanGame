@@ -62,10 +62,16 @@ MonoBehaviour:
   - {fileID: 1085338602065725093, guid: 5c11ead997d28464288f0f6b33c3528b, type: 3}
   - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
   - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
+  - {fileID: 1085338602065725093, guid: 438a5b848bb4e7141a4a2bdafd04181f, type: 3}
+  - {fileID: 1085338602065725093, guid: 19d885f58e8fafd419afc0abf887a70f, type: 3}
+  - {fileID: 1085338602065725093, guid: 5d781b736956e4a4183c7adb3be721e4, type: 3}
   spawnChances:
-  - 99.47827
-  - 0.26086748
-  - 0.26086748
+  - 12.178233
+  - 18.51521
+  - 16.38881
+  - 13.717021
+  - 22.019682
+  - 17.18105
 --- !u!1 &3411574322290068192
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,8 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 100
-  - 0
+  - 64.20754
+  - 35.79246
   spawnPosition: {fileID: 5932021491750453924}
   counterText: {fileID: 0}
   objectsToSpawn:

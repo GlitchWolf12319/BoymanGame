@@ -5349,15 +5349,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 0.33333334
-  - 0.33333334
-  - 0.33333334
+  - 0
+  - 50
+  - 50
   spawnPosition: {fileID: 5932021491750453924}
   counterText: {fileID: 0}
   objectsToSpawn:
   - {fileID: 3672122524016186361, guid: ca351419ed3f28b40a118e2cc6ffe8c0, type: 3}
-  - {fileID: 3672122524016186361, guid: ca351419ed3f28b40a118e2cc6ffe8c0, type: 3}
-  - {fileID: 3672122524016186361, guid: ca351419ed3f28b40a118e2cc6ffe8c0, type: 3}
+  - {fileID: 3672122524016186361, guid: bc117d99090a66040af2ba4da0a6bb71, type: 3}
+  - {fileID: 3672122524016186361, guid: 26a1b073b39aa4a459f73a5e05215516, type: 3}
 --- !u!65 &6713931545053086185
 BoxCollider:
   m_ObjectHideFlags: 0

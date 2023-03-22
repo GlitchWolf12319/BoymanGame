@@ -28,7 +28,7 @@ public class SpawnRoom : MonoBehaviour
         if (other.CompareTag("Player") && !hasSpawned)
         {
             numColliders++;
-            counterText.text = GetCountString(numColliders) + " Decent";
+            counterText.text = GetCountString(numColliders) + " Descent ";
 
             // Flash the text
             counterText.DOColor(Color.white, 0.1f).SetLoops(2, LoopType.Yoyo);
