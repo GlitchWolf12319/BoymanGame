@@ -18,6 +18,8 @@ public class Restart : FindTargets
 
         if(targets.Count <= 0){
             buttons.SetActive(true);
+            Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLScfXd34AmUOKV92MY-Zv9TzE0Gk-ajhF6PRlfsyR9xaDgSujA/viewform");
+             Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSdscRqhLkfzKXVuQLDUZZvqDxGOC0qMhoxUVywt9Hdo-8uynw/viewform?usp=sf_link");
         }
     }
 

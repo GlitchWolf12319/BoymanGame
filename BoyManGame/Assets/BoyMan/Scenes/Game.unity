@@ -7707,8 +7707,8 @@ MonoBehaviour:
   spawnChances:
   - 0
   - 0
-  - 100
   - 0
+  - 100
   spawnPosition: {fileID: 477652101}
   counterText: {fileID: 325270958}
   objectsToSpawn:
