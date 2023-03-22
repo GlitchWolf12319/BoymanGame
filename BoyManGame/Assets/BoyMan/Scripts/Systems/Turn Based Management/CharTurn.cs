@@ -36,6 +36,8 @@ public class CharTurn : FindTargets
         if(characterType == CharacterType.Player){
             APText.text = ActionPoints + "/" + transform.GetComponent<CharacterController>().CS.MaxAP.ToString();
         }
+
+
         
     }
 
@@ -317,6 +319,7 @@ public class CharTurn : FindTargets
    }
 
    public IEnumerator CardAnimation(GameObject card){
+        card.GetComponent<Card>().CheckIfUsingCard(true);
         Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
         card.transform.DOMove(middle, 1);
         yield return new WaitForSeconds(0.5f);
@@ -332,6 +335,7 @@ public class CharTurn : FindTargets
             card.transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
             card.transform.eulerAngles = new Vector3(0,0,0);
             card.transform.position = new Vector3(card.GetComponent<Card>().originalPosition.x - 1600, card.GetComponent<Card>().originalPosition.y, card.GetComponent<Card>().originalPosition.z);
+            card.GetComponent<Card>().CheckIfUsingCard(false);
         });
    
    }

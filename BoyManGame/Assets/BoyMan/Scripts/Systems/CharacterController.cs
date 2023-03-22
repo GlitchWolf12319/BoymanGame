@@ -140,7 +140,7 @@ public class CharacterController : FindTargets
         //transform.GetComponent<CharTurn>().tbm.ChangeTurn();
         transform.DOScale(new Vector3(0,0,0), 0.5f);
 
-        
+
         GameObject.Find("RestartScreen").GetComponent<Restart>().removeTarget(this.gameObject);
 
         TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
@@ -193,11 +193,12 @@ public class CharacterController : FindTargets
     public void CheckStatusEffects(){
 
         if(health > 0){
+
         if(IgniteDamage(5) != 0){
             TakeDamage(5, "Ignite");
         }
 
-        if(IgniteDamage(poisonAmmount) != 0){
+        if(poisonDamage(poisonAmmount) != 0){
             TakeDamage(poisonAmmount, "Poison");
         }
         }

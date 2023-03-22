@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95a5e74566e5d84cb1491ce2f1fba71, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  thinkTime: 1
+  thinkTime: 5
   target: 1
   TurnMoves:
   - cards:

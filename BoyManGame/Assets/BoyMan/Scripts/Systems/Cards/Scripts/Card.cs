@@ -131,6 +131,24 @@ public class Card : FindTargets
         
     }
 
+    public void CheckIfUsingCard(bool active){
+        if(active){
+            for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
+                if(caster.GetComponent<DeckDrawing>().hand[i].name != transform.name){
+                    caster.GetComponent<DeckDrawing>().hand[i].transform.DOMoveY(caster.GetComponent<DeckDrawing>().hand[i].transform.position.y - 1000, 0.5f);
+                }
+            }
+        }
+
+        if(!active){
+            for(int i = 0; i < caster.GetComponent<DeckDrawing>().hand.Count; i++){
+                if(caster.GetComponent<DeckDrawing>().hand[i].name != transform.name){
+                    caster.GetComponent<DeckDrawing>().hand[i].transform.DOMoveY(caster.GetComponent<DeckDrawing>().hand[i].transform.position.y + 1000, 0.5f);
+                }
+            }
+        }
+    }
+
     IEnumerator cantUseCard(){
         Vector3 upPos = new Vector3(0, originalPosition.y + 200, 0);
         Vector3 downPos = new Vector3(0,upPos.y - 100 , 0);
@@ -264,10 +282,10 @@ public class Card : FindTargets
             target.GetComponent<CharTurn>().GainCardInfo(card, this, null, card.ability[i].igniteParty.IgniteStack, card.ability[i].igniteParty.IgniteAmmount, i, card.APCost);
         }
 
-        DeckDrawing dd = caster.GetComponent<DeckDrawing>();
-        for(int c = 0; c < dd.hand.Count; c++){
-            dd.hand[c].transform.DOMove(dd.hand[c].originalPosition, 0.5f);
-        }
+        // DeckDrawing dd = caster.GetComponent<DeckDrawing>();
+        // for(int c = 0; c < dd.hand.Count; c++){
+        //     dd.hand[c].transform.DOMove(dd.hand[c].originalPosition, 0.5f);
+        // }
 
         targets.Clear();
 
