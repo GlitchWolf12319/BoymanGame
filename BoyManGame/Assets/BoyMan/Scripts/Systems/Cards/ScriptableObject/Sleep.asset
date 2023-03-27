@@ -16,7 +16,7 @@ MonoBehaviour:
   APCost: 2
   Description: Deals 10 Damage
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
+  Artwork: {fileID: 21300000, guid: 286cb1c17a6d720479cb3813156dabba, type: 3}
   ability:
   - {fileID: 11400000, guid: 410e964a66b806a4b9e31446945e7f06, type: 2}
   attackMethod: 1

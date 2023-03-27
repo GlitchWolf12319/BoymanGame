@@ -16,7 +16,7 @@ MonoBehaviour:
   APCost: 3
   Description: Apply 15 Ignite
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
+  Artwork: {fileID: 21300000, guid: 900620b04f72ab94ebcc479f5e75dbae, type: 3}
   ability:
   - {fileID: 11400000, guid: 3ce79936dcd7656449933eb596cfa781, type: 2}
   attackMethod: 1

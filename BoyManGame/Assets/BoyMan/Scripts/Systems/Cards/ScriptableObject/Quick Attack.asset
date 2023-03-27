@@ -16,7 +16,7 @@ MonoBehaviour:
   APCost: 3
   Description: Deal 12 Damage
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
+  Artwork: {fileID: 21300000, guid: 92294b002ec525b4c9c75b5af9ca37f7, type: 3}
   ability:
   - {fileID: 11400000, guid: ab5d4eeda862f8e40bedeed0b7436931, type: 2}
   attackMethod: 1

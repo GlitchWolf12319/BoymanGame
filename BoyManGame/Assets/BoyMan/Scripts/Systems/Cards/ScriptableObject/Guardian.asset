@@ -16,7 +16,8 @@ MonoBehaviour:
   APCost: 4
   Description: Gain 25 Guard
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
+  Artwork: {fileID: 21300000, guid: 8c87a26d4f2350f44ae273182be42b32, type: 3}
   ability:
   - {fileID: 11400000, guid: 5549ecf78fd327e4189701361c0e7616, type: 2}
   attackMethod: 0
+  AttackEffect: {fileID: 0}

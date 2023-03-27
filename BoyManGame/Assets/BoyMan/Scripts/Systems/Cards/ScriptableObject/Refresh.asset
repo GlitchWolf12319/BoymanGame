@@ -16,7 +16,8 @@ MonoBehaviour:
   APCost: 2
   Description: Gain 2 Invisible
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: 4e54eabac814bd04ab2e9fad74d5e5af, type: 3}
+  Artwork: {fileID: 21300000, guid: 1f6e82f3bc9826b4588e26f525a44af1, type: 3}
   ability:
   - {fileID: 11400000, guid: 4c9a7198d3a92d749a5a0da6d69c59b3, type: 2}
   attackMethod: 0
+  AttackEffect: {fileID: 0}
