@@ -17,6 +17,8 @@ public class CharacterController : FindTargets
     [SerializeField] private GameObject damageTextPrefab;
     public bool dead;
 
+    public AudioSource audioPlayer;
+
     [Header("Status Effects")]
     public int igniteStack;
     public int igniteAmmount;
@@ -36,6 +38,25 @@ public class CharacterController : FindTargets
         CharName = CS.CharacterName;
     }
 
+    public IEnumerator SetAnimationTrigger(float delay, bool triggerValue){
+        yield return new WaitForSeconds(delay);
+        anim.SetBool("isIdle", triggerValue);
+    }
+
+    public void PlaySound(AudioClip clipToPlay){
+        if(clipToPlay.name.Contains("walking")){
+            audioPlayer.loop = true;
+        }
+        audioPlayer.clip = clipToPlay;
+        audioPlayer.Play();
+    }
+
+    public IEnumerator StopAudio(float duration){
+        yield return new WaitForSeconds(duration);
+        audioPlayer.Stop();
+        audioPlayer.clip = null;
+    }
+
     public void OnMouseEnter() {
 
         if(transform.tag == "Enemy"){
@@ -48,7 +69,7 @@ public class CharacterController : FindTargets
             }
 
             for(int i = 0; i < arrowParts.Count; i++){
-                arrowParts[i].GetComponent<Image>().color = Color.red;
+                arrowParts[i].GetComponent<Image>().color = Color.blue;
             }
 
             }
@@ -82,21 +103,38 @@ public class CharacterController : FindTargets
         }
     }
 
-    public void TakeDamage(int ammount, string DamageType){
+    public void TakeDamage(int ammount){
         if(guard < ammount){
+            int damage = ammount - guard;
+            ammount = damage;
+
             health -= ammount;
+            guard -= ammount;
+
+            if(guard <= 0){
+                guard = 0;
+            }
+        }
+        else if(guard > ammount){
             guard -= ammount;
         }
         
 
         DamageIdicator damageIdicator = Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIdicator>();
 
-        if(ammount > 0 && guard < ammount){
-            damageIdicator.SetDamageText(ammount);
+        if(ammount > 0 && guard <= ammount){
+            damageIdicator.SetDamageText(ammount, null);
             StartCoroutine(DamageColor());
         }
 
-        if(health <= 0){
+        if(ammount > 0 && guard > ammount){
+            damageIdicator.SetDamageText(0, "Fail");
+            StartCoroutine(DamageColor());
+        }
+
+        damageIdicator.SetDamageColor(Color.red);
+
+        if(health <= 0 && !dead){
             health = 0;
             Die();
         }
@@ -108,20 +146,7 @@ public class CharacterController : FindTargets
             ammount = ammount;
         }
 
-        if(DamageType == "Poison"){
-                damageIdicator.SetDamageColor(Color.green);
-            }
-            else if(DamageType == "Ignite"){
-                damageIdicator.SetDamageColor(new Color(192, 125, 0, 255));
-            }
-            else if(DamageType == "Damage"){
-                if(health < MaxHealth / 2){
-                    damageIdicator.SetDamageColor(Color.red);
-                }
-                else{
-                    damageIdicator.SetDamageColor(Color.yellow);
-                }
-            }
+        
         
     }
 
@@ -137,17 +162,16 @@ public class CharacterController : FindTargets
     }
 
     void Die(){
-        dead = true;
-        //transform.GetComponent<CharTurn>().tbm.ChangeTurn();
         transform.DOScale(new Vector3(0,0,0), 0.5f);
 
 
-        GameObject.Find("RestartScreen").GetComponent<Restart>().removeTarget(this.gameObject);
-
         TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
-        if(tbm.battleInProgress){
+        if(tbm.battleInProgress && !dead){
+            GameObject.Find("RestartScreen").GetComponent<Restart>().removeTarget(this.gameObject);
             transform.GetComponent<CharTurn>().tbm.RemoveFromTurnOrder(this.gameObject);
         }
+
+        dead = true;
 
         GameObject jane = GameObject.Find("Jane");
         GameObject boyman = GameObject.Find("BoyMan");
@@ -195,12 +219,12 @@ public class CharacterController : FindTargets
 
         if(health > 0){
 
-        if(IgniteDamage(5) != 0){
-            TakeDamage(5, "Ignite");
+        if(IgniteDamage(igniteStack) != 0){
+            TakeDamage(igniteStack + 1);
         }
 
-        if(poisonDamage(poisonAmmount) != 0){
-            TakeDamage(poisonAmmount, "Poison");
+        if(poisonDamage(poisonStack) != 0){
+            TakeDamage(poisonStack + 1);
         }
         }
         

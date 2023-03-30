@@ -7,10 +7,10 @@ public class CardRender : MonoBehaviour
 {
     public CardTemplate card;
     public Text APCost;
-    [SerializeField] private Text CardName;
-    [SerializeField] private Text CardDescription;
-    [SerializeField] private Image ArtworkImage;
-    [SerializeField] private Image BorderImage;
+    public Text CardName;
+    public Text CardDescription;
+    public Image ArtworkImage;
+    public Image BorderImage;
 
     void Start(){
         RenderCardInformation();

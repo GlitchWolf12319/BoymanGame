@@ -17,14 +17,6 @@ public class MoveRight : MonoBehaviour
         //anim = GetComponentInChildren<Animator>();
     }
 
-    private void Update()
-    {
-        // Listen for keyboard input
-        if (canMove && Input.GetKeyDown(KeyCode.D))
-        {
-            Move(); // Move the player to the target
-        }
-    }
 
     
     public void Move()

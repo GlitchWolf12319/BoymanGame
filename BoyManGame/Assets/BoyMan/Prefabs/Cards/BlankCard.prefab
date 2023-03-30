@@ -344,6 +344,8 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
   onHover: 0
@@ -351,6 +353,8 @@ MonoBehaviour:
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 9151050130047543809, guid: 3e968bd3180690b4bab77e42f0846e9e,
+    type: 3}
   arrow: {fileID: 7227727344903009486, guid: 3d57f86a1ed50f940a3c442b15f0d975, type: 3}
   speechBubblePrefab: {fileID: 2934715155009488773, guid: 8f1bc3250107114479e8af165676bdac,
     type: 3}

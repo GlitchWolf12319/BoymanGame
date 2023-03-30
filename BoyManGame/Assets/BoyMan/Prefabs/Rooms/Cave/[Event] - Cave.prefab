@@ -178,9 +178,9 @@ MonoBehaviour:
   - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
   - {fileID: 1085338602065725093, guid: 5c11ead997d28464288f0f6b33c3528b, type: 3}
   spawnChances:
-  - 0
-  - 0
-  - 100
+  - 21.041777
+  - 29.212677
+  - 49.745544
 --- !u!1 &3411574322290068192
 GameObject:
   m_ObjectHideFlags: 0

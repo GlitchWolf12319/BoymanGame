@@ -13,6 +13,7 @@ TagManager:
   - UI
   - Arrow
   - TurnBanner
+  - NoAPBubble
   layers:
   - Default
   - TransparentFX

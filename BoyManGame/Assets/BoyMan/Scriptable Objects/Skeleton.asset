@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: 
   CharacterName: Skeleton
-  MaxHealth: 80
+  MaxHealth: 20
   startingAP: 0
   MaxAP: 0

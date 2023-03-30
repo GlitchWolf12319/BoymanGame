@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class TurnBaseManager : FindTargets
 {
@@ -10,8 +11,12 @@ public class TurnBaseManager : FindTargets
     [SerializeField] private List<GameObject> heroesInBattle;
     [SerializeField] private List<GameObject> totalCharsInBattle;
     [SerializeField] private GameObject RewardSystem;
+    public GameObject disabledUI;
     public bool battleInProgress;
 
+    void Start(){
+        disabledUI.transform.localScale = new Vector3(0,0,0);
+    }
 
     public void ChangeTurn(){
         turnCounter++;
@@ -20,7 +25,14 @@ public class TurnBaseManager : FindTargets
             turnCounter = 0;
         }
 
+
         turns[turnCounter].StartCoroutine(turns[turnCounter].StartTurn());
+        
+    }
+
+    public IEnumerator EnlargeDisabledUI(){
+        yield return new WaitForSeconds(1);
+        disabledUI.transform.localScale = new Vector3(1,1,1);
     }
 
     public void SetTurnOrder(){
@@ -39,6 +51,9 @@ public class TurnBaseManager : FindTargets
     }
 
     public void RemoveFromTurnOrder(GameObject DeadTarget){
+
+        if(!DeadTarget.GetComponent<CharacterController>().dead){
+
         Debug.Log("Removing " + DeadTarget.name);
         turns.RemoveAt(turns.IndexOf(DeadTarget.GetComponent<CharTurn>()));
         
@@ -54,25 +69,29 @@ public class TurnBaseManager : FindTargets
             StartCoroutine(FinishBattle());
             battleInProgress = false;
         }
+        }
     }
 
     public IEnumerator FinishBattle(){
-
         turns.Clear();
         yield return new WaitForSeconds(3);
         GameObject RS = Instantiate(RewardSystem);
         RS.transform.SetAsFirstSibling();
 
         for(int i = 0; i < heroesInBattle.Count; i++){
-                heroesInBattle[i].GetComponent<DeckDrawing>().moveDeckToDiscard();
-                heroesInBattle[i].GetComponent<CharTurn>().turnUI.SetActive(false);
 
-                foreach(var card in heroesInBattle[i].GetComponent<DeckDrawing>().discardPile){
-                    heroesInBattle[i].GetComponent<DeckDrawing>().deck.Add(card);
+                for(int c = 0; c < heroesInBattle[i].GetComponent<NewDeckDrawing>().hand.Count; c++){
+                    heroesInBattle[i].GetComponent<NewDeckDrawing>().hand[c].GetComponent<Card>().disableHovering = true;
                 }
+
+                heroesInBattle[i].GetComponent<CharTurn>().turnUI.SetActive(false);
+                heroesInBattle[i].GetComponent<NewDeckDrawing>().ClearDeck();
+                heroesInBattle[i].GetComponent<CharacterController>().guard = 0;
+                heroesInBattle[i].GetComponent<CharacterController>().igniteStack = 0;
+                heroesInBattle[i].GetComponent<CharacterController>().poisonStack = 0;
         }
         
-
+        disabledUI.transform.localScale = new Vector3(0,0,0);
     }  
 
 

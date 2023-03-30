@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7606341456879916784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.4, y: -8.8}
+  m_AnchoredPosition: {x: 0.0000095367, y: 89.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4208758267592308563
@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 3801887915410139680}
+  CS: {fileID: 11400000, guid: 2eafe059394c9fd42aae341bed303642, type: 2}
   cc: {fileID: 6320966231526336071}
   HP: {fileID: 2409943901079548194}
 --- !u!1 &6174878910194400891
@@ -605,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 6320966231526336066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.94, y: 8.95, z: 36.6}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2746850179315458843}
@@ -739,6 +740,10 @@ MonoBehaviour:
     type: 3}
   turnMoveCounter: 0
   turnUI: {fileID: 0}
+  intentionIcon: {fileID: 1422294388252792665}
+  swordIcon: {fileID: 21300000, guid: 8c14083f054bf5b46b7c255bf4f69315, type: 3}
+  blockIcon: {fileID: 21300000, guid: ab6e9dae5e1c376449ab2906da658436, type: 3}
+  igniteIcon: {fileID: 21300000, guid: 565b8b3c2dae61b43a6a449bf76a233a, type: 3}
 --- !u!65 &6320966231526336073
 BoxCollider:
   m_ObjectHideFlags: 0

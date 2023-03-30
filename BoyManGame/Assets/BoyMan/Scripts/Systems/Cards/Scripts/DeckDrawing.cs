@@ -23,6 +23,8 @@ public class DeckDrawing : MonoBehaviour
     void Update(){
         deckText.text = deck.Count.ToString();
         discardText.text = discardPile.Count.ToString();
+
+
     }
 
     public void DrawCards(int ammount){
@@ -36,7 +38,7 @@ public class DeckDrawing : MonoBehaviour
                 int randomCard = Random.Range(0, deck.Count);
                 hand.Add(deck[randomCard]);
                 hand[i].gameObject.SetActive(true);
-                hand[i].CheckCurrentAPAgainstCard();
+                //hand[i].CheckCurrentAPAgainstCard();
                 hand[i].transform.DOMove(cardPosition[i].position, speedValues[i]);
                 hand[i].GetComponent<Card>().originalPosition = cardPosition[i].position;
                 hand[i].GetComponent<Card>().index = i;
@@ -97,21 +99,13 @@ public class DeckDrawing : MonoBehaviour
 
     public IEnumerator MoveDeckToDiscardPile(){
         foreach(var card in hand){
+            
             for(int i = 0; i < hand.Count; i++){
                 card.GetComponent<Card>().canHover = false;
             }
+
             discardPile.Add(card);
 
-            // card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1).OnComplete(() =>
-            // {
-            //     card.transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
-            //     card.transform.eulerAngles = new Vector3(0,0,0);
-            //     card.transform.position = new Vector3(card.GetComponent<Card>().originalPosition.x - 1600, card.GetComponent<Card>().originalPosition.y, card.GetComponent<Card>().originalPosition.z);
-            // });
-            // card.transform.DOMoveX(card.transform.position.x + 2000, 0.5f);
-
-
-            Debug.Log("deck animation");
             Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
             card.transform.DOMove(middle, .1f);
             yield return new WaitForSeconds(0.1f);
@@ -121,12 +115,14 @@ public class DeckDrawing : MonoBehaviour
             card.transform.DORotate(new Vector3(0, 0, -145), 0.1f);
             yield return new WaitForSeconds(0.1f);
             //card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1);
-   
+            //card.ResetCard();
             card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1).OnComplete(() =>
             {
+                card.gameObject.SetActive(false);
                 card.transform.DOScale(new Vector3(1.03905f, 1.03905f, 1.03905f), 0.5f);
                 card.transform.eulerAngles = new Vector3(0,0,0);
-                card.transform.position = new Vector3(card.GetComponent<Card>().originalPosition.x - 1600, card.GetComponent<Card>().originalPosition.y, card.GetComponent<Card>().originalPosition.z);
+                card.transform.position = new Vector3(card.GetComponent<Card>().originalPosition.x - 3000, card.GetComponent<Card>().originalPosition.y, card.GetComponent<Card>().originalPosition.z);
+            
             });
         }
 

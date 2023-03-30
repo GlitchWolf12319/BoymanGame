@@ -718,7 +718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &937902396370816101
 RectTransform:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4985216825091304268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -912,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3517749417965638168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1071,6 +1071,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -1817,8 +1818,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -120.10618}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189780504426093
 CanvasRenderer:
@@ -1861,7 +1862,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189780504426095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2081,8 +2082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189780634677905
 CanvasRenderer:
@@ -2125,7 +2126,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189780634677907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,6 +2642,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -3387,8 +3389,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4, y: -123.3}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189781147939688
 CanvasRenderer:
@@ -3431,7 +3433,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189781147939690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3527,6 +3529,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -3661,8 +3664,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189781192454674
 CanvasRenderer:
@@ -3705,7 +3708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189781192454676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3929,8 +3932,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189781309473387
 CanvasRenderer:
@@ -3973,7 +3976,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189781309473389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4337,6 +4340,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -4743,6 +4747,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -4921,6 +4926,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -5327,6 +5333,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -5505,6 +5512,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -6101,8 +6109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189781998840583
 CanvasRenderer:
@@ -6145,7 +6153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189781998840601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6329,8 +6337,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189782049665172
 CanvasRenderer:
@@ -6373,7 +6381,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189782049665174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6425,8 +6433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189782059246051
 CanvasRenderer:
@@ -6469,7 +6477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189782059246053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6661,6 +6669,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -6891,8 +6900,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189782138940482
 CanvasRenderer:
@@ -6935,7 +6944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189782138940484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7107,6 +7116,7 @@ MonoBehaviour:
   cardRotation: {x: 0, y: 0, z: 0}
   canSelectTarget: 0
   targets: []
+  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
@@ -7317,8 +7327,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1, y: -112}
-  m_SizeDelta: {x: 147.398, y: 68.731}
+  m_AnchoredPosition: {x: -1.4000301, y: -123.299995}
+  m_SizeDelta: {x: 160.5328, y: 76.2092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1969189782276630764
 CanvasRenderer:
@@ -7361,7 +7371,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Deals 10 Damage
+  m_Text: Deals 10 Damage and ignite
 --- !u!114 &1969189782276630766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7471,7 +7481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8768940449690884064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7568,7 +7578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6347664616493269678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7665,7 +7675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2357636108920727125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7762,7 +7772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &880004612768165103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7859,7 +7869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7966665981407725416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8047,7 +8057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3815593712868742107
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8144,7 +8154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3815754602099419763
 RectTransform:
   m_ObjectHideFlags: 0

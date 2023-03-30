@@ -81,8 +81,17 @@ IEnumerator FadeOut()
          }
 
          CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         AudioManager audioManager = FindObjectOfType<AudioManager>();
          foreach(CharacterController charController in cc){
-            charController.anim.SetBool("isIdle", false);
+            bool isIdle = charController.anim.GetBool("isIdle");
+            charController.PlaySound(audioManager.walkingSound);
+            if(isIdle){
+                charController.anim.SetBool("isIdle", false);
+            }
+            else{
+                charController.anim.SetBool("isIdle", true);
+            }
+            
          }
     }
     // Wait for fade to complete

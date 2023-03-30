@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95678761e75fe84ca47b089aea396f9, type: 3}
   m_Name: SkieletonMage
   m_EditorClassIdentifier: 
-  CharacterName: SkullBat
-  MaxHealth: 100
+  CharacterName: Skull Mage
+  MaxHealth: 40
   startingAP: 0
   MaxAP: 0

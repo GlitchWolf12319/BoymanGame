@@ -226,21 +226,8 @@ public class RewardSystem : FindTargets
         cardSelectionScreen.transform.DOScale(new Vector3(0, 0f, 0), 0.5f);
         rewardScreen.transform.DOScale(new Vector3(2f,2f,0), 0.5f);
 
-        GameObject addedCard = Instantiate(AddedCardPrefab);
-        addedCard.GetComponent<CardRender>().card = template;
-        addedCard.GetComponent<CardRender>().RenderCardInformation();
-        addedCard.GetComponent<Card>().card = template;
-        addedCard.name = template.name;
-
-            GameObject.Find(currentClaimer).GetComponent<DeckDrawing>().deck.Add(addedCard.GetComponent<Card>());
-            Canvas cardCanvas = GameObject.Find(currentClaimer).GetComponentInChildren<Canvas>();
-            foreach(Transform child in cardCanvas.gameObject.transform){
-                if(child.name == "Deck"){
-                    addedCard.transform.SetParent(child);
-                }
-            }
-
-        addedCard.GetComponent<Card>().AssingCaster();
+        GameObject.Find(currentClaimer).GetComponent<NewDeckDrawing>().deck.Add(template);
+        Canvas cardCanvas = GameObject.Find(currentClaimer).GetComponentInChildren<Canvas>();
         
    }
 
@@ -253,6 +240,18 @@ public class RewardSystem : FindTargets
         foreach(MoveRight Move in move){
             Move.Move();
         }
+
+        CharacterController[] cc = FindObjectsOfType<CharacterController>();
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        foreach(CharacterController charController in cc){
+            if(charController.anim != null){
+                charController.anim.SetBool("isIdle", false);
+                charController.PlaySound(audioManager.walkingSound);
+            }
+                
+        }
+
+        
    }
 
    public void Skip(){

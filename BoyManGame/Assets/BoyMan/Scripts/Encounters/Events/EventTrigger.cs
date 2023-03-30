@@ -76,15 +76,23 @@ public void OnButton1Click()
         Debug.Log("Button 1 deals " + B1_damage + " damage.");
         B1_healAmount -= B1_damage;
 
-        CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
-        foreach(CharacterController cc in chars){
-            if(cc.gameObject.tag == "Player"){
-                Debug.Log(cc.gameObject.name);
-                cc.TakeDamage(B1_damage, "Damage");
+        CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         foreach(CharacterController charController in cc){
+
+            bool isIdle = charController.anim.GetBool("isIdle");
+            if(isIdle){
+                charController.anim.SetBool("isIdle", false);
+            }
+            else{
+                charController.anim.SetBool("isIdle", true);
             }
 
-            cc.anim.SetBool("isIdle", false);
-        }
+            if(charController.gameObject.tag == "Player"){
+                Debug.Log(charController.gameObject.name);
+                charController.TakeDamage(B1_damage);
+            }
+            
+         }
 
         }
 
@@ -92,14 +100,23 @@ public void OnButton1Click()
     else if (chance <= B1_DamageProbability + B1_healProbability)
     {
         Debug.Log("Button 1 heals " + B1_healAmount + " health.");
-         CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
-        foreach(CharacterController cc in chars){
-            if(cc.gameObject.tag == "Player"){
-                cc.Heal(B1_healAmount);
+        CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         foreach(CharacterController charController in cc){
+
+            bool isIdle = charController.anim.GetBool("isIdle");
+            if(isIdle){
+                charController.anim.SetBool("isIdle", false);
+            }
+            else{
+                charController.anim.SetBool("isIdle", true);
             }
 
-            cc.anim.SetBool("isIdle", false);
-        }
+            if(charController.gameObject.tag == "Player"){
+                Debug.Log(charController.gameObject.name);
+                charController.Heal(B1_healAmount);
+            }
+            
+         }
 
 
     }
@@ -117,10 +134,17 @@ public void OnButton1Click()
     }
     else{
   Debug.Log("Button 1 does nothing.");
-        CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
-        foreach(CharacterController cc in chars){
-            cc.anim.SetBool("isIdle", false);
-        }
+        CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         foreach(CharacterController charController in cc){
+            bool isIdle = charController.anim.GetBool("isIdle");
+            if(isIdle){
+                charController.anim.SetBool("isIdle", false);
+            }
+            else{
+                charController.anim.SetBool("isIdle", true);
+            }
+            
+         }
     }
 
     StartCoroutine(FadeOutPanel());
@@ -134,37 +158,62 @@ public void OnButton1Click()
     {
         Debug.Log("Button 2 deals " + B2_damage + " damage.");
         B2_healAmount -= B2_damage;
-         CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
-        foreach(CharacterController cc in chars){
-            if(cc.gameObject.tag == "Player"){
-                cc.TakeDamage(B2_damage, "Damage");
+        CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         foreach(CharacterController charController in cc){
+
+            bool isIdle = charController.anim.GetBool("isIdle");
+            if(isIdle){
+                charController.anim.SetBool("isIdle", false);
+            }
+            else{
+                charController.anim.SetBool("isIdle", true);
             }
 
-            cc.anim.SetBool("isIdle", false);
-        }
+            if(charController.gameObject.tag == "Player"){
+                Debug.Log(charController.gameObject.name);
+                charController.TakeDamage(B2_damage);
+            }
+            
+         }
 
     }
     else if (chance <= B2_damageProbability + B2_healProbability)
     {
         Debug.Log("Button 2 heals " + B2_healAmount + " health.");
         B2_healAmount += B2_healAmount;
-         CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
-        foreach(CharacterController cc in chars){
-            if(cc.gameObject.tag == "Player"){
-                cc.Heal(B2_healAmount);
+        CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         foreach(CharacterController charController in cc){
+
+            bool isIdle = charController.anim.GetBool("isIdle");
+            if(isIdle){
+                charController.anim.SetBool("isIdle", false);
+            }
+            else{
+                charController.anim.SetBool("isIdle", true);
             }
 
-            cc.anim.SetBool("isIdle", false);
-        }
+            if(charController.gameObject.tag == "Player"){
+                Debug.Log(charController.gameObject.name);
+                charController.Heal(B2_healAmount);
+            }
+            
+         }
 
     }
     else    
     {
         Debug.Log("Button 2 does nothing.");
-        CharacterController[] chars = GameObject.FindObjectsOfType<CharacterController>();
-        foreach(CharacterController cc in chars){
-            cc.anim.SetBool("isIdle", false);
-        }
+        CharacterController[] cc = FindObjectsOfType<CharacterController>();
+         foreach(CharacterController charController in cc){
+            bool isIdle = charController.anim.GetBool("isIdle");
+            if(isIdle){
+                charController.anim.SetBool("isIdle", false);
+            }
+            else{
+                charController.anim.SetBool("isIdle", true);
+            }
+            
+         }
         
     }
     StartCoroutine(FadeOutPanel());
@@ -208,6 +257,13 @@ private IEnumerator FadeOutPanel()
          MoveRight[] move = GameObject.FindObjectsOfType<MoveRight>();
          foreach(MoveRight Move in move){
             Move.Move();
+         }
+
+         CharacterController[] cc = GameObject.FindObjectsOfType<CharacterController>();
+         AudioManager audioManager = FindObjectOfType<AudioManager>();
+         foreach(CharacterController charController in cc){
+            charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
+            charController.PlaySound(audioManager.walkingSound);
          }
     // Destroy this game object
     Destroy(gameObject);

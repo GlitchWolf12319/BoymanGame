@@ -10,9 +10,11 @@ public class EventCollider : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            CharacterController[] cc = FindObjectsOfType<CharacterController>();
-            foreach(CharacterController CharController in cc){
-                CharController.anim.SetBool("isIdle", true);
+            CharacterController[] cc = GameObject.FindObjectsOfType<CharacterController>();
+            AudioManager audioManager = FindObjectOfType<AudioManager>();
+            foreach(CharacterController charController in cc){
+                charController.StartCoroutine(charController.SetAnimationTrigger(2, true));
+                charController.StartCoroutine(charController.StopAudio(2));
             }
 
             float totalSpawnChance = 0f;

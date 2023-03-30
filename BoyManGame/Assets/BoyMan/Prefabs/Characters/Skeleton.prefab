@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6232210675464117465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -316,6 +316,10 @@ MonoBehaviour:
     type: 3}
   turnMoveCounter: 0
   turnUI: {fileID: 0}
+  intentionIcon: {fileID: 260665049104330890}
+  swordIcon: {fileID: 21300000, guid: 8c14083f054bf5b46b7c255bf4f69315, type: 3}
+  blockIcon: {fileID: 21300000, guid: ab6e9dae5e1c376449ab2906da658436, type: 3}
+  igniteIcon: {fileID: 21300000, guid: 565b8b3c2dae61b43a6a449bf76a233a, type: 3}
 --- !u!65 &2320215925050070910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -512,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4848267598159321879}
+  CS: {fileID: 11400000, guid: a94bc211dfa6df249bd433c4def828a8, type: 2}
   cc: {fileID: 2320215925050070896}
   HP: {fileID: 6267412466624004117}
 --- !u!1 &4156094016513651550

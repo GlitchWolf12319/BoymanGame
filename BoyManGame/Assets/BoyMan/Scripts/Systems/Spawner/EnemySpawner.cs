@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class EnemySpawner : FindTargets
+public class EnemySpawner : MonoBehaviour
 {
 
     [Header("Place enemies to spawn in battle here")]
@@ -38,17 +38,10 @@ public class EnemySpawner : FindTargets
             player = GameObject.Find("Jane");
         }
         SpawnEnemies();
+        tbm.StartCoroutine(tbm.EnlargeDisabledUI());
         tbm.SetTurnOrder();
         tbm.ChangeTurn();
     }
-
-    // public void OnTriggerEnter(Collider other){
-    //     if(other.tag == "Player"){
-    //         player = other.gameObject;
-    //         BattleStarter();
-    //         this.GetComponent<BoxCollider>().enabled = false;
-    //     }
-    // }
 
     private void SpawnEnemies()
     {

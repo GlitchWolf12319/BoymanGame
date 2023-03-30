@@ -15,7 +15,6 @@ public class DamageIdicator : MonoBehaviour
    private float timer; 
 
    void Start(){
-    //transform.LookAt(2 * transform.position - Camera.main.transform.position);
 
     float direction = Random.rotation.eulerAngles.z;
     initialPosition = transform.position;
@@ -42,8 +41,15 @@ public class DamageIdicator : MonoBehaviour
 
    }
 
-   public void SetDamageText(int damage){
-        text.text = damage.ToString();
+   public void SetDamageText(int damage, string message){
+        if(damage != 0 && message == null){
+            text.text = damage.ToString();
+        }
+
+        if(damage == 0 && message != null){
+            text.text = message;
+        }  
+        
    }
 
    public void SetDamageColor(Color color){
