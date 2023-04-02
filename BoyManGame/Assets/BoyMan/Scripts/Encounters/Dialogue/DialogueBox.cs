@@ -46,23 +46,30 @@ IEnumerator Type()
     }
     isTyping = false;
 }
+    public void NextSentence()
+    {
+        if (!isTyping && index < sentences.Length - 1)
+        {
+            index++;
+            textDisplay.text = "";
+            imageDisplay.sprite = images[index];
+            StopAllCoroutines();
+            StartCoroutine(Type());
+        }
+        else if (!isTyping)
+        {
+            // End of dialogue
+            StartCoroutine(FadeOut());
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            // Skip to the end of the sentence
+            StopAllCoroutines();
+            textDisplay.text = sentences[index];
+            isTyping = false;
+        }
+    }
 
-public void NextSentence()
-{
-    if (!isTyping && index < sentences.Length - 1)
-    {
-        index++;
-        textDisplay.text = "";
-        imageDisplay.sprite = images[index];
-        StopAllCoroutines();
-        StartCoroutine(Type());
-    }
-    else if (!isTyping)
-    {
-        // End of dialogue
-        StartCoroutine(FadeOut());
-    }
-}
 
 IEnumerator FadeOut()
 {
