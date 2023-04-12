@@ -15,6 +15,7 @@ public class MoveRight : MonoBehaviour
 
     private void Start(){
         //anim = GetComponentInChildren<Animator>();
+        
     }
 
 

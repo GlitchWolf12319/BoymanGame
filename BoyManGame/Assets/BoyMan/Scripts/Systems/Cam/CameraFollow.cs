@@ -16,13 +16,15 @@ public class CameraFollow : MonoBehaviour
 
 
     //method that runs after all other updates have been processed
-    void LateUpdate()
-    {
-        if(player != null){
-        //calculates the target position of the camera based on the player's position and offset
+   void LateUpdate()
+{
+    if(player != null){
+        // calculates the target position of the camera based on the player's position and offset
         Vector3 targetPos = player.position + offset;
-        //smoothly moves the camera to the target position with lag
+        // set the z-component of targetPos to be equal to the current z-component of the camera's position vector
+        targetPos.z = transform.position.z;
+        // smoothly moves the camera to the target position with lag
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, lagSpeed);
-        }
     }
+}
 }

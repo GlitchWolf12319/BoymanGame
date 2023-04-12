@@ -26,21 +26,23 @@ public class GrowVines : MonoBehaviour
                 {
                     growVinesMeshes[i].materials[j].SetFloat("Grow_", minGrow);
                     growVinesMaterials.Add(growVinesMeshes[i].materials[j]);
+                    StartCoroutine(GrowVine(growVinesMaterials[i]));
                 }
             }
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            for (int i = 0; i < growVinesMaterials.Count; i++)
-            {
-                StartCoroutine(GrowVine(growVinesMaterials[i]));
-            }
-        }
+      //  if (Input.GetKeyDown(KeyCode.Space))
+       // {
+      //      for (int i = 0; i < growVinesMaterials.Count; i++)
+      //      {
+      //          StartCoroutine(GrowVine(growVinesMaterials[i]));
+       //     }
+      //  }
     }
 
 
