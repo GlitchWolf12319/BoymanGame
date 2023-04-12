@@ -28,24 +28,47 @@ public class CheckPartyStatus : MonoBehaviour
             jane = GameObject.Find("Jane");
             oslo = GameObject.Find("Oslo");
             casper = GameObject.Find("Casper");
-			 GameObject canvasGameObject = GameObject.FindGameObjectWithTag("canvas");
+			 GameObject canvasGameObject = GameObject.FindGameObjectWithTag("canvas");          
+List<GameObject> characters = new List<GameObject>();
 
-            List<GameObject> characters = new List<GameObject>{ boyman, jane, oslo, casper };
+if (boyman != null)
+{
+    characters.Add(boyman);
+}
+if (jane != null)
+{
+    characters.Add(jane);
+}
+if (oslo != null)
+{
+    characters.Add(oslo);
+}
+if (casper != null)
+{
+    characters.Add(casper);
+}
+
+
             foundCharactersToTalk = false;
 while (!foundCharactersToTalk && characters.Count >= 2)
 {
+
+    Debug.Log(characters.Count);
     int index1 = Random.Range(0, characters.Count);
     int index2 = Random.Range(0, characters.Count);
+
 
     // Generate new indices until they are different and within the valid range
     while (index2 == index1)
     {
         index2 = Random.Range(0, characters.Count);
+     
     }
-
+ 
     GameObject character1 = characters[index1];
     GameObject character2 = characters[index2];
 
+  
     if (character1 != null && character2 != null)
     {
         Debug.Log(character1.name + " talks to " + character2.name);
@@ -121,6 +144,19 @@ while (!foundCharactersToTalk && characters.Count >= 2)
                 }  
                
             }
+            else if (character2.name == "BoyMan")
+            {
+				  if (canvasGameObject != null)
+                {
+                    Canvas canvas = canvasGameObject.GetComponent<Canvas>();
+                    if (canvas != null)
+                    {
+
+                        GameObject instantiatedPrefab =    Instantiate(boymanJane, transform.position, Quaternion.identity);
+                    }
+                }  
+               
+            }
         }
         else if (character1.name == "Oslo" && character2.name == "Casper")
         {
@@ -137,7 +173,7 @@ while (!foundCharactersToTalk && characters.Count >= 2)
         }
 
         foundCharactersToTalk = true;
-        Destroy(this.gameObject);
+      
 
         // Sort indices in descending order before removing from list
         int largerIndex = Mathf.Max(index1, index2);
@@ -150,7 +186,8 @@ while (!foundCharactersToTalk && characters.Count >= 2)
             characters.RemoveAt(smallerIndex);
         }
     }
+   }
 }
 		}
 	}
-}
+
