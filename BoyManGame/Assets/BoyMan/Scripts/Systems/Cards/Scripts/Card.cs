@@ -561,7 +561,7 @@ public class Card : FindTargets
         Debug.Log(ogPos);
         Camera cam = Camera.main;
         cam.GetComponent<CameraZoom>().shouldZoomIn = true;
-        caster.transform.DOMove(cam.GetComponent<CameraZoom>().target.position, 1);
+        caster.transform.DOMoveX(cam.GetComponent<CameraZoom>().target.position.x, 1);
         yield return new WaitForSeconds(1);
         if(card.AttackEffect != null){
             GameObject effect = Instantiate(card.AttackEffect, targetPos.transform.position, Quaternion.identity);

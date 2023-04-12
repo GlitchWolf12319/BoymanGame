@@ -83,7 +83,14 @@ public void OnButton1Click()
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
                 charController.TakeDamage(B1_damage, "NormalDamage");
-                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if(player != null){         
+                    Movement[] move = FindObjectsOfType<Movement>();
+                    foreach(Movement Move in move){
+                    Move.PlayOneShotAudio(Move.damage);
+                    Move.enabled = true;
+                }
+                }
             }
             
          }
@@ -100,7 +107,14 @@ public void OnButton1Click()
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
                 charController.Heal(B1_healAmount);
-                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if(player != null){         
+                    Movement[] move = FindObjectsOfType<Movement>();
+                    foreach(Movement Move in move){
+                    Move.PlayOneShotAudio(Move.heal);
+                    Move.enabled = true;
+                }
+                }
             }
             
          }
@@ -121,10 +135,13 @@ public void OnButton1Click()
     }
     else{
   Debug.Log("Button 1 does nothing.");
-        CharacterController[] cc = FindObjectsOfType<CharacterController>();
-         foreach(CharacterController charController in cc){
-            charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
-         }
+  GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if(player != null){         
+                    Movement[] move = FindObjectsOfType<Movement>();
+                    foreach(Movement Move in move){
+                    Move.enabled = true;
+                }
+                }
     }
 
     StartCoroutine(FadeOutPanel());
@@ -142,9 +159,16 @@ public void OnButton1Click()
          foreach(CharacterController charController in cc){
 
             if(charController.gameObject.tag == "Player"){
-                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
                 Debug.Log(charController.gameObject.name);
                 charController.TakeDamage(B2_damage, "NormalDamage");
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if(player != null){         
+                    Movement[] move = FindObjectsOfType<Movement>();
+                    foreach(Movement Move in move){
+                    Move.PlayOneShotAudio(Move.damage);
+                    Move.enabled = true;
+                }
+                }
             }
             
          }
@@ -160,7 +184,14 @@ public void OnButton1Click()
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
                 charController.Heal(B2_healAmount);
-                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if(player != null){         
+                    Movement[] move = FindObjectsOfType<Movement>();
+                    foreach(Movement Move in move){
+                    Move.PlayOneShotAudio(Move.heal);
+                    Move.enabled = true;
+                }
+                }
             }
             
          }
@@ -169,10 +200,13 @@ public void OnButton1Click()
     else    
     {
         Debug.Log("Button 2 does nothing.");
-        CharacterController[] cc = FindObjectsOfType<CharacterController>();
-         foreach(CharacterController charController in cc){
-            charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
-         }
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if(player != null){         
+                    Movement[] move = FindObjectsOfType<Movement>();
+                    foreach(Movement Move in move){
+                    Move.enabled = true;
+                }
+                }
         
     }
     StartCoroutine(FadeOutPanel());
@@ -212,11 +246,6 @@ private IEnumerator FadeOutPanel()
         t += Time.deltaTime;
     }
 //  Set the spawn chance of room 0 to 100%
-         //player.GetComponent<MoveRight>().Move();
-         MoveRight[] move = GameObject.FindObjectsOfType<MoveRight>();
-         foreach(MoveRight Move in move){
-            Move.Move();
-         }
 
          CharacterController[] cc = GameObject.FindObjectsOfType<CharacterController>();
 

@@ -252,7 +252,7 @@ public class CharTurn : EnemyAbility
         Vector3 ogPos = transform.position;
         Camera cam = Camera.main;
         cam.GetComponent<CameraZoom>().shouldZoomIn = true;
-        transform.DOMove(cam.GetComponent<CameraZoom>().target.position, 1);
+        transform.DOMoveX(cam.GetComponent<CameraZoom>().target.position.x, 1);
         yield return new WaitForSeconds(2);
         cam.GetComponent<CameraZoom>().shouldZoomIn = false;
         transform.DOMove(ogPos, 1);

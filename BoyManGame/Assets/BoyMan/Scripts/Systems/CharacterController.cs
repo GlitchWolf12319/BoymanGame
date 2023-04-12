@@ -38,25 +38,6 @@ public class CharacterController : FindTargets
         CharName = CS.CharacterName;
     }
 
-    public IEnumerator SetAnimationTrigger(float delay, bool triggerValue){
-        yield return new WaitForSeconds(delay);
-        anim.SetBool("isIdle", triggerValue);
-    }
-
-    public void PlaySound(AudioClip clipToPlay){
-        if(clipToPlay.name.Contains("walking")){
-            audioPlayer.loop = true;
-        }
-        audioPlayer.clip = clipToPlay;
-        audioPlayer.Play();
-    }
-
-    public IEnumerator StopAudio(float duration){
-        yield return new WaitForSeconds(duration);
-        audioPlayer.Stop();
-        audioPlayer.clip = null;
-    }
-
     public void OnMouseEnter() {
 
         if(transform.tag == "Enemy"){

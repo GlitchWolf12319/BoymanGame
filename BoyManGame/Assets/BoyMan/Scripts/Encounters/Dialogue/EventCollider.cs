@@ -9,13 +9,14 @@ public class EventCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-            CharacterController[] cc = GameObject.FindObjectsOfType<CharacterController>();
-            AudioManager audioManager = FindObjectOfType<AudioManager>();
-            foreach(CharacterController charController in cc){
-                charController.StartCoroutine(charController.SetAnimationTrigger(2, true));
-                charController.StartCoroutine(charController.StopAudio(2));
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if(player != null){         
+                Movement[] move = FindObjectsOfType<Movement>();
+                foreach(Movement Move in move){
+                Move.StopEverything();
+                Move.enabled = false;
             }
+        }
 
             float totalSpawnChance = 0f;
             for (int i = 0; i < prefabsToInstantiate.Length; i++)

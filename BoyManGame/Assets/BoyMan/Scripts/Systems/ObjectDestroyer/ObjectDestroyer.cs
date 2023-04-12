@@ -8,10 +8,25 @@ public class ObjectDestroyer : MonoBehaviour
     {
         // Invoke the DestroyObject method after 'duration' seconds
         Invoke("DestroyObject", duration);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if(player != null){         
+                Movement[] move = FindObjectsOfType<Movement>();
+                foreach(Movement Move in move){
+                Move.StopEverything();
+                Move.enabled = false;
+            }
+        }
     }
 
     void DestroyObject()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if(player != null){         
+                Movement[] move = FindObjectsOfType<Movement>();
+                foreach(Movement Move in move){
+                Move.enabled = true;
+            }
+        }
         // Destroy the object this script is attached to
         Destroy(gameObject);
     }

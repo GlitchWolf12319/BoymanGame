@@ -234,22 +234,15 @@ public class RewardSystem : FindTargets
    public void Leave(){
         rewardScreen.transform.DOScale(new Vector3(0,0,0), 0.5f);
 
-        Destroy(this.gameObject, 0.7f);
-
-        MoveRight[] move = FindObjectsOfType<MoveRight>();
-        foreach(MoveRight Move in move){
-            Move.Move();
-        }
-
-        CharacterController[] cc = FindObjectsOfType<CharacterController>();
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
-        foreach(CharacterController charController in cc){
-            if(charController.anim != null){
-                charController.anim.SetBool("isIdle", false);
-                charController.PlaySound(audioManager.walkingSound);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if(player != null){         
+                Movement[] move = FindObjectsOfType<Movement>();
+                foreach(Movement Move in move){
+                Move.enabled = true;
             }
-                
         }
+
+        Destroy(this.gameObject, 0.7f);
 
         
    }

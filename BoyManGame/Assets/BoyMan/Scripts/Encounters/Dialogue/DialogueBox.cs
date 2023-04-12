@@ -20,6 +20,14 @@ public class DialogueBox : MonoBehaviour
     public CanvasGroup canvasGroup;
 
    void Start(){
+    GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null){         
+            Movement[] move = FindObjectsOfType<Movement>();
+            foreach(Movement Move in move){
+            Move.StopEverything();
+            Move.enabled = false;
+            }
+        }
       imageDisplay.sprite = images[index];
        StartCoroutine(Type());
 
@@ -82,20 +90,11 @@ IEnumerator FadeOut()
     player = GameObject.FindGameObjectWithTag("Player");
         if(player != null){         
     //  Set the spawn chance of room 0 to 100%
-         MoveRight[] move = FindObjectsOfType<MoveRight>();
-         foreach(MoveRight Move in move){
-            Move.Move();
+         Movement[] move = FindObjectsOfType<Movement>();
+         foreach(Movement Move in move){
+            Move.enabled = true;
          }
-
-         CharacterController[] cc = FindObjectsOfType<CharacterController>();
-         AudioManager audioManager = FindObjectOfType<AudioManager>();
-         foreach(CharacterController charController in cc){
-            bool isIdle = charController.anim.GetBool("isIdle");
-            charController.PlaySound(audioManager.walkingSound);
-            charController.SetAnimationTrigger(0, false);
-            
-         }
-    }
+        }
     // Wait for fade to complete
 
     // Hide the dialogue box
