@@ -50,7 +50,7 @@ public class TurnBaseManager : FindTargets
         battleInProgress = true;
     }
 
-    public void RemoveFromTurnOrder(GameObject DeadTarget){
+    public void RemoveFromTurnOrder(GameObject DeadTarget, string damageType){
 
         if(!DeadTarget.GetComponent<CharacterController>().dead){
 
@@ -61,11 +61,17 @@ public class TurnBaseManager : FindTargets
             heroesInBattle.Remove(DeadTarget);
         }
         else if(DeadTarget.GetComponent<CharTurn>().characterType == CharTurn.CharacterType.Enemy){
+            
             enemiesInBattle.Remove(DeadTarget);
+            Debug.Log(damageType);
+            if(enemiesInBattle.Count > 0 && damageType != "NormalDamage"){
+                ChangeTurn();
+            }
         }
 
 
         if(isBattleFinished() && heroesInBattle.Count > 0){
+            Debug.Log("Battle Finished");
             StartCoroutine(FinishBattle());
             battleInProgress = false;
         }

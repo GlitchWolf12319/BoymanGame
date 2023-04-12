@@ -103,7 +103,8 @@ public class CharacterController : FindTargets
         }
     }
 
-    public void TakeDamage(int ammount){
+    public void TakeDamage(int ammount, string DamageType){
+        Debug.Log(DamageType);
         if(guard < ammount){
             int damage = ammount - guard;
             ammount = damage;
@@ -136,7 +137,7 @@ public class CharacterController : FindTargets
 
         if(health <= 0 && !dead){
             health = 0;
-            Die();
+            Die(DamageType);
         }
 
         if(hasChilled()){
@@ -161,14 +162,14 @@ public class CharacterController : FindTargets
         guard += ammount;
     }
 
-    void Die(){
+    void Die(string DamageType){
         transform.DOScale(new Vector3(0,0,0), 0.5f);
 
 
         TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
         if(tbm.battleInProgress && !dead){
             GameObject.Find("RestartScreen").GetComponent<Restart>().removeTarget(this.gameObject);
-            transform.GetComponent<CharTurn>().tbm.RemoveFromTurnOrder(this.gameObject);
+            transform.GetComponent<CharTurn>().tbm.RemoveFromTurnOrder(this.gameObject, DamageType);
         }
 
         dead = true;
@@ -220,11 +221,11 @@ public class CharacterController : FindTargets
         if(health > 0){
 
         if(IgniteDamage(igniteStack) != 0){
-            TakeDamage(igniteStack + 1);
+            TakeDamage(igniteStack + 1, "Ignite Damage");
         }
 
         if(poisonDamage(poisonStack) != 0){
-            TakeDamage(poisonStack + 1);
+            TakeDamage(poisonStack + 1, "Poison Damage");
         }
         }
         

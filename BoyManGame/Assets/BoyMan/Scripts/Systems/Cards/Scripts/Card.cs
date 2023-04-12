@@ -92,46 +92,49 @@ public class Card : FindTargets
 
         if(card.ability[i].dealDamage != null){
             DealDamage(target, card.ability[i].dealDamage.damageAmmount);
-            StartCoroutine(CameraAttack(target, false));
+            //StartCoroutine(CameraAttack(target, false));
         }
 
         if(card.ability[i].dealPartyDamage != null){
             DealPartyDamage(card.ability[i].dealPartyDamage.damageAmmount);
-            StartCoroutine(CameraAttack(target, false));
+            //StartCoroutine(CameraAttack(target, false));
         }
 
         if(card.ability[i].igniteEffect != null){
             Ignite(target, card.ability[i].igniteEffect.IgniteStack, card.ability[i].igniteEffect.IgniteStack);
-            StartCoroutine(CameraAttack(target, false));
+            //StartCoroutine(CameraAttack(target, false));
         }
 
         if(card.ability[i].poisonEffect != null){
             Poison(target, card.ability[i].poisonEffect.poisonStack, card.ability[i].poisonEffect.poisonStack);
-            StartCoroutine(CameraAttack(target, false));
+            //StartCoroutine(CameraAttack(target, false));
         }
 
         if(card.ability[i].guard != null){
-            GiveGuard(this.gameObject, card.ability[i].guard.guardAmmount);
-            StartCoroutine(CameraAttack(target, true));
+            target = caster;
+            GiveGuard(target, card.ability[i].guard.guardAmmount);
+            //StartCoroutine(CameraAttack(target, true));
         }
 
         if(card.ability[i].heal != null){
-            Heal(this.gameObject, card.ability[i].heal.healAmmount);
-            StartCoroutine(CameraAttack(target, true));
+            target = caster;
+            Heal(target, card.ability[i].heal.healAmmount);
+            //StartCoroutine(CameraAttack(target, true));
         }
 
         if(card.ability[i].healParty != null){
             HealParty(card.ability[i].healParty.healAmmount);
-            StartCoroutine(CameraAttack(target, true));
+            //StartCoroutine(CameraAttack(target, true));
         }
 
         if(card.ability[i].chilled != null){
             Chilled(target, card.ability[i].chilled.chilledStack);
-            StartCoroutine(CameraAttack(target, false));
+            // StartCoroutine(CameraAttack(target, false));
         }
 
         if(card.ability[i].invisible != null){
-            Invisible(this.gameObject, card.ability[i].invisible.invisibleStack);
+            target = caster;
+            Invisible(target, card.ability[i].invisible.invisibleStack);
         }
 
         if(card.ability[i].retreat != null){
@@ -147,7 +150,7 @@ public class Card : FindTargets
 
                     if(RetreatTarget != null){
                         Retreat(target, RetreatTarget);
-                        StartCoroutine(CameraAttack(target, false));
+                        //StartCoroutine(CameraAttack(target, false));
                         possibleTargets.Clear();
                      }
                 }
@@ -155,11 +158,16 @@ public class Card : FindTargets
 
         if(card.ability[i].igniteParty != null){
             IgniteAllEnemies(card.ability[i].igniteParty.IgniteStack, card.ability[i].igniteParty.IgniteStack);
-            StartCoroutine(CameraAttack(target, false));
+            //StartCoroutine(CameraAttack(target, false));
         }
 
         targets.Clear();
     }
+
+        Debug.Log("target name: " + target.name + " Target Tag: " + target.tag);
+        if(target.tag != "Player" || card.ability.Length > 1){
+            StartCoroutine(CameraAttack(target));
+        }
 
         caster.GetComponent<CharTurn>().ActionPoints -= card.APCost;
         caster.GetComponent<NewDeckDrawing>().StartCoroutine(caster.GetComponent<NewDeckDrawing>().MoveToDiscardPile(this.gameObject));
@@ -324,10 +332,6 @@ public class Card : FindTargets
     }
 
     public void CheckCurrentAPAgainstCard(GameObject cards){
-
-        
-
-
         if(cards.GetComponent<Card>().card.APCost > caster.GetComponent<CharTurn>().ActionPoints){
             foreach(Transform children in cards.transform){
                 if(children.name.Contains("Outline")){
@@ -348,6 +352,15 @@ public class Card : FindTargets
 
             cards.GetComponent<CardRender>().APCost.color = Color.white;
         }
+
+        
+            // Debug.Log("Counter " + counter + " handCount " + caster.GetComponent<NewDeckDrawing>().hand.Count);
+            // cards.GetComponent<CardRender>().APCost.color = cantUseColor;
+
+            // if(counter >= caster.GetComponent<NewDeckDrawing>().hand.Count){
+            //     Debug.Log("Outline Button");
+            // }
+        
     }
 
     void CheckIfCardIsPlayed(){
@@ -490,7 +503,7 @@ public class Card : FindTargets
     }
 
     public void DealDamage(GameObject target, int ammount){
-            target.GetComponent<CharacterController>().TakeDamage(ammount);
+            target.GetComponent<CharacterController>().TakeDamage(ammount, "NormalDamage");
     }
 
     void Ignite(GameObject target, int ammount, int stack){
@@ -518,7 +531,7 @@ public class Card : FindTargets
             List<GameObject> targets = FindEnemies();
 
             for(int i = 0; i < targets.Count; i++){
-                targets[i].GetComponent<CharacterController>().TakeDamage(ammount);
+                targets[i].GetComponent<CharacterController>().TakeDamage(ammount, "NormalDamage");
             }
     }
    
@@ -539,10 +552,10 @@ public class Card : FindTargets
             }
    }
 
-   public IEnumerator CameraAttack(GameObject targetPos, bool affectsCaster){
+   public IEnumerator CameraAttack(GameObject targetPos){
         CardInUse(true);
         
-        if(!affectsCaster){
+        // if(!affectsCaster){
 
         Vector3 ogPos = caster.transform.position;
         Debug.Log(ogPos);
@@ -559,15 +572,15 @@ public class Card : FindTargets
 
         cam.GetComponent<CameraZoom>().shouldZoomIn = false;
         caster.transform.DOMove(ogPos, 1);
-        }
+        //}
 
-        if(affectsCaster){
-            yield return new WaitForSeconds(3f);
-        }
-
-        CardInUse(false);
+        // if(affectsCaster){
+        //     yield return new WaitForSeconds(3f);
+        // }
+            CardInUse(false);
         
-        DestroyImmediate(this.gameObject, true);
+            DestroyImmediate(this.gameObject, true);
+        
    }
 
 

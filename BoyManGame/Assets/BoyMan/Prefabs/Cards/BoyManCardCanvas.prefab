@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 1557137186}
   - component: {fileID: 1557137185}
   m_Layer: 5
-  m_Name: EndTurn
+  m_Name: EndTurnImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,8 +448,8 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8085936729185577942}
-  m_RootOrder: 3
+  m_Father: {fileID: 4097491470067082403}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -797,6 +797,79 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &315279943524048131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345605847001338815}
+  - component: {fileID: 5368071457316602501}
+  - component: {fileID: 5539920449340862340}
+  m_Layer: 5
+  m_Name: EndTurnOutline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &345605847001338815
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315279943524048131}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4097491470067082403}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 703, y: -343}
+  m_SizeDelta: {x: 107, y: 43}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5368071457316602501
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315279943524048131}
+  m_CullTransparentMesh: 1
+--- !u!114 &5539920449340862340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315279943524048131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.20963454, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 82555d951a1d7d84b87f58dab9e28882, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &772149717352549748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,14 +1142,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 494883605730960462}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -2640,14 +2715,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 7434137857618239909}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -3527,14 +3604,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 5295269785898990207}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -4338,14 +4417,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 8200000607190818168}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -4745,14 +4826,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 3470671714232364592}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -4924,14 +5007,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 2452020887398888349}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -5331,14 +5416,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 6662970287963656387}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -5510,14 +5597,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 5674497589019621943}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -6667,14 +6756,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 4997979403577052841}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -7114,14 +7205,16 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   index: 0
   cardRotation: {x: 0, y: 0, z: 0}
+  CloseCards: []
+  FarCards: []
   canSelectTarget: 0
   targets: []
-  cardPlayed: 0
   onHover: 0
   Drag: 0
   Arrow: 0
   canHover: 0
   caster: {fileID: 0}
+  shieldIconPrefab: {fileID: 0}
   arrow: {fileID: 4558128014599465441}
   speechBubblePrefab: {fileID: 0}
   canUseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -7979,7 +8072,7 @@ RectTransform:
   - {fileID: 934019870}
   - {fileID: 1751185166}
   - {fileID: 851383330}
-  - {fileID: 1557137184}
+  - {fileID: 4097491470067082403}
   m_Father: {fileID: 1969189781975236593}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8033,6 +8126,44 @@ RectTransform:
   - {fileID: 1969189780593976266}
   m_Father: {fileID: 1969189781975236593}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6631242650433161706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4097491470067082403}
+  m_Layer: 5
+  m_Name: EndTurn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4097491470067082403
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6631242650433161706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 345605847001338815}
+  - {fileID: 1557137184}
+  m_Father: {fileID: 8085936729185577942}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

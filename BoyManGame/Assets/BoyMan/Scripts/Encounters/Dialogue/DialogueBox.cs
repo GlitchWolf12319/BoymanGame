@@ -92,12 +92,7 @@ IEnumerator FadeOut()
          foreach(CharacterController charController in cc){
             bool isIdle = charController.anim.GetBool("isIdle");
             charController.PlaySound(audioManager.walkingSound);
-            if(isIdle){
-                charController.anim.SetBool("isIdle", false);
-            }
-            else{
-                charController.anim.SetBool("isIdle", true);
-            }
+            charController.SetAnimationTrigger(0, false);
             
          }
     }

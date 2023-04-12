@@ -23,6 +23,7 @@ public class CharTurn : EnemyAbility
     public int turnMoveCounter;
     public GameObject turnUI;
     public GameObject intentionIcon;
+    public TMP_Text damageAmmountText;
     public Sprite swordIcon;
     public Sprite blockIcon;
     public Sprite igniteIcon;
@@ -124,18 +125,21 @@ public class CharTurn : EnemyAbility
 
         if(enemyTurn.TurnMoves[intentCounter].cards[0].dealDamage != null){
             Color fullAlpha = new Color(fullAlpha.r = 255, fullAlpha.g = 255, fullAlpha.b = 255, fullAlpha.a = 255);
+            damageAmmountText.text = enemyTurn.TurnMoves[intentCounter].cards[0].dealDamage.damageAmmount.ToString();
             intentionIcon.GetComponent<Image>().color = fullAlpha;
             intentionIcon.GetComponent<Image>().sprite = swordIcon;
         }
 
         if(enemyTurn.TurnMoves[intentCounter].cards[0].guard != null){
             Color fullAlpha = new Color(fullAlpha.r = 255, fullAlpha.g = 255, fullAlpha.b = 255, fullAlpha.a = 255);
+            damageAmmountText.text = enemyTurn.TurnMoves[intentCounter].cards[0].guard.guardAmmount.ToString();
             intentionIcon.GetComponent<Image>().color = fullAlpha;
             intentionIcon.GetComponent<Image>().sprite = blockIcon;
         }
 
         if(enemyTurn.TurnMoves[intentCounter].cards[0].igniteEffect != null){
             Color fullAlpha = new Color(fullAlpha.r = 255, fullAlpha.g = 255, fullAlpha.b = 255, fullAlpha.a = 255);
+            damageAmmountText.text = enemyTurn.TurnMoves[intentCounter].cards[0].igniteEffect.IgniteStack.ToString();
             intentionIcon.GetComponent<Image>().color = fullAlpha;
             intentionIcon.GetComponent<Image>().sprite = igniteIcon;
         }
@@ -154,7 +158,7 @@ public class CharTurn : EnemyAbility
                         GameObject target = targets[randomChoice];
                         yield return new WaitForSeconds(1);
                         Debug.Log("Dealing Damage");
-                        DealDamage(target, enemyTurn.TurnMoves[turnMoveCounter].cards[i].dealDamage.GetDamageValue());
+                        DealDamage(target, enemyTurn.TurnMoves[turnMoveCounter].cards[i].dealDamage.damageAmmount);
                         StartCoroutine(EnemyCameraAttack());
                         abilityTurnCounter++;
                         CheckToEndTurn();

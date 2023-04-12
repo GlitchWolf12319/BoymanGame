@@ -100,7 +100,7 @@ public void RotateCard(GameObject card, float rotateValue){
             yield return new WaitForSeconds(0.1f);
             //card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1);
             //InHandCard.ResetCard();
-            card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1).OnComplete(() =>
+            card.transform.DOMove(new Vector3(middle.x + 3000, middle.y - 2000, middle.z), 1).OnComplete(() =>
             {
                 //DestroyImmediate(card.gameObject, true);
             
@@ -134,7 +134,7 @@ public void RotateCard(GameObject card, float rotateValue){
             yield return new WaitForSeconds(0.1f);
             //card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1);
             //card.ResetCard();
-            card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1).OnComplete(() =>
+            card.transform.DOMove(new Vector3(middle.x + 3000, middle.y - 2000, middle.z), 1).OnComplete(() =>
             {
                 DestroyImmediate(card.gameObject, true);
             });

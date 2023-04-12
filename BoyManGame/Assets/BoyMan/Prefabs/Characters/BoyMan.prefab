@@ -837,7 +837,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3557552877303968073}
-  m_LocalRotation: {x: 0, y: 0, z: -0.061048605, w: 0.99813485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.3, y: -15.18, z: 18.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -850,7 +850,7 @@ Transform:
   - {fileID: 8373638060780759307}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3557552877303968076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,9 +922,10 @@ MonoBehaviour:
   turnMoveCounter: 0
   turnUI: {fileID: 8095497669732227204}
   intentionIcon: {fileID: 0}
+  damageAmmountText: {fileID: 0}
   swordIcon: {fileID: 0}
   blockIcon: {fileID: 0}
-  bubble: {fileID: 0}
+  igniteIcon: {fileID: 0}
 --- !u!114 &3557552877303968079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +948,7 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 1971629707595618004, guid: 5755d7c612701d547accb5e991a3c4e6,
     type: 3}
   dead: 0
+  audioPlayer: {fileID: 0}
   igniteStack: 0
   igniteAmmount: 0
   poisonStack: 0
@@ -985,6 +987,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  deckCountText: {fileID: 0}
+  discardPileText: {fileID: 0}
 --- !u!1 &3557552877663257220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1516,7 @@ RectTransform:
   m_GameObject: {fileID: 9198984094379512032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6187, y: 1.6187, z: 1.6187}
+  m_LocalScale: {x: 2.7203875, y: 2.7203875, z: 2.7203875}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6705607683672715648}
@@ -1520,7 +1524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117, y: -50}
+  m_AnchoredPosition: {x: 333, y: -60}
   m_SizeDelta: {x: 390.87, y: 30.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341992495511245455
@@ -1549,6 +1553,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3557552877303968077}
     m_Modifications:
+    - target: {fileID: 1557137184, guid: b03c024b8d0c76d4faf5455dc94af023, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557137184, guid: b03c024b8d0c76d4faf5455dc94af023, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -254
+      objectReference: {fileID: 0}
+    - target: {fileID: 345605847001338815, guid: b03c024b8d0c76d4faf5455dc94af023,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 345605847001338815, guid: b03c024b8d0c76d4faf5455dc94af023,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 345605847001338815, guid: b03c024b8d0c76d4faf5455dc94af023,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 794
+      objectReference: {fileID: 0}
+    - target: {fileID: 345605847001338815, guid: b03c024b8d0c76d4faf5455dc94af023,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -254
+      objectReference: {fileID: 0}
     - target: {fileID: 1969189780202846721, guid: b03c024b8d0c76d4faf5455dc94af023,
         type: 3}
       propertyPath: caster

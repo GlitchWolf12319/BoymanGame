@@ -39,7 +39,7 @@ public class EnemyAbility : FindTargets
     }
 
     public void DealDamage(GameObject target, int ammount){
-            target.GetComponent<CharacterController>().TakeDamage(ammount);
+            target.GetComponent<CharacterController>().TakeDamage(ammount, "NormalDamage");
     }
 
     public void Ignite(GameObject target, int ammount, int stack){
@@ -67,7 +67,7 @@ public class EnemyAbility : FindTargets
             List<GameObject> targets = FindEnemies();
 
             for(int i = 0; i < targets.Count; i++){
-                targets[i].GetComponent<CharacterController>().TakeDamage(ammount);
+                targets[i].GetComponent<CharacterController>().TakeDamage(ammount, "NormalDamage");
             }
     }
    

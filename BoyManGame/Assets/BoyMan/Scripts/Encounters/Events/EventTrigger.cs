@@ -79,17 +79,11 @@ public void OnButton1Click()
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
 
-            bool isIdle = charController.anim.GetBool("isIdle");
-            if(isIdle){
-                charController.anim.SetBool("isIdle", false);
-            }
-            else{
-                charController.anim.SetBool("isIdle", true);
-            }
 
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
-                charController.TakeDamage(B1_damage);
+                charController.TakeDamage(B1_damage, "NormalDamage");
+                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
             }
             
          }
@@ -103,17 +97,10 @@ public void OnButton1Click()
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
 
-            bool isIdle = charController.anim.GetBool("isIdle");
-            if(isIdle){
-                charController.anim.SetBool("isIdle", false);
-            }
-            else{
-                charController.anim.SetBool("isIdle", true);
-            }
-
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
                 charController.Heal(B1_healAmount);
+                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
             }
             
          }
@@ -136,14 +123,7 @@ public void OnButton1Click()
   Debug.Log("Button 1 does nothing.");
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
-            bool isIdle = charController.anim.GetBool("isIdle");
-            if(isIdle){
-                charController.anim.SetBool("isIdle", false);
-            }
-            else{
-                charController.anim.SetBool("isIdle", true);
-            }
-            
+            charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
          }
     }
 
@@ -161,17 +141,10 @@ public void OnButton1Click()
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
 
-            bool isIdle = charController.anim.GetBool("isIdle");
-            if(isIdle){
-                charController.anim.SetBool("isIdle", false);
-            }
-            else{
-                charController.anim.SetBool("isIdle", true);
-            }
-
             if(charController.gameObject.tag == "Player"){
+                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
                 Debug.Log(charController.gameObject.name);
-                charController.TakeDamage(B2_damage);
+                charController.TakeDamage(B2_damage, "NormalDamage");
             }
             
          }
@@ -184,17 +157,10 @@ public void OnButton1Click()
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
 
-            bool isIdle = charController.anim.GetBool("isIdle");
-            if(isIdle){
-                charController.anim.SetBool("isIdle", false);
-            }
-            else{
-                charController.anim.SetBool("isIdle", true);
-            }
-
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
                 charController.Heal(B2_healAmount);
+                charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
             }
             
          }
@@ -205,14 +171,7 @@ public void OnButton1Click()
         Debug.Log("Button 2 does nothing.");
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
-            bool isIdle = charController.anim.GetBool("isIdle");
-            if(isIdle){
-                charController.anim.SetBool("isIdle", false);
-            }
-            else{
-                charController.anim.SetBool("isIdle", true);
-            }
-            
+            charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
          }
         
     }
@@ -260,11 +219,7 @@ private IEnumerator FadeOutPanel()
          }
 
          CharacterController[] cc = GameObject.FindObjectsOfType<CharacterController>();
-         AudioManager audioManager = FindObjectOfType<AudioManager>();
-         foreach(CharacterController charController in cc){
-            charController.StartCoroutine(charController.SetAnimationTrigger(0, false));
-            charController.PlaySound(audioManager.walkingSound);
-         }
+
     // Destroy this game object
     Destroy(gameObject);
 }
