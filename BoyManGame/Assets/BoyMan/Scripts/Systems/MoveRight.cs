@@ -12,14 +12,17 @@ public class MoveRight : MonoBehaviour
 
     //[SerializeField] private Animator anim;
 
-
     private void Start(){
         //anim = GetComponentInChildren<Animator>();
         
     }
-
-
-    
+//-----------------------DELETE------------------------------------------------
+public void Update() {
+    if (Input.GetKeyDown(KeyCode.D) ) {
+        Move();
+    }
+}
+//-----------------------DELETE------------------------------------------------
     public void Move()
     {
         
@@ -35,4 +38,6 @@ public class MoveRight : MonoBehaviour
         canMove = false; // Set the flag to prevent multiple movements at the same time
         //anim.SetBool("isIdle", canMove);
     }
+    
+
 }

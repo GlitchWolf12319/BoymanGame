@@ -3496,15 +3496,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 100
-  - 0
-  - 0
+  - 0.48987055
+  - 0.48987055
+  - 0.48987055
+  - 98.53039
   spawnPosition: {fileID: 7838675766744144562}
   counterText: {fileID: 0}
   objectsToSpawn:
   - {fileID: 4467797108200846306}
   - {fileID: 4467797108200846306, guid: f43bf509af38d21438a0247d3c1e8635, type: 3}
   - {fileID: 4467797108200846306, guid: 8b701a2f7209923498aba4edc2234c75, type: 3}
+  - {fileID: 4467797108200846306, guid: 3d8385c5e17b5814fb10050cb1a550c1, type: 3}
 --- !u!65 &7679830394375332756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3649,7 +3651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5504754770327360230
 Transform:
   m_ObjectHideFlags: 0
