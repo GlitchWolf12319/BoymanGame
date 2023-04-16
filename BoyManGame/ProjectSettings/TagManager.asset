@@ -14,6 +14,7 @@ TagManager:
   - Arrow
   - TurnBanner
   - NoAPBubble
+  - Obstacle
   layers:
   - Default
   - TransparentFX

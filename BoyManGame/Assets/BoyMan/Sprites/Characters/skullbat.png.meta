@@ -108,10 +108,10 @@ TextureImporter:
       name: skullbat_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 4097
-        width: 1439
-        height: 943
+        x: 0
+        y: 2710
+        width: 1724
+        height: 2710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,10 +129,10 @@ TextureImporter:
       name: skullbat_1
       rect:
         serializedVersion: 2
-        x: 1772
-        y: 4175
-        width: 1643
-        height: 730
+        x: 1724
+        y: 2710
+        width: 1724
+        height: 2710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: skullbat_2
       rect:
         serializedVersion: 2
-        x: 131
-        y: 1293
-        width: 1434
-        height: 1019
+        x: 0
+        y: 0
+        width: 1724
+        height: 2710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: skullbat_3
       rect:
         serializedVersion: 2
-        x: 1772
-        y: 1465
-        width: 1643
-        height: 730
+        x: 1724
+        y: 0
+        width: 1724
+        height: 2710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -35,7 +35,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Grow_: 0
+    - Grow_: 1
     - _Clip: 0.98
     - _Grow: 1
     - _Metallic: 0.56
