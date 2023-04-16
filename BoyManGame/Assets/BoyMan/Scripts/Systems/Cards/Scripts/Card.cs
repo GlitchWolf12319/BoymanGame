@@ -169,6 +169,10 @@ public class Card : FindTargets
             StartCoroutine(CameraAttack(target));
         }
 
+        if(target.tag == "Player"){
+            StartCoroutine(CardInUse());
+        }
+
         caster.GetComponent<CharTurn>().ActionPoints -= card.APCost;
         caster.GetComponent<NewDeckDrawing>().StartCoroutine(caster.GetComponent<NewDeckDrawing>().MoveToDiscardPile(this.gameObject));
         canSelectTarget = false;
@@ -184,6 +188,12 @@ public class Card : FindTargets
             caster.GetComponent<NewDeckDrawing>().hand[i].GetComponent<Card>().canSelect = true;
         }
         
+    }
+
+    public IEnumerator CardInUse(){
+        CardInUse(true);
+        yield return new WaitForSeconds(2);
+        CardInUse(false);
     }
 
     public void CardInUse(bool inUse){
@@ -394,15 +404,15 @@ public class Card : FindTargets
         transform.DORotate(new Vector3(0,0,0), 0.5f);
 
         if(index == 0 || index == 4){
-            transform.DOMoveY(transform.position.y + 100, 0.5f);
+            transform.DOMoveY(transform.position.y + 210, 0.5f);
         }
 
         if(index == 1 || index == 3){
-            transform.DOMoveY(transform.position.y + 90, 0.5f);
+            transform.DOMoveY(transform.position.y + 120, 0.5f);
         }
 
         if(index == 2){
-            transform.DOMoveY(transform.position.y + 55, 0.5f);
+            transform.DOMoveY(transform.position.y + 100, 0.5f);
         }
 
         

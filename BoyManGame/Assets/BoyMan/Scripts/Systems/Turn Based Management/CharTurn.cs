@@ -49,7 +49,7 @@ public class CharTurn : EnemyAbility
 
     public IEnumerator StartTurn(){
         if(!transform.GetComponent<CharacterController>().dead){
-
+        yield return new WaitForSeconds(0.5f);
         TurnCounter++;
         turnMoveCounter++;
 
@@ -100,6 +100,14 @@ public class CharTurn : EnemyAbility
 
             if(transform.name.Contains("Jane")){
                 turnBanner.GetComponent<TurnBanner>().turnText.text = "Jane's Turn";
+            }
+
+            if(transform.name.Contains("Oslo")){
+                turnBanner.GetComponent<TurnBanner>().turnText.text = "Oslo's Turn";
+            }
+
+            if(transform.name.Contains("Skindred")){
+                turnBanner.GetComponent<TurnBanner>().turnText.text = "Skindred's Turn";
             }
             
             int displayTurn = TurnCounter + 1;
@@ -268,6 +276,7 @@ public class CharTurn : EnemyAbility
 
         if(counter == 0){
             Debug.Log("canSkip");
+            turnUI.SetActive(false);
             StartCoroutine(EndTurn());
         }
         

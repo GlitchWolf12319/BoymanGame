@@ -3698,9 +3698,9 @@ MonoBehaviour:
   - {fileID: 6534328651796939035, guid: d5e4252dc31e1df48a4093c49012503e, type: 3}
   - {fileID: 6534328651796939035, guid: 981072453e91dd14fabb5a2914797eaf, type: 3}
   spawnChances:
-  - 33.01215
-  - 32.710953
-  - 34.276897
+  - 45.017166
+  - 0
+  - 54.982834
 --- !u!1 &7457779478953508555
 GameObject:
   m_ObjectHideFlags: 0

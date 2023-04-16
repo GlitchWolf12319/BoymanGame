@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class HealthBar : MonoBehaviour
     public CharacterStats CS;
     public CharacterController cc;
     private float newHealth;
-    public Text HP;
+    public TMP_Text HP;
     private float currentHealth;
 
     void Start(){

@@ -21,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
     [Header("Spawn Distance away from each other")]
     public float enemySpawnDistance;
 
+    public float[] yOffset;
+
     public GameObject player;
     public TurnBaseManager tbm;
 
@@ -67,9 +69,9 @@ public class EnemySpawner : MonoBehaviour
             
 
             // Instantiate the enemy prefab at the spawn position
-            GameObject enemy = Instantiate(enemyPrefab[i], enemySpawnPosition, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefab[i],new Vector3(enemySpawnPosition.x, enemySpawnPosition.y + yOffset[i], enemySpawnPosition.z), Quaternion.identity);
             enemy.transform.DOScale(ScaleSize[i], 1f);
-
+            Debug.Log("Spawning Enemies");
             // Add the enemy to the spawnedEnemies list
             spawnedEnemies.Add(enemy);
         

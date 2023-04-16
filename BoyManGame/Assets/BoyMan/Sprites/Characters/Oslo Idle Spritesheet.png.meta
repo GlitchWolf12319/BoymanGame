@@ -1,0 +1,427 @@
+fileFormatVersion: 2
+guid: e0739f1edc794394bbcc9ba5fc731b52
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 8418
+        width: 2172
+        height: 2212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab51a41c5d724014b973d295325afe1a
+      internalID: -1288693053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 4501
+        y: 8418
+        width: 2172
+        height: 2212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44424cfa4a702c24fb437e2b2d1c4388
+      internalID: 2091551025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 8180
+        y: 8429
+        width: 2194
+        height: 2281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38ef5d46a193af4a8ae4575fcd98fad
+      internalID: 1737952784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 11888
+        y: 8429
+        width: 2194
+        height: 2281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1efc9d5078cd54faa7eeefb5d25ca8
+      internalID: 1894947812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 5668
+        width: 2194
+        height: 2333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b0fbed9f81cf349bc374ac5d919e81
+      internalID: -2049698980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 4472
+        y: 5668
+        width: 2194
+        height: 2333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514bdde5adfcbff489a6a55b1b32e06f
+      internalID: -1185742374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 8180
+        y: 5720
+        width: 2126
+        height: 2415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c5db5c10b0c26409a3a97d12d01317
+      internalID: -1186360328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 11888
+        y: 5720
+        width: 2126
+        height: 2415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761b84f8f88aa7a4c8941d3e09c899f3
+      internalID: -1667867752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 3012
+        width: 2126
+        height: 2415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24284c6854fd864691682f3e63ffcd6
+      internalID: -1961395781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 4472
+        y: 3012
+        width: 2126
+        height: 2415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea1289773cf2854485a1cf1a1938c6b
+      internalID: 1394230073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 8216
+        y: 2911
+        width: 2231
+        height: 2516
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21455f19f57cb7e4ba4c8a969bb1c3bd
+      internalID: 2027370475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 11924
+        y: 2911
+        width: 2231
+        height: 2516
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1497f4301f82048a48d2fe563f9788
+      internalID: -2078989865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oslo Idle Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 224
+        width: 2209
+        height: 2493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057cf19e68f900f40816c181643e686f
+      internalID: -817149760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Oslo Idle Spritesheet_10: 469632155
+      Oslo Idle Spritesheet_2: 1737952784
+      Oslo Idle Spritesheet_20: 577973691
+      Oslo Idle Spritesheet_12: 2093916421
+      Oslo Idle Spritesheet_13: 1636531352
+      Oslo Idle Spritesheet_29: -2078989865
+      Oslo Idle Spritesheet_17: 795752688
+      Oslo Idle Spritesheet_9: -238786332
+      Oslo Idle Spritesheet_25: -1667867752
+      Oslo Idle Spritesheet_11: 1357462060
+      Oslo Idle Spritesheet_18: -1278781029
+      Oslo Idle Spritesheet_7: 784598199
+      Oslo Idle Spritesheet_8: 1538177607
+      Oslo Idle Spritesheet_30: -817149760
+      Oslo Idle Spritesheet_6: 1218639266
+      Oslo Idle Spritesheet_3: -172822455
+      Oslo Idle Spritesheet_15: 1728431818
+      Oslo Idle Spritesheet_19: 661220072
+      Oslo Idle Spritesheet_21: 1043974968
+      Oslo Idle Spritesheet_1: 2091551025
+      Oslo Idle Spritesheet_23: -1185742374
+      Oslo Idle Spritesheet_5: -2073031026
+      Oslo Idle Spritesheet_4: 1894947812
+      Oslo Idle Spritesheet_27: 1394230073
+      Oslo Idle Spritesheet_28: 2027370475
+      Oslo Idle Spritesheet_0: -1288693053
+      Oslo Idle Spritesheet_22: -2049698980
+      Oslo Idle Spritesheet_24: -1186360328
+      Oslo Idle Spritesheet_16: -526352067
+      Oslo Idle Spritesheet_14: -1402429946
+      Oslo Idle Spritesheet_26: -1961395781
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

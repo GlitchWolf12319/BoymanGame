@@ -9,6 +9,8 @@ public class EventCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            this.GetComponent<BoxCollider>().enabled = false;
+            Debug.Log("Collision " + other.gameObject.name);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if(player != null){         
                 Movement[] move = FindObjectsOfType<Movement>();

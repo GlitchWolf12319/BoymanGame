@@ -45,12 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 2320215925050070901, guid: 4df860bfdc40fc747b5fcbe95ba03b10, type: 3}
-  - {fileID: 2320215925050070901, guid: 4df860bfdc40fc747b5fcbe95ba03b10, type: 3}
+  - {fileID: 4416580390934823793, guid: 25c74eb8a15297c4f933b56aee094d34, type: 3}
+  - {fileID: 4416580390934823793, guid: 25c74eb8a15297c4f933b56aee094d34, type: 3}
   ScaleSize:
   - {x: 0.31, y: 0.31, z: 0.31}
   - {x: 0.31, y: 0.31, z: 0.31}
-  spawnDistance: 10
+  spawnDistance: 15
   enemySpawnDistance: 5
+  yOffset:
+  - 0
+  - -0.75
   player: {fileID: 0}
   tbm: {fileID: 0}
