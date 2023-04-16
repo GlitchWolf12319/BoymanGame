@@ -18046,7 +18046,7 @@ PrefabInstance:
     - target: {fileID: 3557552877303968073, guid: f1f009aab26fc57469a0980bcee90d7f,
         type: 3}
       propertyPath: m_Name
-      value: Skindred
+      value: Casper
       objectReference: {fileID: 0}
     - target: {fileID: 3557552877303968073, guid: f1f009aab26fc57469a0980bcee90d7f,
         type: 3}
@@ -34428,7 +34428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1567452007
 RectTransform:
   m_ObjectHideFlags: 0
