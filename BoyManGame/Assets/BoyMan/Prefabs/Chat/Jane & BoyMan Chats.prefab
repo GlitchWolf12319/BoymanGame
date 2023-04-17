@@ -59,9 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToInstantiate:
-  - {fileID: 4370800046772037202, guid: 52480aa36e2cf4d4384909f002df3939, type: 3}
+  - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
   - {fileID: 4370800046772037202, guid: 82d995f2b600f9f4a9a0913eb2d718bd, type: 3}
   spawnChances:
-  - 35.140675
-  - 33.333332
-  - 33.333332
+  - 96.07203
+  - 3.9279704

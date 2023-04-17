@@ -91,15 +91,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boymanJane: {fileID: 3155316716810318441, guid: f53d75cff81f0fe46a837ec74641fa00,
     type: 3}
-  boymanOslo: {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053,
+  boymanOslo: {fileID: 3155316716810318441, guid: f53d75cff81f0fe46a837ec74641fa00,
     type: 3}
-  boymanCasper: {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053,
+  boymanCasper: {fileID: 3155316716810318441, guid: f53d75cff81f0fe46a837ec74641fa00,
     type: 3}
-  janeOslo: {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053,
+  janeOslo: {fileID: 3155316716810318441, guid: f53d75cff81f0fe46a837ec74641fa00,
     type: 3}
-  janeCasper: {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053,
+  janeCasper: {fileID: 3155316716810318441, guid: f53d75cff81f0fe46a837ec74641fa00,
     type: 3}
-  osloCasper: {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053,
+  osloCasper: {fileID: 3155316716810318441, guid: f53d75cff81f0fe46a837ec74641fa00,
     type: 3}
 --- !u!1 &4467797106411264200
 GameObject:
@@ -3266,9 +3266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 0.3682687
-  - 84.65659
-  - 14.975135
+  - 0.019062955
+  - 4.3821397
+  - 95.59879
   spawnPosition: {fileID: 7838675766744144562}
   counterText: {fileID: 0}
   objectsToSpawn:

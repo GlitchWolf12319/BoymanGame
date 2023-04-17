@@ -108,10 +108,10 @@ TextureImporter:
       name: Mage idle with flame spritesheet_0
       rect:
         serializedVersion: 2
-        x: 1225
-        y: 4107
-        width: 1554
-        height: 3786
+        x: 0
+        y: 4000
+        width: 4000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,10 +129,10 @@ TextureImporter:
       name: Mage idle with flame spritesheet_1
       rect:
         serializedVersion: 2
-        x: 5225
-        y: 4108
-        width: 1554
-        height: 3781
+        x: 4000
+        y: 4000
+        width: 4000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: Mage idle with flame spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1193
-        y: 111
-        width: 1590
-        height: 3782
+        x: 0
+        y: 0
+        width: 4000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: Mage idle with flame spritesheet_3
       rect:
         serializedVersion: 2
-        x: 5260
-        y: 111
-        width: 1523
-        height: 3746
+        x: 4000
+        y: 0
+        width: 4000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
