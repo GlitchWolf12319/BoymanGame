@@ -22,6 +22,7 @@ public class CharTurn : EnemyAbility
     public GameObject attackIconPrefab;
     public int turnMoveCounter;
     public GameObject turnUI;
+    public GameObject turnIcon;
     public GameObject intentionIcon;
     public TMP_Text damageAmmountText;
     public Sprite swordIcon;
@@ -53,6 +54,7 @@ public class CharTurn : EnemyAbility
         TurnCounter++;
         turnMoveCounter++;
 
+        turnIcon.SetActive(true);
         turnBanner = GameObject.FindGameObjectWithTag("TurnBanner");
 
         this.GetComponent<CharacterController>().CheckStatusEffects();
@@ -106,8 +108,8 @@ public class CharTurn : EnemyAbility
                 turnBanner.GetComponent<TurnBanner>().turnText.text = "Oslo's Turn";
             }
 
-            if(transform.name.Contains("Skindred")){
-                turnBanner.GetComponent<TurnBanner>().turnText.text = "Skindred's Turn";
+            if(transform.name.Contains("Casper")){
+                turnBanner.GetComponent<TurnBanner>().turnText.text = "Casper's Turn";
             }
             
             int displayTurn = TurnCounter + 1;
@@ -277,6 +279,7 @@ public class CharTurn : EnemyAbility
         if(counter == 0){
             Debug.Log("canSkip");
             turnUI.SetActive(false);
+            turnIcon.SetActive(false);
             StartCoroutine(EndTurn());
         }
         
@@ -292,6 +295,7 @@ public class CharTurn : EnemyAbility
 
             if(characterType == CharacterType.Enemy){
                 IntentSystem();
+                turnIcon.SetActive(false);
             }
             abilityTurnCounter = 0;
             yield return new WaitForSeconds(1.5f);

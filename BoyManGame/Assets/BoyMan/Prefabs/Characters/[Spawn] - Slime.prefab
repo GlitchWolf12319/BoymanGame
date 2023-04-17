@@ -52,8 +52,14 @@ MonoBehaviour:
   - {x: 0.35, y: 0.35, z: 0.35}
   spawnDistance: 15
   enemySpawnDistance: 5
-  yOffset:
+  xOffset:
   - 0
-  - 0.75
+  - 1.5
+  yOffset:
+  - -2
+  - -1.5
+  zOffset:
+  - 0
+  - 3
   player: {fileID: 0}
   tbm: {fileID: 0}

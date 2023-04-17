@@ -17,7 +17,7 @@ public class CheckPartyStatus : MonoBehaviour
     public GameObject osloCasper;
 
     private bool foundCharactersToTalk;
-	private bool hit;
+	[SerializeField]private bool hit;
 
     void OnTriggerEnter(Collider other)
     {

@@ -81,8 +81,6 @@ public class TurnBaseManager : FindTargets
     public IEnumerator FinishBattle(){
         turns.Clear();
         yield return new WaitForSeconds(3);
-        GameObject RS = Instantiate(RewardSystem);
-        RS.transform.SetAsFirstSibling();
 
         for(int i = 0; i < heroesInBattle.Count; i++){
 
@@ -95,9 +93,14 @@ public class TurnBaseManager : FindTargets
                 heroesInBattle[i].GetComponent<CharacterController>().guard = 0;
                 heroesInBattle[i].GetComponent<CharacterController>().igniteStack = 0;
                 heroesInBattle[i].GetComponent<CharacterController>().poisonStack = 0;
+                heroesInBattle[i].GetComponent<CharTurn>().turnIcon.SetActive(false);
         }
         
         disabledUI.transform.localScale = new Vector3(0,0,0);
+
+        yield return new WaitForSeconds(2.5f);
+        GameObject RS = Instantiate(RewardSystem);
+        RS.transform.SetAsFirstSibling();
     }  
 
 

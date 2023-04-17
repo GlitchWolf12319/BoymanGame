@@ -49,12 +49,14 @@ public class RewardSystem : FindTargets
     public GameObject AddedCardPrefab;
     public Transform[] cardSlots;
     public string currentClaimer;
+    public Image tip;
     
 
 
     void Start(){
         AssignValues();
         rewardScreen.transform.DOScale(new Vector3(2,2,2), 0.5f);
+        tip.DOColor(Color.white, 0.2f).SetLoops(21, LoopType.Yoyo);
     }
 
     void AssignValues(){

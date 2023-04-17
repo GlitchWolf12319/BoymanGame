@@ -85,7 +85,7 @@ public class CharacterController : FindTargets
     }
 
     public void TakeDamage(int ammount, string DamageType){
-        Debug.Log(DamageType);
+        Debug.Log("targets name " + transform.name + "targets guard before attack " + guard);
         if(guard < ammount){
             int damage = ammount - guard;
             ammount = damage;
@@ -96,6 +96,8 @@ public class CharacterController : FindTargets
             if(guard <= 0){
                 guard = 0;
             }
+
+            Debug.Log("targets guard after attack " + guard);
         }
         else if(guard > ammount){
             guard -= ammount;
@@ -110,7 +112,7 @@ public class CharacterController : FindTargets
         }
 
         if(ammount > 0 && guard > ammount){
-            damageIdicator.SetDamageText(0, "Fail");
+            damageIdicator.SetDamageText(0, "Blocked");
             StartCoroutine(DamageColor());
         }
 
