@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
 
     public IEnumerator BattleStarter(){
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.5f);
         player = GameObject.Find("BoyMan");
         if(player == null){
             player = GameObject.Find("Jane");

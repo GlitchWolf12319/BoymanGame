@@ -50,6 +50,7 @@ public class RewardSystem : FindTargets
     public Transform[] cardSlots;
     public string currentClaimer;
     public Image tip;
+    public int claimCounter;
     
 
 
@@ -130,11 +131,16 @@ public class RewardSystem : FindTargets
 
 
    public void BoymanButton(){
+    claimCounter++;
     currentClaimer = "BoyMan";
     panel1.transform.DOScale(new Vector3(0,0,0), 0.5f);
         if(panel1Rewards == Panel1Rewards.Gold){
             GameObject.Find("BoyMan").GetComponent<CharacterController>().GiveCoins(gold1Ammount);
             panel1.transform.DOScale(new Vector3(0,0,0), 0.5f);
+
+            if(claimCounter == 4){
+                Leave();
+            }
         }
 
         if(panel1Rewards == Panel1Rewards.Card){
@@ -145,11 +151,16 @@ public class RewardSystem : FindTargets
     }
 
     public void JaneButton(){
+        claimCounter++;
         currentClaimer = "Jane";
         panel2.transform.DOScale(new Vector3(0,0,0), 0.5f);
         if(panel2Rewards == Panel2Rewards.Gold){
             GameObject.Find("Jane").GetComponent<CharacterController>().GiveCoins(gold2Ammount);
             panel2.transform.DOScale(new Vector3(0,0,0), 0.5f);
+
+            if(claimCounter == 4){
+                Leave();
+            }
         }
 
         if(panel2Rewards == Panel2Rewards.Card){
@@ -160,11 +171,16 @@ public class RewardSystem : FindTargets
     }
 
     public void OsloButton(){
+        claimCounter++;
         currentClaimer = "Oslo";
         panel3.transform.DOScale(new Vector3(0,0,0), 0.5f);
         if(panel3Rewards == Panel3Rewards.Gold){
             GameObject.Find("Oslo").GetComponent<CharacterController>().GiveCoins(gold3Ammount);
             panel3.transform.DOScale(new Vector3(0,0,0), 0.5f);
+
+            if(claimCounter == 4){
+                Leave();
+            }
         }
 
         if(panel3Rewards == Panel3Rewards.Card){
@@ -175,11 +191,16 @@ public class RewardSystem : FindTargets
     }
 
     public void CasperButton(){
+        claimCounter++;
         currentClaimer = "Casper";
         panel4.transform.DOScale(new Vector3(0,0,0), 0.5f);
         if(panel4Rewards == Panel4Rewards.Gold){
             GameObject.Find("Casper").GetComponent<CharacterController>().GiveCoins(gold2Ammount);
             panel4.transform.DOScale(new Vector3(0,0,0), 0.5f);
+
+            if(claimCounter == 4){
+                Leave();
+            }
         }
 
         if(panel4Rewards == Panel4Rewards.Card){
@@ -230,7 +251,10 @@ public class RewardSystem : FindTargets
 
         GameObject.Find(currentClaimer).GetComponent<NewDeckDrawing>().deck.Add(template);
         Canvas cardCanvas = GameObject.Find(currentClaimer).GetComponentInChildren<Canvas>();
-        
+
+        if(claimCounter == 4){
+            Leave();
+        }
    }
 
    public void Leave(){
@@ -252,6 +276,23 @@ public class RewardSystem : FindTargets
    public void Skip(){
         cardSelectionScreen.transform.DOScale(new Vector3(0,0,0), 0.5f);
         rewardScreen.transform.DOScale(new Vector3(2,2,2), 0.5f);
+
+        List<GameObject> cards = new List<GameObject>();
+
+        foreach(var presentCards in FindObjectsOfType<AddCardToDeck>()){
+            cards.Add(presentCards.gameObject);
+            Debug.Log(presentCards.name);
+        }
+
+        for(int i = 0; i < cards.Count; i++){
+            cards[i].transform.DOScale(new Vector3(0,0,0), 0.1f);
+            Destroy(cards[i], 0.5f);
+        }
+        cardsChosen.Clear();
+
+        if(claimCounter == 4){
+            Leave();
+        }
    }
 
 

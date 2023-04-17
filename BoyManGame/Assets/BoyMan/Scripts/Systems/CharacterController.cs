@@ -85,34 +85,32 @@ public class CharacterController : FindTargets
     }
 
     public void TakeDamage(int ammount, string DamageType){
-        Debug.Log("targets name " + transform.name + "targets guard before attack " + guard);
-        if(guard < ammount){
-            int damage = ammount - guard;
-            ammount = damage;
-
-            health -= ammount;
+        Debug.Log("targets name " + transform.name + " targets guard before attack " + guard);
+        //IF PLAYER HAS MORE GUARD THAN DAMAGE BEING TAKEN
+        if(guard >= ammount){
             guard -= ammount;
-
             if(guard <= 0){
                 guard = 0;
             }
-
-            Debug.Log("targets guard after attack " + guard);
         }
-        else if(guard > ammount){
+
+        //IF PLAYER HAS LESS GUARD THAN DAMAGE BEING TAKEN
+        if(guard < ammount){
+            int remainingDamage = ammount - guard;
+            health -= remainingDamage;
             guard -= ammount;
         }
         
-
+        Debug.Log("targets guard after attack " + guard);
         DamageIdicator damageIdicator = Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIdicator>();
 
-        if(ammount > 0 && guard <= ammount){
-            damageIdicator.SetDamageText(ammount, null);
+        if(ammount > 0 && guard < ammount){
+            damageIdicator.SetDamageText(ammount);
             StartCoroutine(DamageColor());
         }
 
-        if(ammount > 0 && guard > ammount){
-            damageIdicator.SetDamageText(0, "Blocked");
+        if(ammount > 0 && guard >= ammount){
+            damageIdicator.SetDamageText(0);
             StartCoroutine(DamageColor());
         }
 

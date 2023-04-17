@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class TurnBaseManager : FindTargets
 {
-    [SerializeField]int turnCounter = -1;
-    [SerializeField] private List<CharTurn> turns;
+    public int turnCounter = -1;
+    public List<CharTurn> turns;
     [SerializeField] private List<GameObject> enemiesInBattle;
     [SerializeField] private List<GameObject> heroesInBattle;
     [SerializeField] private List<GameObject> totalCharsInBattle;
@@ -102,6 +102,38 @@ public class TurnBaseManager : FindTargets
         GameObject RS = Instantiate(RewardSystem);
         RS.transform.SetAsFirstSibling();
     }  
+
+
+    public IEnumerator FleeBattle(){
+
+        for(int e = 0; e < enemiesInBattle.Count; e++){
+            enemiesInBattle[e].transform.DOScale(new Vector3(0,0,0), 0.5f);
+            yield return new WaitForSeconds(0.5f);
+            Destroy(enemiesInBattle[e]);
+        }
+
+        for(int h = 0; h < heroesInBattle.Count; h++){
+            heroesInBattle[h].GetComponent<CharTurn>().turnUI.SetActive(false);
+            heroesInBattle[h].GetComponent<NewDeckDrawing>().ClearDeck();
+            heroesInBattle[h].GetComponent<CharacterController>().guard = 0;
+            heroesInBattle[h].GetComponent<CharacterController>().igniteStack = 0;
+            heroesInBattle[h].GetComponent<CharacterController>().poisonStack = 0;
+            heroesInBattle[h].GetComponent<CharTurn>().turnIcon.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        heroesInBattle.Clear();
+        enemiesInBattle.Clear();
+
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if(player != null){         
+                Movement[] move = FindObjectsOfType<Movement>();
+                foreach(Movement Move in move){
+                Move.enabled = true;
+            }
+        }
+    }
 
 
     public bool isBattleFinished(){

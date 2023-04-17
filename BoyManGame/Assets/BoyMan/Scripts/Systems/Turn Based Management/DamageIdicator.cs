@@ -41,15 +41,8 @@ public class DamageIdicator : MonoBehaviour
 
    }
 
-   public void SetDamageText(int damage, string message){
-        if(damage != 0 && message == null){
-            text.text = damage.ToString();
-        }
-
-        if(damage == 0 && message != null){
-            text.text = message;
-        }  
-        
+   public void SetDamageText(int damage){
+        text.text = damage.ToString();     
    }
 
    public void SetDamageColor(Color color){
