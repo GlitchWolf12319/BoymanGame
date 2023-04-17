@@ -76,7 +76,6 @@ this.arrowNodes.Add(Instantiate(this.ArrowNodePrefab, this.transform).GetCompone
     }
 
     this.arrowNodes[0].transform.rotation = this.arrowNodes[1].transform.rotation;
-
     }
 }
 
