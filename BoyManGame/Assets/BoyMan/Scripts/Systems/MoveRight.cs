@@ -11,19 +11,10 @@ public class MoveRight : MonoBehaviour
     private bool canMove = true; // Flag to prevent multiple movements at the same time
 
     //[SerializeField] private Animator anim;
- void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player")) 
-        {
-            Move();
-        }
-    {
-    }
-    }
-    private void Start(){
-        //anim = GetComponentInChildren<Animator>();
-        
-    }
+
+public void Awake() {
+             
+}
 
 
     

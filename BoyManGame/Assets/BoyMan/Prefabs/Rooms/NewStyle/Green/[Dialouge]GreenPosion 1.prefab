@@ -4396,7 +4396,7 @@ GameObject:
   - component: {fileID: 7679830394375332756}
   m_Layer: 0
   m_Name: SpawnNextRoom
-  m_TagString: Untagged
+  m_TagString: SpawnNextRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4429,9 +4429,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 0.019062955
-  - 4.3821397
-  - 95.59879
+  - 96.47523
+  - 0.15449029
+  - 3.3702908
   spawnPosition: {fileID: 7838675766744144562}
   counterText: {fileID: 0}
   objectsToSpawn:

@@ -17,7 +17,11 @@ public class EventCollider : MonoBehaviour
                 foreach(Movement Move in move){
                 Move.StopEverything();
                 Move.enabled = false;
+
+
             }
+
+            
         }
 
             float totalSpawnChance = 0f;

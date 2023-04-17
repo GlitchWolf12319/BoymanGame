@@ -17,7 +17,11 @@ public class Wall : MonoBehaviour
     void Start()
     {
         Debug.Log(startingPosition);
-        // Store the starting position of the player
+     SetStartingPostion();
+    }
+
+    public  void SetStartingPostion(){
+   // Store the starting position of the player
         startingPosition = transform.position;
     }
 

@@ -130,6 +130,11 @@ public void OnButton1Click()
         if(spawnRoom != null){          
     //  Set the spawn chance of room 0 to 100%
          spawnRoom.GetComponent<SpawnRoom>().SetSpawnChanceTo100(0);
+         
+                MoveRight[] moveplayer = FindObjectsOfType<MoveRight>();
+                foreach(MoveRight Moveplayer in moveplayer) {
+                    Moveplayer.Move();
+                }
       
         }   
     }
