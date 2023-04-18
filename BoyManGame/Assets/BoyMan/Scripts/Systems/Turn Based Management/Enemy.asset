@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   thinkTime: 2
-  target: 1
+  target: 0
   TurnMoves:
   - cards:
     - {fileID: 11400000, guid: bfe02190a4462484b8c147326438b6fc, type: 2}
   - cards:
-    - {fileID: 11400000, guid: 3f66bd53c378e1e4eb4ad3e60a297117, type: 2}
+    - {fileID: 11400000, guid: 227584a561498f748bf9a20e79c2a011, type: 2}
   - cards:
-    - {fileID: 11400000, guid: bfe02190a4462484b8c147326438b6fc, type: 2}
+    - {fileID: 11400000, guid: ee67d24ca2c7f084893e392d03bddb66, type: 2}
   - cards:
-    - {fileID: 11400000, guid: bfe02190a4462484b8c147326438b6fc, type: 2}
+    - {fileID: 11400000, guid: 2b8c9b0393be53a40b6e08443286a9f5, type: 2}
   - cards:
-    - {fileID: 11400000, guid: bfe02190a4462484b8c147326438b6fc, type: 2}
+    - {fileID: 11400000, guid: 2caf7e9d55a11064a8eacf3f8f45d2c2, type: 2}
   - cards:
     - {fileID: 11400000, guid: 67635d0ced0aa5a44a4eb935dda18200, type: 2}

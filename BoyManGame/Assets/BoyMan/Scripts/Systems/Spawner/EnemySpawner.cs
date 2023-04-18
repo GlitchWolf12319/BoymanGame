@@ -41,6 +41,7 @@ public class EnemySpawner : MonoBehaviour
         if(player == null){
             player = GameObject.Find("Jane");
         }
+
         SpawnEnemies();
         tbm.StartCoroutine(tbm.EnlargeDisabledUI());
         tbm.SetTurnOrder();

@@ -22,8 +22,15 @@ public class FleeManager : MonoBehaviour
     }
 
     public IEnumerator Flee(){
-
+        TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
         dice.SetActive(true);
+        tbm.turns[tbm.turnCounter].GetComponent<CharTurn>().turnUI.SetActive(false);
+
+        for(int c = 0; c < tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().hand.Count; c++){
+            tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().hand[c].SetActive(false);
+        }
+
+
 
         for(int i = 0; i < 20; i++){
             int noRoll = Random.Range(1, 20);
@@ -38,15 +45,20 @@ public class FleeManager : MonoBehaviour
             Debug.Log("Pass");
             yield return new WaitForSeconds(1);
             dice.SetActive(false);
-            TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
             tbm.StartCoroutine(tbm.FleeBattle());
+            
         }
 
         if(roll + 1 < passRoll){
             Debug.Log("Fail");
             yield return new WaitForSeconds(1);
             dice.SetActive(false);
-            TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
+            tbm.turns[tbm.turnCounter].GetComponent<CharTurn>().turnUI.SetActive(true);
+
+            for(int c = 0; c < tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().hand.Count; c++){
+                tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().hand[c].SetActive(true);
+            }
+
             tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().ClearDeck();
             tbm.turns[tbm.turnCounter].EndTurnButton();
         }

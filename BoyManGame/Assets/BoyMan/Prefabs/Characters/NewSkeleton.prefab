@@ -505,8 +505,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.3, y: -9.4}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -6.7, y: -9.4}
+  m_SizeDelta: {x: 185.25, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2746500633032380557
 CanvasRenderer:
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 565b8b3c2dae61b43a6a449bf76a233a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c91379abb1ccb04a89acf68d31c0664, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -760,6 +760,8 @@ MonoBehaviour:
   poisonAmmount: 0
   chilledStack: 0
   invisibleStack: 0
+  WeakenStack: 0
+  poisonIcon: {fileID: 0}
 --- !u!114 &4416580390934823803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,8 +793,10 @@ MonoBehaviour:
   intentionIcon: {fileID: 2278796316279787544}
   damageAmmountText: {fileID: 7426606993792738863}
   swordIcon: {fileID: 21300000, guid: 8c14083f054bf5b46b7c255bf4f69315, type: 3}
-  blockIcon: {fileID: 21300000, guid: ab6e9dae5e1c376449ab2906da658436, type: 3}
-  igniteIcon: {fileID: 21300000, guid: 565b8b3c2dae61b43a6a449bf76a233a, type: 3}
+  blockIcon: {fileID: 21300000, guid: 41a67751c1fd3a249a32644887da6b32, type: 3}
+  igniteIcon: {fileID: 21300000, guid: 2c91379abb1ccb04a89acf68d31c0664, type: 3}
+  brokenShield: {fileID: 7131016473908368215, guid: 73b699b0cbdf2be4e9de82179be98832,
+    type: 3}
 --- !u!65 &4416580390934823802
 BoxCollider:
   m_ObjectHideFlags: 0

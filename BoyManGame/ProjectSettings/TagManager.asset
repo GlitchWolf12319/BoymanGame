@@ -15,6 +15,7 @@ TagManager:
   - TurnBanner
   - NoAPBubble
   - Obstacle
+  - Dice
   layers:
   - Default
   - TransparentFX

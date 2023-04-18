@@ -13,7 +13,11 @@ public class Movement : MonoBehaviour
     public AudioClip heal;
 
     void Start(){
-        playerAudio.enabled = true;
+
+        if(playerAudio != null){
+            playerAudio.enabled = true;
+        }
+        
     }
 
     void LateUpdate(){
@@ -28,14 +32,25 @@ public class Movement : MonoBehaviour
     void Move(){
         if(Input.GetKey(KeyCode.A)){
             transform.position += Vector3.left * speed * Time.deltaTime;
-            spriteRend.flipX = true;
-            anim.SetBool("isIdle", false);
 
+            if(spriteRend != null){
+                spriteRend.flipX = true;
+            }
+            
+
+
+            if(anim != null){
+                anim.SetBool("isIdle", false);
+            }
+            
+
+            if(playerAudio != null){
             playerAudio.clip = walking;
             playerAudio.loop = true;
             playerAudio.enabled = true;
             if(!playerAudio.isPlaying){
                 playerAudio.Play();
+            }
             }
             
             
@@ -44,35 +59,58 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.D)){
             transform.position += Vector3.right * speed * Time.deltaTime;
-            spriteRend.flipX = false;
-            anim.SetBool("isIdle", false);
 
-            playerAudio.clip = walking;
-            playerAudio.loop = true;
-            playerAudio.enabled = true;
-            if(!playerAudio.isPlaying){
-                playerAudio.Play();
+            if(spriteRend != null){
+                spriteRend.flipX = false;
             }
+
+            if(anim != null){
+                anim.SetBool("isIdle", false);
+            }
+
+
+            if(playerAudio != null){
+                playerAudio.clip = walking;
+                playerAudio.loop = true;
+                playerAudio.enabled = true;
+                if(!playerAudio.isPlaying){
+                    playerAudio.Play();
+                }
+            }
+            
             
         }
         
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)){
-            anim.SetBool("isIdle", true);
 
-            playerAudio.clip = null;
-            playerAudio.loop = false;
-            playerAudio.enabled = false;
-            playerAudio.Stop();
+            if(anim != null){
+                anim.SetBool("isIdle", true);
+            }
+            
+
+            if(playerAudio != null){
+                playerAudio.clip = null;
+                playerAudio.loop = false;
+                playerAudio.enabled = false;
+                playerAudio.Stop();
+            }
+            
             
         }
     }
 
     public void StopEverything(){
-        anim.SetBool("isIdle", true);
 
-            playerAudio.clip = null;
-            playerAudio.loop = false;
-            playerAudio.enabled = false;
-            playerAudio.Stop();
+            if(anim != null){
+                anim.SetBool("isIdle", true);
+            }
+            
+
+            if(playerAudio != null){
+                playerAudio.clip = null;
+                playerAudio.loop = false;
+                playerAudio.enabled = false;
+                playerAudio.Stop();
+            }
     }
 }

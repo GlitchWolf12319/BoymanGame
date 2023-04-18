@@ -105,6 +105,11 @@ public class Card : FindTargets
             //StartCoroutine(CameraAttack(target, false));
         }
 
+        if(card.ability[i].weaken != null){
+            Weaken(target, card.ability[i].weaken.WeakenStack);
+            //StartCoroutine(CameraAttack(target, false));
+        }
+
         if(card.ability[i].poisonEffect != null){
             Poison(target, card.ability[i].poisonEffect.poisonStack, card.ability[i].poisonEffect.poisonStack);
             //StartCoroutine(CameraAttack(target, false));
@@ -513,13 +518,29 @@ public class Card : FindTargets
     }
 
     public void DealDamage(GameObject target, int ammount){
-            target.GetComponent<CharacterController>().TakeDamage(ammount, "NormalDamage");
+        TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
+            if(tbm.turns[tbm.turnCounter].GetComponent<CharacterController>().hasWeaken()){
+                Debug.Log("Has Weaken");
+                float quat = ammount * 0.25f;
+                float newDamage = ammount - quat;
+                int intDamage = Mathf.RoundToInt(newDamage);
+                Debug.Log("Weaken Damage " + intDamage);
+
+                target.GetComponent<CharacterController>().TakeDamage(intDamage, "NormalDamage");    
+            }
+            else{
+                target.GetComponent<CharacterController>().TakeDamage(ammount, "NormalDamage");
+            }
     }
 
     void Ignite(GameObject target, int ammount, int stack){
 
             target.GetComponent<CharacterController>().igniteAmmount = ammount;
             target.GetComponent<CharacterController>().igniteStack += stack;
+    }
+
+    void Weaken(GameObject target, int stack){
+            target.GetComponent<CharacterController>().WeakenStack += stack;
     }
 
     void Poison(GameObject target, int ammount, int stack){

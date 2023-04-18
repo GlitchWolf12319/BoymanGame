@@ -106,7 +106,7 @@ public void OnButton1Click()
 
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
-                charController.Heal(B1_healAmount);
+                charController.AddToMaxHealth(1);
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 if(player != null){         
                     Movement[] move = FindObjectsOfType<Movement>();
@@ -188,7 +188,7 @@ public void OnButton1Click()
 
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
-                charController.Heal(B2_healAmount);
+                charController.AddToMaxHealth(1);
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 if(player != null){         
                     Movement[] move = FindObjectsOfType<Movement>();

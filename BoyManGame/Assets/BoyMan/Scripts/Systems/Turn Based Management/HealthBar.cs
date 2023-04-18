@@ -14,12 +14,11 @@ public class HealthBar : MonoBehaviour
     private float currentHealth;
 
     void Start(){
-        slider.maxValue = CS.MaxHealth;
         currentHealth = slider.value; // store the current health value
     }
 
     public void Update(){
-
+        slider.maxValue = CS.MaxHealth;
         newHealth = cc.health;
         HP.text = cc.health + " / " + cc.MaxHealth;
 

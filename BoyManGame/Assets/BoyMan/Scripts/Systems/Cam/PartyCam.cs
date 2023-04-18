@@ -2,14 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PartyCam : MonoBehaviour
+public class PartyCam : FindTargets
 {
     [SerializeField]private GameObject target;
     private Camera cam;
     private bool targetFound;
+    private TurnBaseManager tbm;
+
+
+    void Start(){
+        tbm = FindObjectOfType<TurnBaseManager>();
+    }
 
     void FindTarget(){
         target = GameObject.FindGameObjectWithTag("Player");
+
+
         cam = Camera.main;
 
         if(target != null){
@@ -17,7 +25,6 @@ public class PartyCam : MonoBehaviour
         }
         else{
             targetFound = false;
-            FindTarget();
         }
     }
 
@@ -25,12 +32,13 @@ public class PartyCam : MonoBehaviour
     void FixedUpdate(){
         if(target != null){
             if(targetFound){
-                transform.position = new Vector3(target.transform.position.x + 10, cam.transform.position.y, cam.transform.position.z);
+                if(!tbm.battleInProgress){
+                    transform.position = new Vector3(target.transform.position.x + 10, cam.transform.position.y, cam.transform.position.z);
+                }
             }
         }
         else{
             FindTarget();
-        }
-        
+        }   
     }
 }

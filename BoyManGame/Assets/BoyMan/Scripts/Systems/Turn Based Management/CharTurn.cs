@@ -28,6 +28,7 @@ public class CharTurn : EnemyAbility
     public Sprite swordIcon;
     public Sprite blockIcon;
     public Sprite igniteIcon;
+    public GameObject brokenShield;
 
     void Start(){
         
@@ -93,8 +94,15 @@ public class CharTurn : EnemyAbility
             
         }
 
+        
+
         if(characterType == CharacterType.Player){
             turnBanner.GetComponent<TurnBanner>().currentTurn = TurnBanner.Turn.Player;
+
+            if(transform.GetComponent<CharacterController>().guard > 0){
+                transform.GetComponent<CharacterController>().guard = 0;
+                Instantiate(brokenShield, transform.position, Quaternion.identity);
+            }
 
             if(transform.name.Contains("BoyMan")){
                 turnBanner.GetComponent<TurnBanner>().turnText.text = "BoyMan's Turn";
@@ -260,9 +268,10 @@ public class CharTurn : EnemyAbility
 
    public IEnumerator EnemyCameraAttack(){
         Vector3 ogPos = transform.position;
-        Camera cam = Camera.main;
+         Camera cam = Camera.main;
         cam.GetComponent<CameraZoom>().shouldZoomIn = true;
-        transform.DOMoveX(cam.GetComponent<CameraZoom>().target.position.x, 1);
+        //transform.DOMoveX(cam.GetComponent<CameraZoom>().target.position.x, 1);
+        transform.DOMoveX(cam.transform.position.x, 1);
         yield return new WaitForSeconds(2);
         cam.GetComponent<CameraZoom>().shouldZoomIn = false;
         transform.DOMove(ogPos, 1);

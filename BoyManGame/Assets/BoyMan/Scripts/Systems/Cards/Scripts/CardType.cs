@@ -18,5 +18,6 @@ public class CardType : ScriptableObject
     public DealPartyDamage dealPartyDamage;
     public HealParty healParty;
     public IgniteParty igniteParty;
+    public Weaken weaken;
     
 }

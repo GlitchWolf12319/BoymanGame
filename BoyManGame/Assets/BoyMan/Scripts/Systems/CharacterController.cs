@@ -26,6 +26,9 @@ public class CharacterController : FindTargets
     public int poisonAmmount;
     public int chilledStack;
     public int invisibleStack;
+    public int WeakenStack;
+
+    public GameObject poisonIcon;
     // Start is called before the first frame update
     void Awake()
     {
@@ -88,6 +91,7 @@ public class CharacterController : FindTargets
         Debug.Log("targets name " + transform.name + " targets guard before attack " + guard);
         //IF PLAYER HAS MORE GUARD THAN DAMAGE BEING TAKEN
         if(guard >= ammount){
+            Debug.Log("Enough Guard");
             guard -= ammount;
             if(guard <= 0){
                 guard = 0;
@@ -95,10 +99,15 @@ public class CharacterController : FindTargets
         }
 
         //IF PLAYER HAS LESS GUARD THAN DAMAGE BEING TAKEN
-        if(guard < ammount){
+        else if(guard < ammount){
+            Debug.Log("Not Enough Guard");
             int remainingDamage = ammount - guard;
             health -= remainingDamage;
             guard -= ammount;
+
+            if(guard <= 0){
+                guard = 0;
+            }
         }
         
         Debug.Log("targets guard after attack " + guard);
@@ -127,9 +136,6 @@ public class CharacterController : FindTargets
         else{
             ammount = ammount;
         }
-
-        
-        
     }
 
     public void Heal(int ammount){
@@ -137,6 +143,12 @@ public class CharacterController : FindTargets
         if(health >= MaxHealth){
             health = MaxHealth;
         }
+    }
+
+    public void AddToMaxHealth(int ammount){
+        CS.MaxHealth += 1;
+        MaxHealth = CS.MaxHealth;
+
     }
 
     public void GainGuard(int ammount){
@@ -271,6 +283,17 @@ public class CharacterController : FindTargets
         }
         else{
             invisibleStack = 0;
+            return false;
+        }
+    }
+
+    public bool hasWeaken(){
+        if(WeakenStack > 0){
+            WeakenStack--;
+            return true;
+        }
+        else{
+            WeakenStack = 0;
             return false;
         }
     }
