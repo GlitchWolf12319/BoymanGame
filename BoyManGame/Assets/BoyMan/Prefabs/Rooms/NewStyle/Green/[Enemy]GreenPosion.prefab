@@ -4616,10 +4616,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 0.48987055
-  - 0.48987055
-  - 0.48987055
-  - 98.53039
+  - 26.163866
+  - 32.44569
+  - 21.000948
+  - 20.389496
   spawnPosition: {fileID: 7838675766744144562}
   counterText: {fileID: 0}
   objectsToSpawn:

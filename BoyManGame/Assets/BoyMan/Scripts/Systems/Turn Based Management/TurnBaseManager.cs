@@ -134,6 +134,8 @@ public class TurnBaseManager : FindTargets
     public IEnumerator FleeBattle()
     {
 
+        turns.Clear();
+
         for (int e = 0; e < enemiesInBattle.Count; e++)
         {
             enemiesInBattle[e].transform.DOScale(new Vector3(0, 0, 0), 0.5f);
@@ -143,6 +145,7 @@ public class TurnBaseManager : FindTargets
 
         for (int h = 0; h < heroesInBattle.Count; h++)
         {
+            heroesInBattle[h].GetComponent<CharacterController>().health = heroesInBattle[h].GetComponent<CharacterController>().MaxHealth;
             heroesInBattle[h].GetComponent<CharTurn>().turnUI.SetActive(false);
             heroesInBattle[h].GetComponent<NewDeckDrawing>().ClearDeck();
             heroesInBattle[h].GetComponent<CharacterController>().guard = 0;

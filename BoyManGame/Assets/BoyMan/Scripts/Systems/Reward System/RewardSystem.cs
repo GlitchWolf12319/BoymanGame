@@ -51,6 +51,7 @@ public class RewardSystem : FindTargets
     public string currentClaimer;
     public Image tip;
     public int claimCounter;
+    public int partyClaimer;
     
 
 
@@ -105,6 +106,7 @@ public class RewardSystem : FindTargets
         bool findCasper = false;
 
         for(int i = 0; i < party.Count; i++){
+            partyClaimer++;
             if(party[i].name.Contains("BoyMan")){
                 findBoyman = true;
             }
@@ -138,7 +140,7 @@ public class RewardSystem : FindTargets
             GameObject.Find("BoyMan").GetComponent<CharacterController>().GiveCoins(gold1Ammount);
             panel1.transform.DOScale(new Vector3(0,0,0), 0.5f);
 
-            if(claimCounter == 4){
+            if(claimCounter == partyClaimer){
                 Leave();
             }
         }
@@ -158,7 +160,7 @@ public class RewardSystem : FindTargets
             GameObject.Find("Jane").GetComponent<CharacterController>().GiveCoins(gold2Ammount);
             panel2.transform.DOScale(new Vector3(0,0,0), 0.5f);
 
-            if(claimCounter == 4){
+            if(claimCounter == partyClaimer){
                 Leave();
             }
         }
@@ -178,7 +180,7 @@ public class RewardSystem : FindTargets
             GameObject.Find("Oslo").GetComponent<CharacterController>().GiveCoins(gold3Ammount);
             panel3.transform.DOScale(new Vector3(0,0,0), 0.5f);
 
-            if(claimCounter == 4){
+            if(claimCounter == partyClaimer){
                 Leave();
             }
         }
@@ -198,7 +200,7 @@ public class RewardSystem : FindTargets
             GameObject.Find("Casper").GetComponent<CharacterController>().GiveCoins(gold2Ammount);
             panel4.transform.DOScale(new Vector3(0,0,0), 0.5f);
 
-            if(claimCounter == 4){
+            if(claimCounter == partyClaimer){
                 Leave();
             }
         }
@@ -252,7 +254,7 @@ public class RewardSystem : FindTargets
         GameObject.Find(currentClaimer).GetComponent<NewDeckDrawing>().deck.Add(template);
         Canvas cardCanvas = GameObject.Find(currentClaimer).GetComponentInChildren<Canvas>();
 
-        if(claimCounter == 4){
+        if(claimCounter == partyClaimer){
             Leave();
         }
    }
@@ -290,7 +292,7 @@ public class RewardSystem : FindTargets
         }
         cardsChosen.Clear();
 
-        if(claimCounter == 4){
+        if(claimCounter == partyClaimer){
             Leave();
         }
    }

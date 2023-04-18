@@ -18,11 +18,23 @@ public class FleeManager : MonoBehaviour
     }
 
     public void FleeButton(){
-        StartCoroutine(Flee());
+        TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
+        int counter = 0;
+        for(int i = 0; i < tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().hand.Count; i++){
+            if(tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().hand[i].GetComponent<Card>().selected == true){
+                counter++;
+            }
+        }
+
+        if(counter == 0){
+            StartCoroutine(Flee());
+        }
+        
     }
 
     public IEnumerator Flee(){
         TurnBaseManager tbm = FindObjectOfType<TurnBaseManager>();
+        
         dice.SetActive(true);
         tbm.turns[tbm.turnCounter].GetComponent<CharTurn>().turnUI.SetActive(false);
 
@@ -40,6 +52,8 @@ public class FleeManager : MonoBehaviour
 
         int roll = Random.Range(1, 20);
         spriteRend.sprite = diceFaces[roll];
+
+
 
         if(roll + 1 >= passRoll){
             Debug.Log("Pass");
