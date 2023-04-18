@@ -46,17 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances:
-  - 0.48987055
-  - 0.48987055
-  - 0.48987055
-  - 98.53039
+  - 94.631676
+  - 5.368323
   spawnPosition: {fileID: 3524307217538343678}
   counterText: {fileID: 0}
   objectsToSpawn:
-  - {fileID: 0}
-  - {fileID: 4467797108200846306, guid: f43bf509af38d21438a0247d3c1e8635, type: 3}
-  - {fileID: 4467797108200846306, guid: 8b701a2f7209923498aba4edc2234c75, type: 3}
-  - {fileID: 4467797108200846306, guid: 3d8385c5e17b5814fb10050cb1a550c1, type: 3}
+  - {fileID: 7079613544434386798, guid: c522e6e1dfdd86c4b816ff243287fe69, type: 3}
+  - {fileID: 1982936497569849539}
 --- !u!65 &2434917573308210784
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -628,6 +624,7 @@ Transform:
   - {fileID: 2694943874183496981}
   - {fileID: 6647831649600064363}
   - {fileID: 1264712499940225630}
+  - {fileID: 3737634947532021251}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3706,6 +3703,65 @@ Transform:
   m_Father: {fileID: 1982936497569849538}
   m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6280803144451687325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3737634947532021251}
+  - component: {fileID: 802724643199589597}
+  - component: {fileID: 2034782019661001141}
+  m_Layer: 0
+  m_Name: DestroyArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3737634947532021251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280803144451687325}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 121.6, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 47.35101, z: 42.409}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1982936497569849538}
+  m_RootOrder: 50
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &802724643199589597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280803144451687325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bf60ffc6a3ed147811773e38901e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDestroy: {fileID: 1982936497569849539}
+--- !u!65 &2034782019661001141
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280803144451687325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8944653106717694824
 GameObject:
   m_ObjectHideFlags: 0
