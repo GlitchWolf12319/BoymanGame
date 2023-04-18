@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Fury Whack
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Furry Whack
+  APCost: 2
+  Description: Deal 12 Damage
+  Border: {fileID: 21300000, guid: 3fef76a3a2db176419949ed5572bf567, type: 3}
+  Artwork: {fileID: 21300000, guid: 8847a898aac4a194b92a702f99ef52b9, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 4c1ef4e98e2d8934e829fb2aa4e751d5, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

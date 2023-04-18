@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Cursed Card
   APCost: 2
-  Description: Apply 2 Chilled
-  Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: 2168e7b6766b6c443bd0c0890047e304, type: 3}
-  ability:
-  - {fileID: 11400000, guid: 70ab63e233547e4418340239c652496b, type: 2}
-  attackMethod: 1
+  Description: Weakens
+  Border: {fileID: 21300000, guid: d0d0ebc5842f96a46aefb70a85f44555, type: 3}
+  Artwork: {fileID: 21300000, guid: e09adf585f32c20409f8b92b7f6f176d, type: 3}
+  ability: []
+  attackMethod: 0
   AttackEffect: {fileID: 0}

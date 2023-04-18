@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Fireball
   APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
+  Description: Apply 5 Ignite
+  Border: {fileID: 21300000, guid: 837ae68648b649d4c8e6c09fa383349c, type: 3}
+  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 8be0084b65467a548bf8c835a918840a, type: 2}
   attackMethod: 0
   AttackEffect: {fileID: 0}

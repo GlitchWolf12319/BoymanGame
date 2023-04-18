@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Sheid up
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
+  Name: Sheild up
+  APCost: 2
+  Description: Gain 8 Guard
+  Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
+  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 5885ba561144e7e42af4b788ca7f3649, type: 2}
   attackMethod: 0
   AttackEffect: {fileID: 0}

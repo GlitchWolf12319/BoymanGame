@@ -16,7 +16,7 @@ MonoBehaviour:
   APCost: 4
   Description: Deal 10 Damage, Apply 5 Ignite
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: fa7d2a90b6fd32349a7da4e1f54ed06a, type: 3}
+  Artwork: {fileID: 21300000, guid: 59e629109c3740146ac7f445e05a96d9, type: 3}
   ability:
   - {fileID: 11400000, guid: 4f9f566a931bf4f4b836397bbecee9a2, type: 2}
   - {fileID: 11400000, guid: ec128e45109f7f74bb1335f8fe5922b1, type: 2}

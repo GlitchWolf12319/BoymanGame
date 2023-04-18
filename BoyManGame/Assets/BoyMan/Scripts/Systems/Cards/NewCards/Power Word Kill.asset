@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Power Word Kill
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Power word Kill
+  APCost: 4
+  Description: Instant kill and Banish card
+  Border: {fileID: 21300000, guid: 376be1d6b1223bb4fbb84bd61d341981, type: 3}
+  Artwork: {fileID: 21300000, guid: 323c1336a565ce74dbe6c266001b945c, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 6e668dd4ef8d800449437e3224434c8e, type: 2}
+  - {fileID: 0}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

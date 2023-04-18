@@ -18,7 +18,7 @@ MonoBehaviour:
   Border: {fileID: 21300000, guid: 09ee682eeb36d8b4b887591a478331df, type: 3}
   Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
   ability:
-  - {fileID: 11400000, guid: 82a20c9561ef3d34594d03403351cbd0, type: 2}
+  - {fileID: 11400000, guid: d66b05edffb39f24296df3f2a11004f4, type: 2}
   attackMethod: 1
   AttackEffect: {fileID: 4704934171718711879, guid: da3b2eee96de6a84aa3d2821e153d898,
     type: 3}

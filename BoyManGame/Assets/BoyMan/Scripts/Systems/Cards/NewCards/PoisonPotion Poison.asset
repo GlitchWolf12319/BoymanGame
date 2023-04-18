@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PoisonPotion Poison
   m_EditorClassIdentifier: 
   dealDamage: {fileID: 0}
-  poisonEffect: {fileID: 0}
+  poisonEffect: {fileID: 11400000}
   igniteEffect: {fileID: 0}
   pull: {fileID: 0}
   push: {fileID: 0}

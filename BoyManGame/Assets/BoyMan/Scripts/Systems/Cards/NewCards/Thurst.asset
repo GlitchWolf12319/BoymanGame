@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Thurst
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Thurst
+  APCost: 4
+  Description: deal 25 damage and apply 2 weaken
+  Border: {fileID: 21300000, guid: 81685709bba45c547a010868ce5949a2, type: 3}
+  Artwork: {fileID: 21300000, guid: 536363ee035ddf54dbeae8e6cd7c3743, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 9148d3ce89d6a0c4590bc5ad89f2c32d, type: 2}
+  - {fileID: 11400000, guid: 29f482877390dac4f8e5cfb6894035f9, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Poisoned kiss
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Poisined Kiss
+  APCost: 2
+  Description: Apply 2 poison
+  Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
+  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 4f63267cee831f14d9865ff72f92798b, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

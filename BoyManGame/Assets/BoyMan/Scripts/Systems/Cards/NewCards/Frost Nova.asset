@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Frost Nova
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Frost Nova
+  APCost: 4
+  Description: 'Deal 8 Damage to 1 enemy the 5 Damage to all enemies '
+  Border: {fileID: 21300000, guid: 376be1d6b1223bb4fbb84bd61d341981, type: 3}
+  Artwork: {fileID: 21300000, guid: 7c9d11b9ae041a04bbe3e0ae86bda613, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 9d2dbfdad98b6c741a1d3ec3d7dde498, type: 2}
+  - {fileID: 11400000, guid: 767e05b8b53897b429118f3ab69ccbcb, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

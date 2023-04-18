@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Regeneration
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
+  Name: Regeneration
+  APCost: 3
+  Description: All Party members gain 25 HP
+  Border: {fileID: 21300000, guid: 08db8228854e45140b068b958f332aa2, type: 3}
+  Artwork: {fileID: 21300000, guid: 83d4c5f543ad2b84b8c136dc6a229fed, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 2676176d8c506de49a3624d8830e5873, type: 2}
   attackMethod: 0
   AttackEffect: {fileID: 0}

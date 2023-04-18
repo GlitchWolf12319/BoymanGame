@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Retreat
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
+  Name: Retreat
+  APCost: 4
+  Description: Gain 20 Guard
+  Border: {fileID: 21300000, guid: 3c237150503df9342a1c8ae831f74397, type: 3}
+  Artwork: {fileID: 21300000, guid: cd58ec7eff0999e4eb2a16800abb4295, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 8c9beed93b3b3e142a0f6820003df34f, type: 2}
   attackMethod: 0
   AttackEffect: {fileID: 0}

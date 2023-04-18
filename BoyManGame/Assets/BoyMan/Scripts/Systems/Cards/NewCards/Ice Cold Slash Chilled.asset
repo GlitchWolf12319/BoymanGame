@@ -20,10 +20,10 @@ MonoBehaviour:
   retreat: {fileID: 0}
   guard: {fileID: 0}
   heal: {fileID: 0}
-  chilled: {fileID: 0}
+  chilled: {fileID: 11400000}
   invisible: {fileID: 0}
   dealPartyDamage: {fileID: 0}
   healParty: {fileID: 0}
   igniteParty: {fileID: 0}
   weaken: {fileID: 0}
-  chilledStack: 0
+  chilledStack: 2

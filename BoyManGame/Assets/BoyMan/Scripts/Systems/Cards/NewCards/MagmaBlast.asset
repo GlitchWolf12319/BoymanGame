@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: MagmaBlast
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Magma Blast
+  APCost: 1
+  Description: Apply 1 ignite to all enemies
+  Border: {fileID: 21300000, guid: 837ae68648b649d4c8e6c09fa383349c, type: 3}
+  Artwork: {fileID: 21300000, guid: 6d85671dcc6e2bd4db9cebd887686830, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 40d2bddf357e1b1459c8fe560cd53ce1, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

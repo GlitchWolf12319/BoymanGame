@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Blue Steel
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
+  Name: Blue Steel
+  APCost: 3
+  Description: 'Weakens all enemies '
+  Border: {fileID: 21300000, guid: 376be1d6b1223bb4fbb84bd61d341981, type: 3}
+  Artwork: {fileID: 21300000, guid: 985315a88647a2547a168d98c4be74ae, type: 3}
+  ability:
+  - {fileID: 0}
   attackMethod: 0
   AttackEffect: {fileID: 0}

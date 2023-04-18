@@ -16,7 +16,7 @@ MonoBehaviour:
   APCost: 1
   Description: Deal 10 Damage, Gain 10 HP
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: b91a0a3b107d56f4f94db587deb4c627, type: 3}
+  Artwork: {fileID: 21300000, guid: 8905fe1f10a9cff47b5a0aaba9dc39c4, type: 3}
   ability:
   - {fileID: 11400000, guid: 6f201eb7cf506b3448020a835919d585, type: 2}
   - {fileID: 11400000, guid: ff8759b8b6994474a8c2edc43dae1fa0, type: 2}

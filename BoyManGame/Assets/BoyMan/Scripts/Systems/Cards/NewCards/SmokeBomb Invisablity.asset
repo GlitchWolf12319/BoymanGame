@@ -21,7 +21,7 @@ MonoBehaviour:
   guard: {fileID: 0}
   heal: {fileID: 0}
   chilled: {fileID: 0}
-  invisible: {fileID: 0}
+  invisible: {fileID: 11400000}
   dealPartyDamage: {fileID: 0}
   healParty: {fileID: 0}
   igniteParty: {fileID: 0}

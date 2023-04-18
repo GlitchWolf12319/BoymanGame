@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Heavy Attack
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Heavy Attack
+  APCost: 1
+  Description: Deal 6 damage
+  Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
+  Artwork: {fileID: 21300000, guid: 191cb544253137a48b692b0f446616eb, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 21d80730465170849962dcff593874df, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

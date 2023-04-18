@@ -18,7 +18,7 @@ MonoBehaviour:
   pull: {fileID: 0}
   push: {fileID: 0}
   retreat: {fileID: 0}
-  guard: {fileID: 0}
+  guard: {fileID: 11400000}
   heal: {fileID: 0}
   chilled: {fileID: 0}
   invisible: {fileID: 0}

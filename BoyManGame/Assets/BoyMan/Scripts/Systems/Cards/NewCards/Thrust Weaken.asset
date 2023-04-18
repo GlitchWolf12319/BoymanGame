@@ -25,5 +25,5 @@ MonoBehaviour:
   dealPartyDamage: {fileID: 0}
   healParty: {fileID: 0}
   igniteParty: {fileID: 0}
-  weaken: {fileID: 0}
-  WeakenStack: 0
+  weaken: {fileID: 11400000}
+  WeakenStack: 2

@@ -19,7 +19,7 @@ MonoBehaviour:
   push: {fileID: 0}
   retreat: {fileID: 0}
   guard: {fileID: 0}
-  heal: {fileID: 0}
+  heal: {fileID: 11400000}
   chilled: {fileID: 0}
   invisible: {fileID: 0}
   dealPartyDamage: {fileID: 0}

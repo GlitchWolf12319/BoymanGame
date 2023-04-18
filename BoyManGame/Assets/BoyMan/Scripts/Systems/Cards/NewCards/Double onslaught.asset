@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Double onslaught
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
+  Name: Double Onslaught
+  APCost: 2
+  Description: Deal 4 damge to all enemies
+  Border: {fileID: 21300000, guid: 81685709bba45c547a010868ce5949a2, type: 3}
+  Artwork: {fileID: 21300000, guid: 00790e55666961b4795d2b973f129070, type: 3}
+  ability:
+  - {fileID: 11400000, guid: c8d7410ac1448fc43a876f86d92a0c5a, type: 2}
   attackMethod: 0
   AttackEffect: {fileID: 0}

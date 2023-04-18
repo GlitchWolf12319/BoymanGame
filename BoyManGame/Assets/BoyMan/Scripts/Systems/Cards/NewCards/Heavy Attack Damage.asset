@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b8df4b270eb584b823d1e8e87d7550, type: 3}
   m_Name: Heavy Attack Damage
   m_EditorClassIdentifier: 
-  dealDamage: {fileID: 0}
+  dealDamage: {fileID: 11400000}
   poisonEffect: {fileID: 0}
   igniteEffect: {fileID: 0}
   pull: {fileID: 0}

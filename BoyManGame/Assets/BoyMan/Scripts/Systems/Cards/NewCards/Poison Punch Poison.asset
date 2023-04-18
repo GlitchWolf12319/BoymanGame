@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Poison Punch Poison
   m_EditorClassIdentifier: 
   dealDamage: {fileID: 0}
-  poisonEffect: {fileID: 0}
+  poisonEffect: {fileID: 11400000}
   igniteEffect: {fileID: 0}
   pull: {fileID: 0}
   push: {fileID: 0}
@@ -26,5 +26,5 @@ MonoBehaviour:
   healParty: {fileID: 0}
   igniteParty: {fileID: 0}
   weaken: {fileID: 0}
-  poisonStack: 0
-  poisonAmmount: 0
+  poisonStack: 1
+  poisonAmmount: 5

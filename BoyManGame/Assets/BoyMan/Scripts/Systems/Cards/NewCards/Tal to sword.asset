@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Tal to sword
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
+  Name: Talk To Sword
+  APCost: 2
+  Description: Gain 15 Guard
+  Border: {fileID: 21300000, guid: 81685709bba45c547a010868ce5949a2, type: 3}
+  Artwork: {fileID: 21300000, guid: 43fa021c9df9e7b41a5c70c646e257aa, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 7c186b93261fc194d872ba1445694afc, type: 2}
   attackMethod: 0
   AttackEffect: {fileID: 0}

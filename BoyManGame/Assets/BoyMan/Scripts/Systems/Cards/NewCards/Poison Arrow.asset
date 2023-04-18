@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Poison Arrow
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: Poison Arrow
+  APCost: 2
+  Description: Deal 10 Damage, Apply 1 poison
+  Border: {fileID: 21300000, guid: 09ee682eeb36d8b4b887591a478331df, type: 3}
+  Artwork: {fileID: 21300000, guid: 11abffe145e2134428e9a496c58a61ce, type: 3}
+  ability:
+  - {fileID: 11400000, guid: 35d1df8f7bb667547918704510105960, type: 2}
+  - {fileID: 11400000, guid: 8d27b18a7cdf42a47b30b8665952486d, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}

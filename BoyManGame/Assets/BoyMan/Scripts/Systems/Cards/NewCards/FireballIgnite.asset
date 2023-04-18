@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dealDamage: {fileID: 0}
   poisonEffect: {fileID: 0}
-  igniteEffect: {fileID: 0}
+  igniteEffect: {fileID: 11400000}
   pull: {fileID: 0}
   push: {fileID: 0}
   retreat: {fileID: 0}
@@ -26,5 +26,5 @@ MonoBehaviour:
   healParty: {fileID: 0}
   igniteParty: {fileID: 0}
   weaken: {fileID: 0}
-  IgniteStack: 0
-  IgniteAmmount: 0
+  IgniteStack: 5
+  IgniteAmmount: 5

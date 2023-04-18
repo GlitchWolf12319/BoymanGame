@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: PoisonPunch
   m_EditorClassIdentifier: 
-  Name: 
-  APCost: 0
-  Description: 
-  Border: {fileID: 0}
-  Artwork: {fileID: 0}
-  ability: []
-  attackMethod: 0
+  Name: PoisonPunch
+  APCost: 1
+  Description: Apply 1 Poison
+  Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
+  Artwork: {fileID: 21300000, guid: e314c3269baa21b4c91c0d7e6b0f97ab, type: 3}
+  ability:
+  - {fileID: 11400000, guid: d45cd16fa9411a84d84c47dc666f4736, type: 2}
+  attackMethod: 1
   AttackEffect: {fileID: 0}
