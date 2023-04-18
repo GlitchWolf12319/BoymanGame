@@ -58,8 +58,7 @@ public class Card : FindTargets
     public Color cantUseColor;
     public bool canSelect;
     public bool disableHovering;
-
-
+    public GameObject descriptionPanel;
 
     public void CollectTarget(){
         targets = FindEnemies();
@@ -401,6 +400,8 @@ public class Card : FindTargets
     public void Hover(){
         if(!Drag && canHover && !Arrow && !disableHovering){
 
+        descriptionPanel.SetActive(true);
+
         NewDeckDrawing dd = caster.GetComponent<NewDeckDrawing>();
         onHover = true;
 
@@ -469,6 +470,7 @@ public class Card : FindTargets
 
     public void NoHover(){
         if(!Drag && canHover && !Arrow && !disableHovering){
+        descriptionPanel.SetActive(false);
         onHover = false;
         transform.DOScale(new Vector3(0.85f, 0.85f, 0.85f), 0.5f);
         transform.DOMove(originalPosition, 0.5f);
