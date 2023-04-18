@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b8df4b270eb584b823d1e8e87d7550, type: 3}
+  m_Name: Frost Nova Damage
+  m_EditorClassIdentifier: 
+  dealDamage: {fileID: 0}
+  poisonEffect: {fileID: 0}
+  igniteEffect: {fileID: 0}
+  pull: {fileID: 0}
+  push: {fileID: 0}
+  retreat: {fileID: 0}
+  guard: {fileID: 0}
+  heal: {fileID: 0}
+  chilled: {fileID: 0}
+  invisible: {fileID: 0}
+  dealPartyDamage: {fileID: 0}
+  healParty: {fileID: 0}
+  igniteParty: {fileID: 0}
+  weaken: {fileID: 0}
+  damageAmmount: 0

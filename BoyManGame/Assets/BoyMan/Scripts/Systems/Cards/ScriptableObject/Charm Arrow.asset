@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Charm Arrow
   APCost: 0
   Description: Deal 2 Damage
-  Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
+  Border: {fileID: 21300000, guid: 5c1982a5077342449b8dbc48ecff9089, type: 3}
   Artwork: {fileID: 21300000, guid: 2b3a693c380ba0346a1f1e359334db31, type: 3}
   ability:
   - {fileID: 11400000, guid: 36aa3e068cc5d5543a6f4663bbd5a9e7, type: 2}

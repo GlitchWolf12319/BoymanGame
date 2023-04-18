@@ -928,6 +928,7 @@ MonoBehaviour:
   swordIcon: {fileID: 0}
   blockIcon: {fileID: 0}
   igniteIcon: {fileID: 0}
+  brokenShield: {fileID: 0}
 --- !u!114 &3557552877303968079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,6 +958,8 @@ MonoBehaviour:
   poisonAmmount: 0
   chilledStack: 0
   invisibleStack: 0
+  WeakenStack: 0
+  poisonIcon: {fileID: 0}
 --- !u!114 &2146461390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,11 +976,16 @@ MonoBehaviour:
     prefab: {fileID: 4911525628652309556, guid: 216e948f7e015ae43b414cb85579d6a7,
       type: 3}
     deck:
-    - {fileID: 11400000, guid: c35cafcfd4ad02d48b4c7ee52a920b2f, type: 2}
-    - {fileID: 11400000, guid: 7791b98272bc6e14685feb4b1f0a33d2, type: 2}
-    - {fileID: 11400000, guid: c35cafcfd4ad02d48b4c7ee52a920b2f, type: 2}
-    - {fileID: 11400000, guid: 7791b98272bc6e14685feb4b1f0a33d2, type: 2}
-    - {fileID: 11400000, guid: c35cafcfd4ad02d48b4c7ee52a920b2f, type: 2}
+    - {fileID: 11400000, guid: 9533a188e61ec9a4d8b748e51306dfcd, type: 2}
+    - {fileID: 11400000, guid: 9533a188e61ec9a4d8b748e51306dfcd, type: 2}
+    - {fileID: 11400000, guid: 9533a188e61ec9a4d8b748e51306dfcd, type: 2}
+    - {fileID: 11400000, guid: 8b61c147b5b243a4ab90931502822f7c, type: 2}
+    - {fileID: 11400000, guid: 8b61c147b5b243a4ab90931502822f7c, type: 2}
+    - {fileID: 11400000, guid: d6574e0a79f0eaa4687a5152f0d16421, type: 2}
+    - {fileID: 11400000, guid: d6574e0a79f0eaa4687a5152f0d16421, type: 2}
+    - {fileID: 11400000, guid: 1c41f6daaed239247ab56cf699bb4b5d, type: 2}
+    - {fileID: 11400000, guid: 23a0c96e3242fd24d9dbc37fcb088d26, type: 2}
+    - {fileID: 11400000, guid: 9533a188e61ec9a4d8b748e51306dfcd, type: 2}
   deck: []
   hand: []
   discardPile: []

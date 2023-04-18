@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
+  m_Name: Blinding
+  m_EditorClassIdentifier: 
+  Name: Blinding
+  APCost: 3
+  Description: Apply 5 Ignite to all enemies and Gain 10 Guard
+  Border: {fileID: 21300000, guid: d3886f257fc1f5640b15462909ece8d3, type: 3}
+  Artwork: {fileID: 21300000, guid: 1cc657a8af1470a4eb0a4dd0253bc670, type: 3}
+  ability:
+  - {fileID: 11400000, guid: df03f0f27c18c5d4da726711adacc87d, type: 2}
+  - {fileID: 11400000, guid: 2fa38bd7846022d40a1481bf30172645, type: 2}
+  attackMethod: 0
+  AttackEffect: {fileID: 2159355840507099046, guid: b5deb1ba7f4fb664094ac086c7e7cecb,
+    type: 3}

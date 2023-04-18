@@ -627,6 +627,7 @@ MonoBehaviour:
   swordIcon: {fileID: 0}
   blockIcon: {fileID: 0}
   igniteIcon: {fileID: 0}
+  brokenShield: {fileID: 0}
 --- !u!114 &6051680023833256154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +657,8 @@ MonoBehaviour:
   poisonAmmount: 0
   chilledStack: 0
   invisibleStack: 0
+  WeakenStack: 0
+  poisonIcon: {fileID: 0}
 --- !u!114 &7108111317042984795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,16 +675,16 @@ MonoBehaviour:
     prefab: {fileID: 4911525628652309556, guid: 216e948f7e015ae43b414cb85579d6a7,
       type: 3}
     deck:
-    - {fileID: 11400000, guid: 9ef38f99b02bbdb4280efe1cf92bd39b, type: 2}
-    - {fileID: 11400000, guid: e0f1ed15d028a8e4ea74f615921860ce, type: 2}
-    - {fileID: 11400000, guid: 253ba8693660bc54097254626439e25d, type: 2}
-    - {fileID: 11400000, guid: 2defff1f21ed9f04fbfc8d08c6723ee5, type: 2}
-    - {fileID: 11400000, guid: 2defff1f21ed9f04fbfc8d08c6723ee5, type: 2}
-    - {fileID: 11400000, guid: 75e3c86e9e569234f87d9cd90c937494, type: 2}
-    - {fileID: 11400000, guid: 1c3d9a0e6a55bd24f97c7d629b2acbc4, type: 2}
-    - {fileID: 11400000, guid: 1c3d9a0e6a55bd24f97c7d629b2acbc4, type: 2}
-    - {fileID: 11400000, guid: c35cafcfd4ad02d48b4c7ee52a920b2f, type: 2}
-    - {fileID: 11400000, guid: c35cafcfd4ad02d48b4c7ee52a920b2f, type: 2}
+    - {fileID: 11400000, guid: 7f0ca63762a6a20488adfd5eb01adb6a, type: 2}
+    - {fileID: 11400000, guid: 7f0ca63762a6a20488adfd5eb01adb6a, type: 2}
+    - {fileID: 11400000, guid: 23b6a6c3ff60c7e42bc8d14819e68f3a, type: 2}
+    - {fileID: 11400000, guid: 23b6a6c3ff60c7e42bc8d14819e68f3a, type: 2}
+    - {fileID: 11400000, guid: 690030c4553938348aa9d85a7de3afda, type: 2}
+    - {fileID: 11400000, guid: 690030c4553938348aa9d85a7de3afda, type: 2}
+    - {fileID: 11400000, guid: 29909b3bf9517cf4ea105e43974b18f4, type: 2}
+    - {fileID: 11400000, guid: 29909b3bf9517cf4ea105e43974b18f4, type: 2}
+    - {fileID: 11400000, guid: c6b1c04f8dea564449b11fe154f6efd5, type: 2}
+    - {fileID: 11400000, guid: 29909b3bf9517cf4ea105e43974b18f4, type: 2}
   deck: []
   hand: []
   discardPile: []

@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Blinding
   APCost: 3
   Description: Apply 5 Ignite to all enemies and Gain 10 Guard
-  Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
-  Artwork: {fileID: 21300000, guid: 53b9f221ef6083745baf23a18ba35091, type: 3}
+  Border: {fileID: 21300000, guid: d3886f257fc1f5640b15462909ece8d3, type: 3}
+  Artwork: {fileID: 21300000, guid: 1cc657a8af1470a4eb0a4dd0253bc670, type: 3}
   ability:
   - {fileID: 11400000, guid: c0a1ab72eab662f4c8f8611ce09b3e48, type: 2}
   - {fileID: 11400000, guid: d368d44c01b42934d8f00aaa294fa5f5, type: 2}
