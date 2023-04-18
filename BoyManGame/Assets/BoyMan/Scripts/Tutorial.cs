@@ -8,6 +8,7 @@ public class Tutorial : MonoBehaviour
     public Image imageComponent;
     public Sprite[] imageArray;
     public bool TutorialStartBool;
+ 
 
 
     private int currentIndex = 0;
@@ -15,10 +16,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         imageComponent.enabled = false;
-
-
-
-
+   
 
     }
     // Update is called once per frame
@@ -39,7 +37,7 @@ public class Tutorial : MonoBehaviour
 
    private IEnumerator WaitForTwoSeconds()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
 
             TutorialStartBool = true;
     }
