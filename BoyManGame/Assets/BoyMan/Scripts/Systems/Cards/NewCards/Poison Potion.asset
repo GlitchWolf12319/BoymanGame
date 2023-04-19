@@ -16,7 +16,7 @@ MonoBehaviour:
   APCost: 3
   Description: Apply 3 Poison
   Border: {fileID: 21300000, guid: 81c6ecf37773599488ce334be01e2f84, type: 3}
-  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  Artwork: {fileID: 21300000, guid: 554ea313da0ef7b4fa4c3dc5f3a78ab2, type: 3}
   ability:
   - {fileID: 11400000, guid: 799f84b11f76289489599505a422bf05, type: 2}
   attackMethod: 1

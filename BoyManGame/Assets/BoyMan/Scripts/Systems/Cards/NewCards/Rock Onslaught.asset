@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Rock On Slaught
   APCost: 3
-  Description: Deal 12 Damage
+  Description: Deal 7 Damage
   Border: {fileID: 21300000, guid: d0d0ebc5842f96a46aefb70a85f44555, type: 3}
-  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  Artwork: {fileID: 21300000, guid: 3de0f25043650504fa898c5de5e9faac, type: 3}
   ability:
   - {fileID: 11400000, guid: c757cf23274f5c34494c75fda508c551, type: 2}
   attackMethod: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heavy Attack
   m_EditorClassIdentifier: 
   Name: Heavy Attack
-  APCost: 1
+  APCost: 2
   Description: Deal 6 damage
   Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
   Artwork: {fileID: 21300000, guid: 191cb544253137a48b692b0f446616eb, type: 3}

@@ -53,7 +53,7 @@ public class AbilityDescriptionPanel : MonoBehaviour
         if(card.ability[0].invisible != null){
             Title.color = Color.yellow;
            Title.text = "Invisible";
-           Description.text = "At the End of a Invisible players turn, they go invisible, at the start of a invisible players turn the invisible stack decreases by 1";
+           Description.text = "Unable to be targeted, at the start of a invisible players turn the invisible stack decreases by 1";
         }
 
         if(card.ability[0].retreat != null){

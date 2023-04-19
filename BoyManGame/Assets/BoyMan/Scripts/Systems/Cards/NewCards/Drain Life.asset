@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Drain Life
   m_EditorClassIdentifier: 
   Name: Drain Life
-  APCost: 1
+  APCost: 3
   Description: Deal 10 damage get 10 HP
   Border: {fileID: 21300000, guid: 5c1982a5077342449b8dbc48ecff9089, type: 3}
   Artwork: {fileID: 21300000, guid: a9c09528bcf719a42a3a9d8d40bc36cb, type: 3}

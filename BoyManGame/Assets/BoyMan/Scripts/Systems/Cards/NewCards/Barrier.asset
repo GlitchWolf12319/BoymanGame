@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Barrier
   APCost: 2
-  Description: Gain 10 Guard
+  Description: Gain 4 Guard
   Border: {fileID: 21300000, guid: d3886f257fc1f5640b15462909ece8d3, type: 3}
   Artwork: {fileID: 21300000, guid: 4ef6b83dab220f44785fecfa599835bf, type: 3}
   ability:

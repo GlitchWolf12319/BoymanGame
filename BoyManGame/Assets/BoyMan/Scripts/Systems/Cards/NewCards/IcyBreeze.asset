@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: IcyBreeze
   APCost: 3
-  Description: Apply 3 Chilled
+  Description: Deal 7 damage
   Border: {fileID: 21300000, guid: 81c6ecf37773599488ce334be01e2f84, type: 3}
   Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
   ability:
-  - {fileID: 11400000, guid: e1851989abe49d64c8123679c7205f2f, type: 2}
+  - {fileID: 11400000, guid: 95b9d63df2bed6e43853f4d2cfcd4cf5, type: 2}
   attackMethod: 1
   AttackEffect: {fileID: 0}

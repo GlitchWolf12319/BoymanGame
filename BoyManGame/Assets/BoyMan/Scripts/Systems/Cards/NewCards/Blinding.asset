@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Blinding
   APCost: 3
-  Description: Apply 5 Ignite to all enemies and Gain 10 Guard
+  Description: Apply 5 Ignite to all enemies and Gain 2 Guard
   Border: {fileID: 21300000, guid: d3886f257fc1f5640b15462909ece8d3, type: 3}
   Artwork: {fileID: 21300000, guid: 1cc657a8af1470a4eb0a4dd0253bc670, type: 3}
   ability:

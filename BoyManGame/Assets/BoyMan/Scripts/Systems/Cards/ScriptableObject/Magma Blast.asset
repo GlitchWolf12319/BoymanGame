@@ -19,6 +19,6 @@ MonoBehaviour:
   Artwork: {fileID: 21300000, guid: 900620b04f72ab94ebcc479f5e75dbae, type: 3}
   ability:
   - {fileID: 11400000, guid: 7d50e39b77ac84b47bd35b4ac09c3017, type: 2}
-  attackMethod: 1
+  attackMethod: 0
   AttackEffect: {fileID: 2159355840507099046, guid: b5deb1ba7f4fb664094ac086c7e7cecb,
     type: 3}

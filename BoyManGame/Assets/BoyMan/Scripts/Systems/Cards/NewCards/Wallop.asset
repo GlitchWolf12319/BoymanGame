@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wallop
   APCost: 2
-  Description: Deal 15 Damage
+  Description: Deal 5 Damage
   Border: {fileID: 21300000, guid: 357f975b897c7214e8d16c8ea4323563, type: 3}
   Artwork: {fileID: 21300000, guid: d061cf1ac0d6a4b4daa35a7536fdc5b0, type: 3}
   ability:

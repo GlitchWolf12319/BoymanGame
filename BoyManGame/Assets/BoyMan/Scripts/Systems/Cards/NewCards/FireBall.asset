@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: 
   Name: Fireball
-  APCost: 0
+  APCost: 2
   Description: Apply 5 Ignite
   Border: {fileID: 21300000, guid: 837ae68648b649d4c8e6c09fa383349c, type: 3}
-  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  Artwork: {fileID: 21300000, guid: 8334e3f2c47a532408b3e9b60037296c, type: 3}
   ability:
   - {fileID: 11400000, guid: 8be0084b65467a548bf8c835a918840a, type: 2}
   attackMethod: 0

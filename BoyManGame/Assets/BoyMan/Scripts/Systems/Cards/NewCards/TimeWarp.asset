@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Time Warp
   APCost: 4
-  Description: Deal 20 Damage
+  Description: Deal 12 Damage
   Border: {fileID: 21300000, guid: 8c153263532e78040bba7f15915c764c, type: 3}
   Artwork: {fileID: 21300000, guid: b05534d07d07139408f7dfa02d68a112, type: 3}
   ability:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Charge Melee Attack
   m_EditorClassIdentifier: 
   Name: Charge Melee Attack
-  APCost: 2
+  APCost: 3
   Description: Dela 10 Damage
   Border: {fileID: 21300000, guid: 81c6ecf37773599488ce334be01e2f84, type: 3}
   Artwork: {fileID: 21300000, guid: 76d8e3e0b7e8ff1458d1cda4674a1a08, type: 3}

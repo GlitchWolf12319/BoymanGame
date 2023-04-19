@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Stealth
   APCost: 1
-  Description: Gain 2 invisablity
+  Description: Gain 2 invisibility
   Border: {fileID: 21300000, guid: ffee356255a4d7e4483074b289386faf, type: 3}
   Artwork: {fileID: 21300000, guid: 673de0b126a2f5a4ab1478fb37993a89, type: 3}
   ability:

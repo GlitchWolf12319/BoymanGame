@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Parry
   APCost: 3
-  Description: Gain 10 Guard
+  Description: Gain 2 Guard
   Border: {fileID: 21300000, guid: d3886f257fc1f5640b15462909ece8d3, type: 3}
   Artwork: {fileID: 21300000, guid: ffb25dd53e202694c83e8df39b6de2f0, type: 3}
   ability:

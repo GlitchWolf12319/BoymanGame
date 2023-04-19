@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Goad
   APCost: 3
-  Description: Deal 5 damage Gain 15 Guard
+  Description: Deal 5 damage Gain 5 Guard
   Border: {fileID: 21300000, guid: e7ea3d8c96e9ccd4ead0f9bb06b13f85, type: 3}
-  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  Artwork: {fileID: 21300000, guid: e31ef30919d8c0b4db91cb2369dacb3c, type: 3}
   ability:
-  - {fileID: 11400000, guid: d16154806c06a3d47939402369f08297, type: 2}
   - {fileID: 11400000, guid: bc9a5940c7d44fd46aae5870082ed7b6, type: 2}
+  - {fileID: 11400000, guid: d16154806c06a3d47939402369f08297, type: 2}
   attackMethod: 1
   AttackEffect: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Lightning Blot
   APCost: 3
-  Description: Deal 25 damage
+  Description: Deal 10 damage
   Border: {fileID: 21300000, guid: e7ea3d8c96e9ccd4ead0f9bb06b13f85, type: 3}
   Artwork: {fileID: 21300000, guid: 09938ab40ebfee643b9c119ccb236560, type: 3}
   ability:

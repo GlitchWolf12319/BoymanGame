@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Retreat
   m_EditorClassIdentifier: 
   Name: Retreat
-  APCost: 4
-  Description: Gain 20 Guard
+  APCost: 3
+  Description: Gain 5 Guard
   Border: {fileID: 21300000, guid: 3c237150503df9342a1c8ae831f74397, type: 3}
   Artwork: {fileID: 21300000, guid: cd58ec7eff0999e4eb2a16800abb4295, type: 3}
   ability:

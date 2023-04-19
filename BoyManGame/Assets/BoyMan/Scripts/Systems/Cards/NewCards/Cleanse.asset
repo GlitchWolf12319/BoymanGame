@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Cleanse
   APCost: 2
-  Description: Heal 5 HP
+  Description: Heal 10 HP
   Border: {fileID: 21300000, guid: d0d0ebc5842f96a46aefb70a85f44555, type: 3}
   Artwork: {fileID: 21300000, guid: 91e6352445db3644d8a71ad07e89e508, type: 3}
   ability:

@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Frost Nova
   APCost: 4
-  Description: 'Deal 8 Damage to 1 enemy the 5 Damage to all enemies '
+  Description: Deal 8 damage to ALL enemies
   Border: {fileID: 21300000, guid: 376be1d6b1223bb4fbb84bd61d341981, type: 3}
   Artwork: {fileID: 21300000, guid: 7c9d11b9ae041a04bbe3e0ae86bda613, type: 3}
   ability:
-  - {fileID: 11400000, guid: 9d2dbfdad98b6c741a1d3ec3d7dde498, type: 2}
   - {fileID: 11400000, guid: 767e05b8b53897b429118f3ab69ccbcb, type: 2}
-  attackMethod: 1
+  attackMethod: 0
   AttackEffect: {fileID: 0}

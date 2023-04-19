@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Ice Cold Slash
   APCost: 2
-  Description: Apply 2 chilled
+  Description: Deal 6 damage
   Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
   Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
   ability:
-  - {fileID: 11400000, guid: 38b324d1df9a922409f053df99c813e6, type: 2}
+  - {fileID: 11400000, guid: 4893ac96f5e71464597413f4c2cc4923, type: 2}
   attackMethod: 1
   AttackEffect: {fileID: 0}

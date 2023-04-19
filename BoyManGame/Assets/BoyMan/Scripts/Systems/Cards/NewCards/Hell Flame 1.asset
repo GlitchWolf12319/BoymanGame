@@ -26,5 +26,5 @@ MonoBehaviour:
   healParty: {fileID: 0}
   igniteParty: {fileID: 0}
   weaken: {fileID: 0}
-  IgniteStack: 15
-  IgniteAmmount: 5
+  IgniteStack: 6
+  IgniteAmmount: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Double onslaught
   m_EditorClassIdentifier: 
   Name: Double Onslaught
-  APCost: 2
-  Description: Deal 4 damge to all enemies
+  APCost: 4
+  Description: Deal 6 damge to all enemies
   Border: {fileID: 21300000, guid: 81685709bba45c547a010868ce5949a2, type: 3}
   Artwork: {fileID: 21300000, guid: 00790e55666961b4795d2b973f129070, type: 3}
   ability:

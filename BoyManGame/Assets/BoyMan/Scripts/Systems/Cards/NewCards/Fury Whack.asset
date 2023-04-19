@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Furry Whack
   APCost: 2
-  Description: Deal 12 Damage
+  Description: Deal 7 Damage
   Border: {fileID: 21300000, guid: 3fef76a3a2db176419949ed5572bf567, type: 3}
   Artwork: {fileID: 21300000, guid: 8847a898aac4a194b92a702f99ef52b9, type: 3}
   ability:

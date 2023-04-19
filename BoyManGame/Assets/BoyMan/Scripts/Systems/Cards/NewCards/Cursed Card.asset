@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Cursed Card
   APCost: 2
-  Description: Weakens
+  Description: Applies 2 weaken
   Border: {fileID: 21300000, guid: d0d0ebc5842f96a46aefb70a85f44555, type: 3}
   Artwork: {fileID: 21300000, guid: e09adf585f32c20409f8b92b7f6f176d, type: 3}
   ability: []

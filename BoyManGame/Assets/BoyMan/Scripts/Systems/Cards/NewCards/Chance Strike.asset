@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Chance Strike
   m_EditorClassIdentifier: 
   Name: Chance Strike
-  APCost: 1
-  Description: Deal 7 Damage
+  APCost: 2
+  Description: Deal 6 Damage
   Border: {fileID: 21300000, guid: dea18c8856012474db0665f80e316fe3, type: 3}
   Artwork: {fileID: 21300000, guid: 8905fe1f10a9cff47b5a0aaba9dc39c4, type: 3}
   ability:

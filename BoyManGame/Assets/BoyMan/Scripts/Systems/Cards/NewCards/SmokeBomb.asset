@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Smoke Bomb
   APCost: 2
-  Description: Gain 2 Invisablity
+  Description: Gain 2 Invisibility
   Border: {fileID: 21300000, guid: d0d0ebc5842f96a46aefb70a85f44555, type: 3}
   Artwork: {fileID: 21300000, guid: 0fa5f6d64579c7e44841481ff2610249, type: 3}
   ability:

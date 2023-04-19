@@ -26,4 +26,4 @@ MonoBehaviour:
   healParty: {fileID: 11400000}
   igniteParty: {fileID: 0}
   weaken: {fileID: 0}
-  healAmmount: 25
+  healAmmount: 10

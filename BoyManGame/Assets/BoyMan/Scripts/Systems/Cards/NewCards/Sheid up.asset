@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Sheild up
   APCost: 2
-  Description: Gain 8 Guard
+  Description: Gain 3 Guard
   Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
-  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  Artwork: {fileID: 21300000, guid: e31ef30919d8c0b4db91cb2369dacb3c, type: 3}
   ability:
   - {fileID: 11400000, guid: 5885ba561144e7e42af4b788ca7f3649, type: 2}
   attackMethod: 0

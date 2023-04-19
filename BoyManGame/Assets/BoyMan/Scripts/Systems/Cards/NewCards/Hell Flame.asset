@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hell Flame
   APCost: 3
-  Description: Apply 15 ignite
+  Description: Apply 6 ignite
   Border: {fileID: 21300000, guid: 08db8228854e45140b068b958f332aa2, type: 3}
-  Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
+  Artwork: {fileID: 21300000, guid: 6d85671dcc6e2bd4db9cebd887686830, type: 3}
   ability:
   - {fileID: 11400000, guid: 9ec647587acbda04e8f29f7c5167853e, type: 2}
   attackMethod: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Thunderstruck
   APCost: 3
-  Description: Deal 20 Damage to all enemies
+  Description: Deal 7 Damage to all enemies
   Border: {fileID: 21300000, guid: e7ea3d8c96e9ccd4ead0f9bb06b13f85, type: 3}
   Artwork: {fileID: 21300000, guid: 7f657757c79063f4d8dfc7539205f78f, type: 3}
   ability:

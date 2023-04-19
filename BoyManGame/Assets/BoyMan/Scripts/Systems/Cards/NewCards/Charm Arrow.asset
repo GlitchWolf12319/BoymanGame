@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Charm Arrow
   m_EditorClassIdentifier: 
   Name: Charm Arrow
-  APCost: 2
-  Description: Deal 10 damage to every enemy
+  APCost: 3
+  Description: Deal 6 damage to every enemy
   Border: {fileID: 21300000, guid: 09ee682eeb36d8b4b887591a478331df, type: 3}
   Artwork: {fileID: 21300000, guid: 963fa435b983e3e4bb842e8f2b003bde, type: 3}
   ability:

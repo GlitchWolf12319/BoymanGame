@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: PoisonPunch
   APCost: 1
-  Description: Apply 1 Poison
+  Description: Apply 2 Poison
   Border: {fileID: 21300000, guid: 3b9c95744ef25f54f9017d6341f7e6de, type: 3}
   Artwork: {fileID: 21300000, guid: e314c3269baa21b4c91c0d7e6b0f97ab, type: 3}
   ability:

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Ghostly bind
   APCost: 4
-  Description: Deal 25 Damage
+  Description: Deal 15 Damage
   Border: {fileID: 21300000, guid: 3c237150503df9342a1c8ae831f74397, type: 3}
   Artwork: {fileID: 21300000, guid: 767f4a58f3cfd544d87613323759514b, type: 3}
   ability:

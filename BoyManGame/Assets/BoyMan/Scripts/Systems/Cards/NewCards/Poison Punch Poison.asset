@@ -26,5 +26,5 @@ MonoBehaviour:
   healParty: {fileID: 0}
   igniteParty: {fileID: 0}
   weaken: {fileID: 0}
-  poisonStack: 1
-  poisonAmmount: 5
+  poisonStack: 2
+  poisonAmmount: 0

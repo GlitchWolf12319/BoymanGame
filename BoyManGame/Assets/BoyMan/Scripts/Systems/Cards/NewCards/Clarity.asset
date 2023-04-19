@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Clarity
   m_EditorClassIdentifier: 
   Name: Clarity
-  APCost: 4
+  APCost: 1
   Description: Heal 5 HP
   Border: {fileID: 21300000, guid: d0d0ebc5842f96a46aefb70a85f44555, type: 3}
   Artwork: {fileID: 21300000, guid: 59e629109c3740146ac7f445e05a96d9, type: 3}
