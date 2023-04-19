@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Heal Party
   APCost: 3
-  Description: Heal each Part member 5 HP
+  Description: Heal each Party member 5 HP
   Border: {fileID: 21300000, guid: d3886f257fc1f5640b15462909ece8d3, type: 3}
   Artwork: {fileID: 21300000, guid: 2f668a8407940494a88a58a67f857f1a, type: 3}
   ability:

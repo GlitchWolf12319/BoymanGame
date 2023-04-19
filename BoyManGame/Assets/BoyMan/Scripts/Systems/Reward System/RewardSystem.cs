@@ -240,8 +240,11 @@ public class RewardSystem : FindTargets
         }
 
         for(int i = 0; i < cards.Count; i++){
-            cards[i].transform.DOScale(new Vector3(0,0,0), 0.1f);
-            Destroy(cards[i], 0.5f);
+            cards[i].transform.DOScale(new Vector3(0,0,0), 0.1f).OnComplete(() =>
+            {
+                Destroy(cards[i], 0.5f);
+            });
+            
         }
 
         cardsChosen.Clear();
@@ -260,7 +263,6 @@ public class RewardSystem : FindTargets
    }
 
    public void Leave(){
-        rewardScreen.transform.DOScale(new Vector3(0,0,0), 0.5f);
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
             if(player != null){         
@@ -270,7 +272,12 @@ public class RewardSystem : FindTargets
             }
         }
 
-        Destroy(this.gameObject, 0.7f);
+        rewardScreen.transform.DOScale(new Vector3(0,0,0), 0.5f).OnComplete(() =>
+        {
+            Destroy(this.gameObject, 0.7f);
+        });
+
+        
 
         
    }
@@ -287,8 +294,11 @@ public class RewardSystem : FindTargets
         }
 
         for(int i = 0; i < cards.Count; i++){
-            cards[i].transform.DOScale(new Vector3(0,0,0), 0.1f);
+            cards[i].transform.DOScale(new Vector3(0,0,0), 0.1f).OnComplete(() =>
+        {
             Destroy(cards[i], 0.5f);
+        });
+            
         }
         cardsChosen.Clear();
 

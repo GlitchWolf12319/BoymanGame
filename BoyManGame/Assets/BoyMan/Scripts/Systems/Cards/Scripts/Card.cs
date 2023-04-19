@@ -199,7 +199,7 @@ public class Card : FindTargets
 
     public IEnumerator CardInUse(){
         CardInUse(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         CardInUse(false);
     }
 
@@ -584,8 +584,10 @@ public class Card : FindTargets
    void HealParty(int ammount){
             Debug.Log("Healing Party");
             List<GameObject> targets = FindGoodChar();
+            
 
             for(int i = 0; i < targets.Count; i++){
+                Debug.Log(targets[i].name);
                 targets[i].GetComponent<CharacterController>().Heal(ammount);
             }
    }

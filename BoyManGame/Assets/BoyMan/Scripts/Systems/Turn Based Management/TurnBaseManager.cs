@@ -113,8 +113,13 @@ public class TurnBaseManager : FindTargets
             for (int c = 0; c < heroesInBattle[i].GetComponent<NewDeckDrawing>().hand.Count; c++)
             {
                 heroesInBattle[i].GetComponent<NewDeckDrawing>().hand[c].GetComponent<Card>().disableHovering = true;
+                heroesInBattle[i].GetComponent<NewDeckDrawing>().hand[c].GetComponent<Card>().canHover = false;
+                heroesInBattle[i].GetComponent<NewDeckDrawing>().hand[c].GetComponent<Card>().canClick = false;
             }
 
+            
+
+            heroesInBattle[i].GetComponent<CharacterController>().health = heroesInBattle[i].GetComponent<CharacterController>().MaxHealth;
             heroesInBattle[i].GetComponent<CharTurn>().turnUI.SetActive(false);
             heroesInBattle[i].GetComponent<NewDeckDrawing>().ClearDeck();
             heroesInBattle[i].GetComponent<CharacterController>().guard = 0;

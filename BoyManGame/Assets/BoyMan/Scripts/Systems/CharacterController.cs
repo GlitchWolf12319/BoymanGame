@@ -28,7 +28,7 @@ public class CharacterController : FindTargets
     public int invisibleStack;
     public int WeakenStack;
 
-    public GameObject poisonIcon;
+    public AudioClip damage;
     // Start is called before the first frame update
     void Awake()
     {
@@ -103,6 +103,8 @@ public class CharacterController : FindTargets
             Debug.Log("Not Enough Guard");
             int remainingDamage = ammount - guard;
             health -= remainingDamage;
+            
+            
             guard -= ammount;
 
             if(guard <= 0){

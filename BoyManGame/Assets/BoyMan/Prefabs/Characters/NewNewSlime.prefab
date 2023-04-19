@@ -1096,6 +1096,7 @@ MonoBehaviour:
   swordIcon: {fileID: 21300000, guid: 8c14083f054bf5b46b7c255bf4f69315, type: 3}
   blockIcon: {fileID: 21300000, guid: 41a67751c1fd3a249a32644887da6b32, type: 3}
   igniteIcon: {fileID: 21300000, guid: 2c91379abb1ccb04a89acf68d31c0664, type: 3}
+  poisonIcon: {fileID: 21300000, guid: ca591477a9022384dac9c743d8683ec7, type: 3}
   brokenShield: {fileID: 7131016473908368215, guid: 73b699b0cbdf2be4e9de82179be98832,
     type: 3}
 --- !u!65 &5531151769771394029

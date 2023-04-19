@@ -28,6 +28,7 @@ public class CharTurn : EnemyAbility
     public Sprite swordIcon;
     public Sprite blockIcon;
     public Sprite igniteIcon;
+    public Sprite poisonIcon;
     public GameObject brokenShield;
 
     void Start(){
@@ -161,6 +162,13 @@ public class CharTurn : EnemyAbility
             intentionIcon.GetComponent<Image>().color = fullAlpha;
             intentionIcon.GetComponent<Image>().sprite = igniteIcon;
         }
+
+        if(enemyTurn.TurnMoves[intentCounter].cards[0].poisonEffect != null){
+            Color fullAlpha = new Color(fullAlpha.r = 255, fullAlpha.g = 255, fullAlpha.b = 255, fullAlpha.a = 255);
+            damageAmmountText.text = enemyTurn.TurnMoves[intentCounter].cards[0].poisonEffect.poisonStack.ToString();
+            intentionIcon.GetComponent<Image>().color = fullAlpha;
+            intentionIcon.GetComponent<Image>().sprite = poisonIcon;
+        }
     }
 
     IEnumerator GetTarget(){
@@ -195,6 +203,24 @@ public class CharTurn : EnemyAbility
                         yield return new WaitForSeconds(1);
                         Debug.Log("Dealing Ignite Damage");
                         Ignite(target, enemyTurn.TurnMoves[turnMoveCounter].cards[i].igniteEffect.IgniteAmmount, enemyTurn.TurnMoves[turnMoveCounter].cards[i].igniteEffect.IgniteStack);
+                        StartCoroutine(EnemyCameraAttack());
+                        abilityTurnCounter++;
+                        CheckToEndTurn();
+                        targets.Clear();
+                        target = null;
+                    }
+                }
+
+                if(enemyTurn.target == EnemyTurn.Target.Player && enemyTurn.TurnMoves[turnMoveCounter].cards[i].poisonEffect != null){
+                    List<GameObject> targets = FindGoodChar();
+
+                    if(targets != null){
+                        Debug.Log("Choosing Target");
+                        int randomChoice = Random.Range(0, targets.Count);
+                        GameObject target = targets[randomChoice];
+                        yield return new WaitForSeconds(1);
+                        Debug.Log("Dealing Poison Damage");
+                        Poison(target, enemyTurn.TurnMoves[turnMoveCounter].cards[i].poisonEffect.poisonAmmount, enemyTurn.TurnMoves[turnMoveCounter].cards[i].poisonEffect.poisonStack);
                         StartCoroutine(EnemyCameraAttack());
                         abilityTurnCounter++;
                         CheckToEndTurn();
@@ -284,7 +310,7 @@ public class CharTurn : EnemyAbility
                 counter++;
             }
         }
-    
+
         if(counter == 0){
             Debug.Log("canSkip");
 
