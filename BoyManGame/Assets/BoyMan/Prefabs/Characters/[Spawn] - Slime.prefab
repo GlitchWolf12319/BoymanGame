@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 5531151769771394022, guid: 58621e3bf52dcb54abcb8f21ffd5a167, type: 3}
-  - {fileID: 5531151769771394022, guid: 58621e3bf52dcb54abcb8f21ffd5a167, type: 3}
+  - {fileID: 5531151769771394022, guid: bfdf3b1b2cbd1a348af0d6aa1c068484, type: 3}
   ScaleSize:
   - {x: 0.35, y: 0.35, z: 0.35}
   - {x: 0.35, y: 0.35, z: 0.35}

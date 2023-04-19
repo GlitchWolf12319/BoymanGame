@@ -3714,12 +3714,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToInstantiate:
   - {fileID: 6534328651796939035, guid: 76f0711ea05c9f24ab8feed6224e45cd, type: 3}
-  - {fileID: 6534328651796939035, guid: d5e4252dc31e1df48a4093c49012503e, type: 3}
+  - {fileID: 6534328651796939035, guid: 051dc05c9c2980b4a8a79b2ffe331806, type: 3}
   - {fileID: 6534328651796939035, guid: 981072453e91dd14fabb5a2914797eaf, type: 3}
+  - {fileID: 6534328651796939035, guid: 8030b962307c15748bc81e18b4afa46c, type: 3}
   spawnChances:
-  - 46.670467
-  - 0
-  - 53.329533
+  - 12.024295
+  - 41.061806
+  - 19.040096
+  - 27.873806
 --- !u!1 &3524307217538343678
 GameObject:
   m_ObjectHideFlags: 0

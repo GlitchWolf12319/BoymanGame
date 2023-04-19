@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Casper
   m_EditorClassIdentifier: 
   CharacterName: Casper
-  MaxHealth: 40
+  MaxHealth: 30
   startingAP: 4
   MaxAP: 4

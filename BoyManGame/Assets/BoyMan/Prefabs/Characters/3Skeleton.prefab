@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6534328651796939037}
   - component: {fileID: 6534328651796939036}
   m_Layer: 0
-  m_Name: '[Spawn] - MushroomEnemy'
+  m_Name: 3Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,21 +45,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 8848483531710279118, guid: 13184193ed02afe4cac26c478bcca932, type: 3}
-  - {fileID: 8848483531710279118, guid: de606e26145830b4bab1a82df4a3c691, type: 3}
+  - {fileID: 6296188239967061158, guid: f52e71352b8e04f469c0085faca8bcd7, type: 3}
+  - {fileID: 6296188239967061158, guid: f52e71352b8e04f469c0085faca8bcd7, type: 3}
+  - {fileID: 4416580390934823793, guid: 25c74eb8a15297c4f933b56aee094d34, type: 3}
   ScaleSize:
-  - {x: 0.5, y: 0.5, z: 0.5}
-  - {x: 0.5, y: 0.5, z: 0.5}
+  - {x: 0.31, y: 0.31, z: 0.31}
+  - {x: 0.31, y: 0.31, z: 0.31}
+  - {x: 0.31, y: 0.31, z: 0.31}
   spawnDistance: 15
   enemySpawnDistance: 5
   xOffset:
   - 0
   - 1.5
+  - 1.5
   yOffset:
   - 0
-  - 0
+  - -1.5
+  - -1.5
   zOffset:
   - 0
+  - 3
   - 3
   player: {fileID: 0}
   tbm: {fileID: 0}

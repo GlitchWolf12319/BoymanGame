@@ -743,7 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169703f864994624f98db184f3f9896d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CS: {fileID: 11400000, guid: a94bc211dfa6df249bd433c4def828a8, type: 2}
+  CS: {fileID: 11400000, guid: e7e6081256647494c8b18d7e2135ca65, type: 2}
   CharName: 
   health: 0
   MaxHealth: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   chilledStack: 0
   invisibleStack: 0
   WeakenStack: 0
-  poisonIcon: {fileID: 0}
+  damage: {fileID: 0}
 --- !u!114 &4416580390934823803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 1
-  enemyTurn: {fileID: 11400000, guid: 953b006e817d0684ab6966dc622cf21c, type: 2}
+  enemyTurn: {fileID: 11400000, guid: 9b89539eddfbd0e408bab48331a147d5, type: 2}
   tbm: {fileID: 0}
   TurnCounter: -1
   abilityTurnCounter: 0
