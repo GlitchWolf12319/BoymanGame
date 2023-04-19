@@ -71,7 +71,7 @@ MonoBehaviour:
     startIndex: 0
     length: 0
   Changemap: 0
-  B1_healProbability: 100
+  B1_healProbability: 50
   B1_healAmount: 10
   B1_DamageProbability: 0
   B1_damage: 0

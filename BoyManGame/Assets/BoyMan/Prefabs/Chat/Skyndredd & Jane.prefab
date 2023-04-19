@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5736628798013947167}
   - component: {fileID: 7967365803448872493}
   m_Layer: 0
-  m_Name: Jane & BoyMan Chats
+  m_Name: Skyndredd & Jane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,8 +59,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToInstantiate:
-  - {fileID: 4370800046772037202, guid: 425e4fa653d30cb47ae8e55f962b4053, type: 3}
-  - {fileID: 4370800046772037202, guid: 82d995f2b600f9f4a9a0913eb2d718bd, type: 3}
+  - {fileID: 4370800046772037202, guid: 5064f81122f743245bc2292b5e64500d, type: 3}
+  - {fileID: 4370800046772037202, guid: 5c902ab3200ea5d4fa580164befafaa9, type: 3}
+  - {fileID: 4370800046772037202, guid: 0c73925f8e2f27b48ab14d44b17fc904, type: 3}
+  - {fileID: 4370800046772037202, guid: 6b86c5c9b1b411d48b6df4b3d65ca324, type: 3}
+  - {fileID: 4370800046772037202, guid: a6084bb9957d33a4bbeea0d4b051ba7a, type: 3}
   spawnChances:
-  - 96.07203
-  - 3.9279704
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20

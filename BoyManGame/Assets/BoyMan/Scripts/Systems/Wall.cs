@@ -7,21 +7,23 @@ public class Wall : MonoBehaviour
     private Vector3 startingPosition;
     private bool isMovingBack;
 
+    public Movement MoveScript;
+
     // The amount of time it takes to move the player back to their starting position
     public float moveBackTime = 0.5f;
 
     // The distance the player will be moved back
-    
+
     public float moveBackDistance = 1.0f;
 
     void Start()
     {
-        Debug.Log(startingPosition);
-     SetStartingPostion();
+        SetStartingPostion();
     }
 
-    public  void SetStartingPostion(){
-   // Store the starting position of the player
+    public void SetStartingPostion()
+    {
+        // Store the starting position of the player
         startingPosition = transform.position;
     }
 
@@ -31,7 +33,7 @@ public class Wall : MonoBehaviour
         {
             // Calculate the new position for the player
             Vector3 newPosition = Vector3.MoveTowards(transform.position, startingPosition, moveBackDistance * Time.deltaTime / moveBackTime);
-            
+
             // Move the player to the new position
             transform.position = newPosition;
 
@@ -50,6 +52,9 @@ public class Wall : MonoBehaviour
         {
             // Start moving the player back to their starting position
             isMovingBack = true;
+   
         }
     }
+
+
 }
