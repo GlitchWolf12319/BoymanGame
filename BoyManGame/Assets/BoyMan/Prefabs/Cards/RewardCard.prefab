@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: -7231650737147042840}
   m_Layer: 0
   m_Name: RewardCard
-  m_TagString: Untagged
+  m_TagString: RewardCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,6 +326,7 @@ MonoBehaviour:
   CardDescription: {fileID: 1450828011557822362}
   ArtworkImage: {fileID: 6744353094086024665}
   BorderImage: {fileID: 1787652232134077927}
+  DefaultBorder: {fileID: 21300000, guid: 5c1982a5077342449b8dbc48ecff9089, type: 3}
 --- !u!114 &1172905784042371493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3725c1dee19d5b04dab9adf16b7f51bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rsUI: {fileID: 0}
+  RS: {fileID: 0}
+  index: 0
 --- !u!1 &6428008442947045022
 GameObject:
   m_ObjectHideFlags: 0

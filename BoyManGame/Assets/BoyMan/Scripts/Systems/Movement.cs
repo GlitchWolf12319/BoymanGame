@@ -25,8 +25,11 @@ public class Movement : MonoBehaviour
     }
 
     public void PlayOneShotAudio(AudioClip clip){
-        playerAudio.enabled = true;
-        playerAudio.PlayOneShot(clip);
+        if(playerAudio != null){
+            playerAudio.enabled = true;
+            playerAudio.PlayOneShot(clip);
+        }
+        
     }
 
     void Move(){

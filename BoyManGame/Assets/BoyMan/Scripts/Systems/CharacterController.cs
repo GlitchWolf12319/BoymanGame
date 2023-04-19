@@ -198,9 +198,14 @@ public class CharacterController : FindTargets
     }
 
     public void Invisible(){
-        Color spriteColour = transform.GetComponent<SpriteRenderer>().color;
-        spriteColour.a = 0.2f;
-        transform.GetComponent<SpriteRenderer>().color = spriteColour;
+        foreach(Transform children in this.transform){
+            if(children.name.Contains("Walk")){
+                Color spriteColour = children.GetComponent<SpriteRenderer>().color;
+                spriteColour.a = 0.2f;
+                children.GetComponent<SpriteRenderer>().color = spriteColour;
+            }
+        }
+        
     }
 
     public void Visible(){

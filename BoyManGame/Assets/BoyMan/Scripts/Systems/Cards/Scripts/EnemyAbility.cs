@@ -97,9 +97,12 @@ public class EnemyAbility : FindTargets
                 Instantiate(transform.GetComponent<CharTurn>().brokenShield, transform.position, Quaternion.identity);
         }
 
-
-            target.GetComponent<CharacterController>().igniteAmmount = ammount;
-            target.GetComponent<CharacterController>().igniteStack += stack;
+            
+            if(target.GetComponent<CharacterController>().guard < stack){
+                target.GetComponent<CharacterController>().igniteAmmount = ammount;
+                target.GetComponent<CharacterController>().igniteStack += stack;
+            }
+            
     }
 
     public void Poison(GameObject target, int ammount, int stack){
@@ -109,8 +112,11 @@ public class EnemyAbility : FindTargets
                 Instantiate(transform.GetComponent<CharTurn>().brokenShield, transform.position, Quaternion.identity);
         }
 
-            target.GetComponent<CharacterController>().poisonAmmount = ammount;
-            target.GetComponent<CharacterController>().poisonStack += stack;
+            if(target.GetComponent<CharacterController>().guard < stack){
+                target.GetComponent<CharacterController>().poisonAmmount = ammount;
+                target.GetComponent<CharacterController>().poisonStack += stack;
+            }
+            
     }
 
     public void Chilled(GameObject target, int stack){
@@ -120,7 +126,10 @@ public class EnemyAbility : FindTargets
                 Instantiate(transform.GetComponent<CharTurn>().brokenShield, transform.position, Quaternion.identity);
         }
 
-        target.GetComponent<CharacterController>().chilledStack += stack;
+        if(target.GetComponent<CharacterController>().guard < stack){
+            target.GetComponent<CharacterController>().chilledStack += stack;
+        }
+        
     }
 
     public void Invisible(GameObject target, int stack){
@@ -158,8 +167,11 @@ public class EnemyAbility : FindTargets
 
             List<GameObject> targets = FindEnemies();
             for(int i = 0; i < targets.Count; i++){
-                targets[i].GetComponent<CharacterController>().igniteAmmount = ammount;
-                targets[i].GetComponent<CharacterController>().igniteStack += stack;
+                if(targets[i].GetComponent<CharacterController>().guard < stack){
+                    targets[i].GetComponent<CharacterController>().igniteAmmount = ammount;
+                    targets[i].GetComponent<CharacterController>().igniteStack += stack;
+                }
+                
             }
     }
 

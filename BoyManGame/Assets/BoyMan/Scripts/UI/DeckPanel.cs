@@ -26,7 +26,7 @@ public class DeckPanel : MonoBehaviour
             Image cardImage = cardObject.GetComponent<Image>();
             Image cardBorder = cardObject.GetComponentInChildren<Image>();
             cardImage.sprite = currentPlayer.GetComponent<NewDeckDrawing>().cardInfo.deck[i].Artwork;
-            cardBorder.sprite = currentPlayer.GetComponent<NewDeckDrawing>().cardInfo.deck[i].Border;
+            cardBorder.sprite = currentPlayer.GetComponent<NewDeckDrawing>().cardInfo.Border;
 
             // Set the size of the card image to match the size of the artwork
             RectTransform cardRect = cardObject.GetComponent<RectTransform>();

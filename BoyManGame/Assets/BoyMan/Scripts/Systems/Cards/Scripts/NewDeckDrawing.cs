@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class CardInformation{
     public GameObject prefab;
     public List<CardTemplate> deck;
+    public Sprite Border;
 }
 
 public class NewDeckDrawing : MonoBehaviour
@@ -108,7 +109,17 @@ public void RotateCard(GameObject card, float rotateValue){
     }
 
     public void ClearDeck(){
-        StartCoroutine(MoveDeckToDiscardPile());
+        int counter = 0;
+        for(int i = 0; i < transform.GetComponent<NewDeckDrawing>().hand.Count; i++){
+            if(transform.GetComponent<NewDeckDrawing>().hand[i].GetComponent<Card>().selected == true){
+                counter++;
+            }
+        }
+
+        if(counter == 0){
+            StartCoroutine(MoveDeckToDiscardPile());
+        }
+        
     }
 
     public IEnumerator MoveDeckToDiscardPile(){
