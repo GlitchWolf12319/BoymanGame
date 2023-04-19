@@ -125,6 +125,8 @@ public class TurnBaseManager : FindTargets
             heroesInBattle[i].GetComponent<CharacterController>().guard = 0;
             heroesInBattle[i].GetComponent<CharacterController>().igniteStack = 0;
             heroesInBattle[i].GetComponent<CharacterController>().poisonStack = 0;
+            heroesInBattle[i].GetComponent<CharacterController>().invisibleStack = 0;
+            heroesInBattle[i].GetComponent<CharacterController>().Visible();
             heroesInBattle[i].GetComponent<CharTurn>().turnIcon.SetActive(false);
         }
 
@@ -156,6 +158,7 @@ public class TurnBaseManager : FindTargets
             heroesInBattle[h].GetComponent<CharacterController>().guard = 0;
             heroesInBattle[h].GetComponent<CharacterController>().igniteStack = 0;
             heroesInBattle[h].GetComponent<CharacterController>().poisonStack = 0;
+            heroesInBattle[h].GetComponent<CharacterController>().invisibleStack = 0;
             heroesInBattle[h].GetComponent<CharacterController>().Visible();
             heroesInBattle[h].GetComponent<CharTurn>().turnIcon.SetActive(false);
             yield return new WaitForSeconds(0.5f);

@@ -39,6 +39,20 @@ public class StatusEffectDisplay : MonoBehaviour
         HideStatusEffect(2);
       }
 
+      if(characterController.invisibleStack > 0){
+        DisplayStatusEffect(3,characterController.invisibleStack.ToString());
+      }
+      else{
+        HideStatusEffect(3);
+      }
+
+      if(characterController.WeakenStack > 0){
+        DisplayStatusEffect(4,characterController.WeakenStack.ToString());
+      }
+      else{
+        HideStatusEffect(4);
+      }
+
 
       
       
