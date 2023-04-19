@@ -171,7 +171,7 @@ MonoBehaviour:
   textDisplay: {fileID: 4370800047041946359}
   imageDisplay: {fileID: 4370800046928611405}
   sentences:
-  - You've peaked opld man, sit this out!
+  - You've peaked old man, sit this out!
   - jane, have some faith, my enemies are too distracted by beauty to land a blow
   images:
   - {fileID: 21300000, guid: 7c477c808d3a4a14e8da463f811b7adc, type: 3}

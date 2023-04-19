@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 943304071003822076}
   - component: {fileID: 8326795550401697813}
   m_Layer: 0
-  m_Name: '[Event] Potion of the Gods'
+  m_Name: '[Event] Heavenly Cake'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,28 +50,28 @@ MonoBehaviour:
   player: {fileID: 0}
   Transiton: {fileID: 0}
   DescriptionFields:
-  - text: Numbing the pain for a while will make it worse when you finally feel it.
+  - text: On the floor before you is a Beautiful Cake
     color: {r: 1, g: 1, b: 1, a: 0}
     startIndex: 0
     length: 0
-  - text: '*Gives you drink*'
+  - text: 'It looks Delicious '
     color: {r: 1, g: 0.8970643, b: 0, a: 0}
     startIndex: 0
     length: 0
   Option_One_Fields:
-  - text: '[Drink]'
+  - text: '[Eat cake]'
     color: {r: 1, g: 1, b: 1, a: 0}
     startIndex: 0
     length: 0
-  - text: ' Gain 1 Max HP'
+  - text: 'Tasty Delight Gain 1 Max HP '
     color: {r: 0.42212605, g: 1, b: 0, a: 0}
     startIndex: 0
     length: 0
-  - text: ' 40% chance to'
+  - text: ' 30% chance to'
     color: {r: 1, g: 1, b: 1, a: 0}
     startIndex: 0
     length: 0
-  - text: ' Loss 20 HP'
+  - text: Choke Lose 10 HP
     color: {r: 1, g: 0, b: 0, a: 0}
     startIndex: 0
     length: 0
@@ -80,11 +80,15 @@ MonoBehaviour:
     color: {r: 1, g: 1, b: 1, a: 0}
     startIndex: 0
     length: 0
+  - text: Throw the untouched butter cream cake
+    color: {r: 1, g: 1, b: 1, a: 0}
+    startIndex: 0
+    length: 0
   Changemap: 0
-  B1_healProbability: 60
+  B1_healProbability: 70
   B1_healAmount: 1
-  B1_DamageProbability: 40
-  B1_damage: 20
+  B1_DamageProbability: 30
+  B1_damage: 10
   B2_healProbability: 0
   B2_healAmount: 0
   B2_damageProbability: 0
