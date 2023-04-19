@@ -74,7 +74,7 @@ public void OnButton1Click()
     if (chance <= B1_DamageProbability)
     {
         Debug.Log("Button 1 deals " + B1_damage + " damage.");
-        B1_healAmount -= B1_damage;
+       // B1_healAmount -= B1_damage;
 
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
@@ -106,7 +106,7 @@ public void OnButton1Click()
 
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
-                charController.AddToMaxHealth(1);
+                charController.AddToMaxHealth(B1_healAmount);
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 if(player != null){         
                     Movement[] move = FindObjectsOfType<Movement>();
@@ -159,12 +159,13 @@ public void OnButton1Click()
     if (chance <= B2_damageProbability)
     {
         Debug.Log("Button 2 deals " + B2_damage + " damage.");
-        B2_healAmount -= B2_damage;
+       // B2_healAmount -= B2_damage;
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
 
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
+                 
                 charController.TakeDamage(B2_damage, "NormalDamage");
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 if(player != null){         
@@ -182,13 +183,13 @@ public void OnButton1Click()
     else if (chance <= B2_damageProbability + B2_healProbability)
     {
         Debug.Log("Button 2 heals " + B2_healAmount + " health.");
-        B2_healAmount += B2_healAmount;
+        //B2_healAmount += B2_healAmount;
         CharacterController[] cc = FindObjectsOfType<CharacterController>();
          foreach(CharacterController charController in cc){
 
             if(charController.gameObject.tag == "Player"){
                 Debug.Log(charController.gameObject.name);
-                charController.AddToMaxHealth(1);
+                charController.AddToMaxHealth(B2_healAmount);
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 if(player != null){         
                     Movement[] move = FindObjectsOfType<Movement>();

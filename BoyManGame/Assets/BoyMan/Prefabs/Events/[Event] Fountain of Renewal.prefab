@@ -64,7 +64,7 @@ MonoBehaviour:
     color: {r: 1, g: 1, b: 1, a: 0}
     startIndex: 0
     length: 0
-  - text: ' Gain 65 HP'
+  - text: ' Gain 1 Max HP to party'
     color: {r: 0.42212605, g: 1, b: 0, a: 0}
     startIndex: 0
     length: 0
@@ -74,14 +74,14 @@ MonoBehaviour:
     startIndex: 0
     length: 0
   Changemap: 0
-  B1_healProbability: 100
-  B1_healAmount: 65
-  B1_DamageProbability: 0
-  B1_damage: 0
-  B2_healProbability: 0
-  B2_healAmount: 0
-  B2_damageProbability: 0
-  B2_damage: 0
+  B1_healProbability: 50
+  B1_healAmount: 5
+  B1_DamageProbability: 50
+  B1_damage: 5
+  B2_healProbability: 70
+  B2_healAmount: 10
+  B2_damageProbability: 30
+  B2_damage: 10
   panel: {fileID: 4545747639047174727}
   button1Text: {fileID: 4545747640226419999}
   button2Text: {fileID: 4545747639470061520}

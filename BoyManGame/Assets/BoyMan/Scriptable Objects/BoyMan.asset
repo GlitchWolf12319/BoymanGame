@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BoyMan
   m_EditorClassIdentifier: 
   CharacterName: Boy-Man
-  MaxHealth: 60
+  MaxHealth: 80
   startingAP: 4
   MaxAP: 4

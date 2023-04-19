@@ -148,8 +148,7 @@ public class CharacterController : FindTargets
     }
 
     public void AddToMaxHealth(int ammount){
-        CS.MaxHealth += 1;
-        MaxHealth = CS.MaxHealth;
+        MaxHealth += ammount;
 
     }
 
