@@ -498,7 +498,7 @@ MonoBehaviour:
   icon4Text: {fileID: 8889308258561054250}
   gold4Ammount: 5
   rewardIcons:
-  - {fileID: 21300000, guid: 9262a291d96616d4586beb9a4256d0be, type: 3}
+  - {fileID: 21300000, guid: cd8a7816529e31e4eb9169100e89a0ca, type: 3}
   - {fileID: 21300000, guid: 671f6a2ebf8f37b4ebc1f1e38142ef33, type: 3}
   rewardScreen: {fileID: 2737821500611531773}
   cardSelectionScreen: {fileID: 3990391656708227583}
@@ -2142,7 +2142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9262a291d96616d4586beb9a4256d0be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd8a7816529e31e4eb9169100e89a0ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
