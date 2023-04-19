@@ -59,6 +59,7 @@ public class Card : FindTargets
     public bool canSelect;
     public bool disableHovering;
     public GameObject descriptionPanel;
+    public bool canClick;
 
     public void CollectTarget(){
         targets = FindEnemies();
@@ -66,7 +67,7 @@ public class Card : FindTargets
 
     public void SelectTarget(){
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canClick)
         {
             Debug.Log("Click");
             // Create a ray from the mouse position
@@ -137,6 +138,7 @@ public class Card : FindTargets
         }
 
         if(card.ability[i].invisible != null){
+            
             target = caster;
             Invisible(target, card.ability[i].invisible.invisibleStack);
         }
@@ -171,6 +173,7 @@ public class Card : FindTargets
         Debug.Log("target name: " + target.name + " Target Tag: " + target.tag);
         if(target.tag != "Player" || card.ability.Length > 1){
             StartCoroutine(CameraAttack(target));
+            StartCoroutine(CardInUse());
         }
 
         if(target.tag == "Player"){
@@ -399,6 +402,7 @@ public class Card : FindTargets
 
     public void Hover(){
         if(!Drag && canHover && !Arrow && !disableHovering){
+        canClick = true;
 
         descriptionPanel.SetActive(true);
 
@@ -470,6 +474,7 @@ public class Card : FindTargets
 
     public void NoHover(){
         if(!Drag && canHover && !Arrow && !disableHovering){
+        canClick = false;
         descriptionPanel.SetActive(false);
         onHover = false;
         transform.DOScale(new Vector3(0.85f, 0.85f, 0.85f), 0.5f);
@@ -586,7 +591,7 @@ public class Card : FindTargets
    }
 
    public IEnumerator CameraAttack(GameObject targetPos){
-        CardInUse(true);
+        //CardInUse(true);
         
         // if(!affectsCaster){
 
@@ -610,7 +615,7 @@ public class Card : FindTargets
         // if(affectsCaster){
         //     yield return new WaitForSeconds(3f);
         // }
-            CardInUse(false);
+            //CardInUse(false);
         
             DestroyImmediate(this.gameObject, true);
         

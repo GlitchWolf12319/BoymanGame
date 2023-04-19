@@ -284,9 +284,16 @@ public class CharTurn : EnemyAbility
                 counter++;
             }
         }
-
+    
         if(counter == 0){
             Debug.Log("canSkip");
+
+            for(int i = 0; i < transform.GetComponent<NewDeckDrawing>().hand.Count; i++){
+                transform.GetComponent<NewDeckDrawing>().hand[i].GetComponent<BoxCollider2D>().enabled = false;
+                transform.GetComponent<NewDeckDrawing>().hand[i].GetComponent<Card>().canClick = false;
+                transform.GetComponent<NewDeckDrawing>().hand[i].GetComponent<Card>().canHover = false;
+            }
+
             turnUI.SetActive(false);
             turnIcon.SetActive(false);
             StartCoroutine(EndTurn());

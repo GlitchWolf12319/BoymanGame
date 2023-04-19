@@ -60,6 +60,18 @@ public class AbilityDescriptionPanel : MonoBehaviour
             Title.color = Color.red;
             Title.text = "Retreat";
             Description.text = "Reposition Caster to the back of the party";
+        }
+
+        if(card.ability[0].heal != null){
+            Title.color = Color.yellow;
+            Title.text = "Heal";
+            Description.text = "Heals Caster for X ammount";
+        }
+
+        if(card.ability[0].healParty != null){
+            Title.color = Color.yellow;
+            Title.text = "Heal";
+            Description.text = "Heals Party for X ammount";
         }        
     }
 

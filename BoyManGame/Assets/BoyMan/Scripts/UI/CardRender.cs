@@ -11,6 +11,7 @@ public class CardRender : MonoBehaviour
     public Text CardDescription;
     public Image ArtworkImage;
     public Image BorderImage;
+    public Sprite DefaultBorder;
 
     void Start(){
         RenderCardInformation();
@@ -21,7 +22,14 @@ public class CardRender : MonoBehaviour
         CardName.text = card.Name;
         CardDescription.text = card.Description;
         ArtworkImage.sprite = card.Artwork;
-        BorderImage.sprite = card.Border;
+
+        if(transform.tag != "RewardCard"){
+            BorderImage.sprite = transform.GetComponent<Card>().caster.GetComponent<NewDeckDrawing>().cardInfo.Border;
+        }
+        else{
+            BorderImage.sprite = DefaultBorder;
+        }
+        
 
     }
 

@@ -45,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
         SpawnEnemies();
         tbm.StartCoroutine(tbm.EnlargeDisabledUI());
         tbm.SetTurnOrder();
+        tbm.turnCounter = -1;
         tbm.ChangeTurn();
     }
 
