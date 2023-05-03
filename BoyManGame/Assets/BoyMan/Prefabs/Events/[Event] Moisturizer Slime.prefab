@@ -51,7 +51,7 @@ MonoBehaviour:
   Transiton: {fileID: 0}
   DescriptionFields:
   - text: As you lay your eyes on the slimy creature, you begin to perceive a peculiar
-      warmth radiating from it. As you observe more closely, a realization dawns
+      warmth radiating from it. As you observe more closely, a realisation dawns
       upon you - the plants and all living beings in its vicinity seem to have been
       rejuvenated and imbued with a newfound vitality.
     color: {r: 1, g: 1, b: 1, a: 0}

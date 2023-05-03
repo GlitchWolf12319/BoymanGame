@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 943304071003822076}
   - component: {fileID: 8326795550401697813}
   m_Layer: 0
-  m_Name: '[Event] Bear Trap'
+  m_Name: '[Event] Cute creatures'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,29 +45,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882cf7da97826524bb5140394cd0d088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleInfo: Bear Trap
+  titleInfo: Cute creatures?
   spawnRoom: {fileID: 0}
   player: {fileID: 0}
   Transiton: {fileID: 0}
   DescriptionFields:
-  - text: As you cautiously tread forward, you catch a glimpse of a menacing bear
-      trap, it's rusted metal jaws agape and ready to ensnare its unwitting prey.
+  - text: A collection of creatures surface around you, following a cute alpha creature,
+      they don't look intimidating but their numbers are vast, do you attempt to
+      feed them or escape?
     color: {r: 1, g: 1, b: 1, a: 0}
     startIndex: 0
     length: 0
-  - text: Suddenly, your foot gives way and you plummet into the trap, the unforgiving
-      jaws clamping down on your leg with a vicious force.
-    color: {r: 1, g: 0.06907654, b: 0, a: 0}
+  Option_One_Fields:
+  - text: You attempt to feed the creatures, they are slow and curious, UNTIL THE
+      LEADER SCREAMS AND LAUNCHES A FULL SCALE ATTACK, the creatures climb your arm
+      and bite every visible part of flesh
+    color: {r: 1, g: 1, b: 1, a: 0}
     startIndex: 0
     length: 0
-  Option_One_Fields:
-  - text: ' Lose 15 hp'
-    color: {r: 1, g: 0, b: 0, a: 0}
+  - text: Lose 15 hp
+    color: {r: 1, g: 0.032745622, b: 0, a: 0}
     startIndex: 0
     length: 0
   Option_Two_Fields:
-  - text: ' Lose 15 hp'
-    color: {r: 1, g: 0, b: 0, a: 0}
+  - text: Upon trying to escape, the creatures swarm you, nipping every visible part
+      of flesh, they suck your blood and scurry away" - lose 10 hp[Leave]
+    color: {r: 0.9811321, g: 0, b: 0, a: 0}
     startIndex: 0
     length: 0
   Changemap: 0
@@ -78,13 +81,13 @@ MonoBehaviour:
   B2_healProbability: 0
   B2_healAmount: 0
   B2_damageProbability: 100
-  B2_damage: 15
+  B2_damage: 10
   panel: {fileID: 4545747639047174727}
   button1Text: {fileID: 4545747640226419999}
   button2Text: {fileID: 4545747639470061520}
   descriptionText: {fileID: 4545747639344198901}
   image: {fileID: 4545747639197784750}
-  sprite: {fileID: 21300000, guid: 8c14083f054bf5b46b7c255bf4f69315, type: 3}
+  sprite: {fileID: 21300000, guid: 1ea95bd84cab121498b1906d412417c4, type: 3}
   button1: {fileID: 4545747638373125156}
   button2: {fileID: 4545747638713744964}
   titleText: {fileID: 4545747638563421688}

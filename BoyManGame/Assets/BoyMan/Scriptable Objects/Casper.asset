@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95678761e75fe84ca47b089aea396f9, type: 3}
   m_Name: Casper
   m_EditorClassIdentifier: 
-  CharacterName: Casper
+  CharacterName: Skyndredd
   MaxHealth: 30
   startingAP: 4
   MaxAP: 4
