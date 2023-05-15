@@ -20,4 +20,5 @@ MonoBehaviour:
   ability:
   - {fileID: 11400000, guid: ba2108a972c449448ac6b78cd6edb743, type: 2}
   attackMethod: 1
-  AttackEffect: {fileID: 0}
+  AttackEffect: {fileID: 7806864696364035072, guid: fee17f1575ee5104db9d3bf0d295c2f6,
+    type: 3}

@@ -21,4 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dab7449bee993544f8892a883889e0fd, type: 2}
   - {fileID: 11400000, guid: 416de84e322582345830f1f2b2478cfe, type: 2}
   attackMethod: 1
-  AttackEffect: {fileID: 0}
+  AttackEffect: {fileID: 7661568282042868219, guid: 23cfc30dd3b70ad4a8da21893bc1e803,
+    type: 3}

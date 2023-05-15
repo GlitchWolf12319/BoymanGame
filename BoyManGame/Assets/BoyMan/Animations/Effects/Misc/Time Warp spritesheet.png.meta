@@ -1,0 +1,761 @@
+fileFormatVersion: 2
+guid: af8148f774352c74ca621752cafdc304
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Time Warp spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1480
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e02aa1d530bb341b329f0ab13b06bd
+      internalID: -1698825520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1480
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0e146060e911343b8589a533317de9
+      internalID: 952645597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1480
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f76ac79a2c1a8246a9c628bee46f13e
+      internalID: 1043163343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 1480
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3435825e21995c7449e7274935e3d5f8
+      internalID: -949216526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1480
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0ac48982fbef946ad34a9c6bc5da26
+      internalID: 628143544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1480
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e278c4cd8fbd4d1499fb3fe69b6ec617
+      internalID: 1511146810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1110
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d45c71d3910494f875e402c4f7cf0c
+      internalID: 1860111848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1110
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2f2e27dd115c24a88cae426d33c1e4
+      internalID: 324669024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1110
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522439c73c575ff40ae65371032e7fa7
+      internalID: -1982174238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 1110
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7f4af9bce989343b522a29a6807bda
+      internalID: 1783150839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1110
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a517b3c61b3100a42904424fab699506
+      internalID: 164154859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1110
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e30022196f0f949ad2afe2531132de
+      internalID: -1081872691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 740
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01ebf184e307fc42ab8170f99701332
+      internalID: -269594901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 740
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f10706c2ed0d548a7f56d67d125156
+      internalID: -741566726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 740
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e452bf97862834fb5e5f3a728e24cf
+      internalID: 1045756688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 740
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d0a07af7f34c34cb4bdda0ce2754c7
+      internalID: -340798925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 740
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9969f6327e9344545a690dbf4fef8ca6
+      internalID: -1390079129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 740
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60a1fa24045ad74b9a2e05c5971d133
+      internalID: 667949860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 370
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994f1e02641a960498148762ca655247
+      internalID: 192933626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 370
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28026b9aa9db34942914f926d2943351
+      internalID: -2084804025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 370
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee7553e414c4d44ead4552c8d5acf31
+      internalID: -343666357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 370
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ceb1e31ecdf37843abc314b99814da5
+      internalID: 2123444903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 370
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d609c60b5e6b9574cb88aba4046002bc
+      internalID: -21136128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 370
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e678a82241d9384884b1233b6476606
+      internalID: 1278669612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ac78a04c2f07545a84072e7e208c56
+      internalID: 459466516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 0
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b55841e902b25b42a82a2c08efe03eb
+      internalID: 197509555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0869bbd9697158498f9c91d7e68af21
+      internalID: -1156181131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 0
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988cf43e89657c140800080ae6bfbd03
+      internalID: 828805531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Time Warp spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 325
+        height: 370
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106d4a8402cb95449b566109aa3fdde1
+      internalID: -721878630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 46d903fd19979df4581e41bfdde7aa04
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Time Warp spritesheet_7: 324669024
+      Time Warp spritesheet_17: 667949860
+      Time Warp spritesheet_20: -343666357
+      Time Warp spritesheet_25: 197509555
+      Time Warp spritesheet_28: -721878630
+      Time Warp spritesheet_10: 164154859
+      Time Warp spritesheet_4: 628143544
+      Time Warp spritesheet_24: 459466516
+      Time Warp spritesheet_19: -2084804025
+      Time Warp spritesheet_23: 1278669612
+      Time Warp spritesheet_18: 192933626
+      Time Warp spritesheet_0: -1698825520
+      Time Warp spritesheet_1: 952645597
+      Time Warp spritesheet_26: -1156181131
+      Time Warp spritesheet_27: 828805531
+      Time Warp spritesheet_3: -949216526
+      Time Warp spritesheet_5: 1511146810
+      Time Warp spritesheet_16: -1390079129
+      Time Warp spritesheet_12: -269594901
+      Time Warp spritesheet_15: -340798925
+      Time Warp spritesheet_2: 1043163343
+      Time Warp spritesheet_6: 1860111848
+      Time Warp spritesheet_8: -1982174238
+      Time Warp spritesheet_14: 1045756688
+      Time Warp spritesheet_21: 2123444903
+      Time Warp spritesheet_22: -21136128
+      Time Warp spritesheet_11: -1081872691
+      Time Warp spritesheet_9: 1783150839
+      Time Warp spritesheet_13: -741566726
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

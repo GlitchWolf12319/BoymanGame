@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a107b745603ce8a4d8460043374e325b, type: 3}
   m_Name: Goad
   m_EditorClassIdentifier: 
-  Name: Goad
+  Name: Last Rites
   APCost: 3
   Description: Deal 5 damage Gain 5 Guard
   Border: {fileID: 21300000, guid: e7ea3d8c96e9ccd4ead0f9bb06b13f85, type: 3}
@@ -21,4 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc9a5940c7d44fd46aae5870082ed7b6, type: 2}
   - {fileID: 11400000, guid: d16154806c06a3d47939402369f08297, type: 2}
   attackMethod: 1
-  AttackEffect: {fileID: 0}
+  AttackEffect: {fileID: 5933501470434786806, guid: e3babc769234f6b4d971992745eab941,
+    type: 3}
