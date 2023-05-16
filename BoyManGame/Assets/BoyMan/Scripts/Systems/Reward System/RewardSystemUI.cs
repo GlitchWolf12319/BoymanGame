@@ -53,7 +53,7 @@ public class RewardSystemUI : MonoBehaviour
         }
 
         if(button1Option == Button1.Card){
-            //caster.GetComponent<CharacterController>().GiveCoins(10);
+           
             Button1Text.transform.DOScale(new Vector3(0,0,0), 0.5f);
             transform.DOScale(new Vector3(0,0,0), 0.5f);
             Destroy(Button1Text, 0.6f);
@@ -76,7 +76,7 @@ public class RewardSystemUI : MonoBehaviour
         }
 
         if(button2Option == Button2.Card){
-            //caster.GetComponent<CharacterController>().GiveCoins(10);
+     
             Button2Text.transform.DOScale(new Vector3(0,0,0), 0.5f);
             transform.DOScale(new Vector3(0,0,0), 0.5f);
             Destroy(Button2Text, 0.6f);

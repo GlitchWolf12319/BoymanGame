@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardType : ScriptableObject
 {
-
+    //declare card type variables
     public DealDamage dealDamage;
     public PoisonEffect poisonEffect;
     public IgniteEffect igniteEffect;

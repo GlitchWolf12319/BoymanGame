@@ -5,9 +5,9 @@ using DG.Tweening;
 using TMPro;
 using System;
 using UnityEngine.UI;
-
 [Serializable]
-public class CardInformation{
+public class CardInformation
+{
     public GameObject prefab;
     public List<CardTemplate> deck;
     public Sprite Border;
@@ -29,28 +29,34 @@ public class NewDeckDrawing : MonoBehaviour
     public TMP_Text discardPileText;
 
 
-    void Start(){
-        for(int i = 0; i < cardInfo.deck.Count; i++){
+    void Start()
+    {
+        // Initialize the deck with cards from the CardInformation
+        for (int i = 0; i < cardInfo.deck.Count; i++)
+        {
             deck.Add(cardInfo.deck[i]);
         }
     }
 
-    void Update(){
+    void Update()
+    {
+        // Update the UI text for deck and discard pile counts
         deckCountText.text = deck.Count.ToString();
         discardPileText.text = discardPile.Count.ToString();
     }
 
-    public void DrawCards(int ammount){
+    public void DrawCards(int amount)
+    {
+        float[] rotateValues = { 13.3f, 8.9f, 0f, -8.9f, -13.3f };
+        float[] speedValues = { 0.05f, 0.15f, 0.2f, 0.25f, 0.3f };
 
-        float[] rotateValues = {13.3f, 8.9f, 0f, -8.9f, -13.3f};
-        float[] speedValues = {0.05f, 0.15f, 0.2f, 0.25f, 0.3f};
+        int deckSize = deck.Count;
 
-        var deckSize = deck.Count;
-        //var deckCopy = new List<CardTemplate>(cardInfo.deck);
-
-        if(deckSize >= ammount){
-
-            for(int i = 0; i < ammount; i++){
+        if (deckSize >= amount)
+        {
+            // Draw cards from the deck
+            for (int i = 0; i < amount; i++)
+            {
                 int randomCard = UnityEngine.Random.Range(0, deck.Count);
                 GameObject runtimeCard = Instantiate(cardInfo.prefab, cardSpawnPosition.position, Quaternion.identity);
                 runtimeCard.GetComponent<Card>().index = i;
@@ -60,130 +66,146 @@ public class NewDeckDrawing : MonoBehaviour
                 MoveCardsToScreen(runtimeCard, spawnSlots[i], speedValues[i]);
 
                 deck.RemoveAt(randomCard);
-
             }
-    }
-    else{
-            for(int i = 0; i < discardPile.Count; i++){
+        }
+        else
+        {
+            // If deck is empty, reshuffle the discard pile into the deck
+            for (int i = 0; i < discardPile.Count; i++)
+            {
                 deck.Add(discardPile[i]);
             }
 
             discardPile.Clear();
 
-            if(ammount > deck.Count + discardPile.Count){
-                ammount = deck.Count + discardPile.Count;
+            if (amount > deck.Count + discardPile.Count)
+            {
+                // Ensure the amount is within the available card count
+                amount = deck.Count + discardPile.Count;
             }
-            DrawCards(ammount);
-        }
 
+            // Draw the remaining cards from the shuffled deck
+            DrawCards(amount);
+        }
+    }
+
+
+public void RotateCard(GameObject card, float rotateValue)
+{
+    // Rotate the card using the DOTween library
+    card.transform.DORotate(new Vector3(0, 0, rotateValue), 0.1f);
 }
 
-public void RotateCard(GameObject card, float rotateValue){
-    card.transform.DORotate(new Vector3(0,0, rotateValue), 0.1f);
+public void MoveCardsToScreen(GameObject card, Transform slot, float Speed)
+{
+    // Move the card to the specified slot using DOTween
+    card.GetComponent<Card>().originalPosition = slot.position;
+    card.transform.DOMove(slot.position, Speed);
 }
 
-    public void MoveCardsToScreen(GameObject card, Transform slot, float Speed){
-        card.GetComponent<Card>().originalPosition = slot.position;
-        card.transform.DOMove(slot.position, Speed);
+public IEnumerator MoveToDiscardPile(GameObject card)
+{
+    // Move the card to the discard pile
+    discardPile.Add(card.GetComponent<Card>().card);
+    hand.Remove(card);
+
+    Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+    card.transform.DOMove(middle, .1f);
+    yield return new WaitForSeconds(0.1f);
+    card.transform.DOScale(new Vector3(0.3f, 0.3f, 0.3f), 0.1f);
+
+    yield return new WaitForSeconds(0.1f);
+    card.transform.DORotate(new Vector3(0, 0, -145), 0.1f);
+    yield return new WaitForSeconds(0.1f);
+
+    card.transform.DOMove(new Vector3(middle.x + 3000, middle.y - 2000, middle.z), 1).OnComplete(() =>
+    {
+        // Perform actions when the card movement is complete
+    });
+}
+
+public void ClearDeck()
+{
+    // Check if any cards are selected in the hand
+    int counter = 0;
+    for (int i = 0; i < transform.GetComponent<NewDeckDrawing>().hand.Count; i++)
+    {
+        if (transform.GetComponent<NewDeckDrawing>().hand[i].GetComponent<Card>().selected == true)
+        {
+            counter++;
+        }
     }
 
-    public IEnumerator MoveToDiscardPile(GameObject card){
-            discardPile.Add(card.GetComponent<Card>().card);
-            hand.Remove(card);
+    if (counter == 0)
+    {
+        // If no cards are selected, move the entire deck to the discard pile
+        StartCoroutine(MoveDeckToDiscardPile());
+    }
+}
 
-            Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
-            card.transform.DOMove(middle, .1f);
-            yield return new WaitForSeconds(0.1f);
-            card.transform.DOScale(new Vector3(0.3f, 0.3f, 0.3f), 0.1f);
-            //card.GetComponent<Card>().trail.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            card.transform.DORotate(new Vector3(0, 0, -145), 0.1f);
-            yield return new WaitForSeconds(0.1f);
-            //card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1);
-            //InHandCard.ResetCard();
-            card.transform.DOMove(new Vector3(middle.x + 3000, middle.y - 2000, middle.z), 1).OnComplete(() =>
-            {
-                //DestroyImmediate(card.gameObject, true);
-            
-            });
+public IEnumerator MoveDeckToDiscardPile()
+{
+    // Move all cards in the hand to the discard pile
+    List<GameObject> cards = new List<GameObject>(hand);
+
+    foreach (var card in cards)
+    {
+        for (int i = 0; i < hand.Count; i++)
+        {
+            card.GetComponent<Card>().canHover = false;
+            card.GetComponent<Card>().disableHovering = true;
+        }
+
+        discardPile.Add(card.GetComponent<Card>().card);
+
+        Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+        card.transform.DOMove(middle, .1f);
+        yield return new WaitForSeconds(0.1f);
+        card.transform.DOScale(new Vector3(0.3f, 0.3f, 0.3f), 0.1f);
+
+        yield return new WaitForSeconds(0.1f);
+        card.transform.DORotate(new Vector3(0, 0, -145), 0.1f);
+        yield return new WaitForSeconds(0.1f);
+
+        card.transform.DOMove(new Vector3(middle.x + 3000, middle.y - 2000, middle.z), 1).OnComplete(() =>
+        {
+            // Destroy the card when the movement is complete
+            DestroyImmediate(card.gameObject, true);
+        });
     }
 
-    public void ClearDeck(){
-        int counter = 0;
-        for(int i = 0; i < transform.GetComponent<NewDeckDrawing>().hand.Count; i++){
-            if(transform.GetComponent<NewDeckDrawing>().hand[i].GetComponent<Card>().selected == true){
-                counter++;
-            }
-        }
+    hand.Clear();
+}
 
-        if(counter == 0){
-            StartCoroutine(MoveDeckToDiscardPile());
+  public void AssignScripts(GameObject card, CardTemplate cardTemp)
+{
+    // Assign the CardTemplate to the CardRender component
+    card.GetComponent<CardRender>().card = cardTemp;
+
+    // Assign properties to the Card component
+    card.GetComponent<Card>().card = cardTemp;
+    card.GetComponent<Card>().shieldIconPrefab = Resources.Load("BlockIcon") as GameObject;
+    card.GetComponent<Card>().selected = false;
+    card.GetComponent<Card>().canSelectTarget = false;
+    card.GetComponent<Card>().onHover = false;
+    card.GetComponent<Card>().Drag = false;
+    card.GetComponent<Card>().Arrow = false;
+    card.GetComponent<Card>().canHover = true;
+    card.GetComponent<Card>().canSelect = true;
+    card.GetComponent<Card>().disableHovering = false;
+    card.GetComponent<Card>().caster = this.gameObject;
+    card.GetComponent<Card>().speechBubblePrefab = Resources.Load("speechBubble_0") as GameObject;
+    card.GetComponent<Card>().canUseColor = Color.blue;
+    card.GetComponent<Card>().cantUseColor = Color.red;
+    parent = this.gameObject;
+
+    // Find the appropriate parent transform to set as the card's parent
+    foreach (Transform children in this.transform)
+    {
+        if (children.name.Contains("CardCanvas"))
+        {
+            card.transform.SetParent(children);
         }
-        
     }
-
-    public IEnumerator MoveDeckToDiscardPile(){
-
-        List<GameObject> cards = new List<GameObject>(hand);
-
-        foreach(var card in cards){
-            
-            for(int i = 0; i < hand.Count; i++){
-                card.GetComponent<Card>().canHover = false;
-                card.GetComponent<Card>().disableHovering = true;
-            }
-
-            discardPile.Add(card.GetComponent<Card>().card);
-
-            Vector3 middle = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
-            card.transform.DOMove(middle, .1f);
-            yield return new WaitForSeconds(0.1f);
-            card.transform.DOScale(new Vector3(0.3f, 0.3f, 0.3f), 0.1f);
-            //card.GetComponent<Card>().trail.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            card.transform.DORotate(new Vector3(0, 0, -145), 0.1f);
-            yield return new WaitForSeconds(0.1f);
-            //card.transform.DOMove(new Vector3(card.transform.position.x + 2000, card.transform.position.y - 2000, card.transform.position.z), 1);
-            //card.ResetCard();
-            card.transform.DOMove(new Vector3(middle.x + 3000, middle.y - 2000, middle.z), 1).OnComplete(() =>
-            {
-                DestroyImmediate(card.gameObject, true);
-            });
-        }
-
-        hand.Clear();
-    }
-
-    
-
-    public void AssignScripts(GameObject card, CardTemplate cardTemp){
-        card.GetComponent<CardRender>().card = cardTemp;
-
-
-        card.GetComponent<Card>().card = cardTemp;
-        card.GetComponent<Card>().shieldIconPrefab = Resources.Load("BlockIcon") as GameObject;
-        card.GetComponent<Card>().selected = false;
-        card.GetComponent<Card>().canSelectTarget = false;
-        card.GetComponent<Card>().onHover = false;
-        card.GetComponent<Card>().Drag = false;
-        card.GetComponent<Card>().Arrow = false;
-        card.GetComponent<Card>().canHover = true;
-        card.GetComponent<Card>().canSelect = true;
-        card.GetComponent<Card>().disableHovering = false;
-        card.GetComponent<Card>().caster = this.gameObject;
-        // card.GetComponent<Card>().arrow = Resources.Load("Arrow") as GameObject;
-        card.GetComponent<Card>().speechBubblePrefab = Resources.Load("speechBubble_0") as GameObject;
-        card.GetComponent<Card>().canUseColor = Color.blue;
-        card.GetComponent<Card>().cantUseColor = Color.red;
-        parent = this.gameObject;
-
-        foreach(Transform children in this.transform){
-            if(children.name.Contains("CardCanvas")){
-                card.transform.SetParent(children);
-            }
-        }
-        
-
-
-    }   
+}
 }
