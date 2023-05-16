@@ -188,19 +188,7 @@ public class CharacterController : FindTargets
                 }
             }
         }
-
         
-        tbm.turnCounter--;
-        if(tbm.turnCounter < 0){
-            tbm.turnCounter = 0;
-        }
-        if(tbm.turns[tbm.turnCounter].gameObject.tag == "Player"){
-            tbm.turns[tbm.turnCounter].GetComponent<NewDeckDrawing>().ClearDeck();
-            tbm.ChangeTurn();
-        }
-        if(tbm.turns[tbm.turnCounter].gameObject.tag != "Player"){
-            tbm.turns[tbm.turnCounter].StartCoroutine(tbm.turns[tbm.turnCounter].StartTurn());
-        }
         Destroy(this.gameObject, 10f);
 
 
