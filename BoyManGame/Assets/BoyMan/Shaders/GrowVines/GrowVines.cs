@@ -1,3 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GrowVines : MonoBehaviour
 {
     public List<MeshRenderer> growVinesMeshes;  // List of MeshRenderers for the growing vines
     public float timeToGrow = 5;  // Time it takes for the vines to fully grow
