@@ -113,7 +113,7 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,7 +134,7 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,7 +155,7 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,7 +176,7 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,7 +197,7 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,7 +218,7 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: Double slash spritesheet_6
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 2160
+        x: 1920
+        y: 1080
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: Double slash spritesheet_7
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 2160
+        x: 3840
+        y: 1080
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,12 +276,12 @@ TextureImporter:
       name: Double slash spritesheet_8
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5760
         y: 1080
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,12 +297,12 @@ TextureImporter:
       name: Double slash spritesheet_9
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1080
+        x: 0
+        y: 0
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,12 +318,12 @@ TextureImporter:
       name: Double slash spritesheet_10
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 1080
+        x: 1920
+        y: 0
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -339,12 +339,12 @@ TextureImporter:
       name: Double slash spritesheet_11
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 1080
+        x: 3840
+        y: 0
         width: 1920
         height: 1080
       alignment: 9
-      pivot: {x: 0, y: 0.5076762}
+      pivot: {x: 0.43, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -352,90 +352,6 @@ TextureImporter:
       bones: []
       spriteID: c426805d37934dd478342161eab1de86
       internalID: 237874234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Double slash spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 9
-      pivot: {x: 0, y: 0.5076762}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee5ec6af042d2bd41ab14976494c8e1a
-      internalID: 821433831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Double slash spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 9
-      pivot: {x: 0, y: 0.5076762}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 314269d14d8598d44a573b240dc3c3d4
-      internalID: -1196977833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Double slash spritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 9
-      pivot: {x: 0, y: 0.5076762}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc3630b7e5950ef47a480e3f761f2b30
-      internalID: -295446443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Double slash spritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 5760
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 9
-      pivot: {x: 0, y: 0.5076762}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd8bf9e88fa822b4792582b6b0cd99a8
-      internalID: -376466989
       vertices: []
       indices: 
       edges: []
@@ -453,8 +369,6 @@ TextureImporter:
     nameFileIdTable:
       Double slash spritesheet_0: 1897702681
       Double slash spritesheet_2: -699554396
-      Double slash spritesheet_15: -376466989
-      Double slash spritesheet_13: -1196977833
       Double slash spritesheet_6: -413067326
       Double slash spritesheet_7: 1047981248
       Double slash spritesheet_8: -171442033
@@ -464,8 +378,6 @@ TextureImporter:
       Double slash spritesheet_5: -980410411
       Double slash spritesheet_11: 237874234
       Double slash spritesheet_9: 641788722
-      Double slash spritesheet_12: 821433831
-      Double slash spritesheet_14: -295446443
       Double slash spritesheet_10: -1629153569
   spritePackingTag: 
   pSDRemoveMatte: 0
