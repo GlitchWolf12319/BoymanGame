@@ -87,7 +87,10 @@ public class Card : FindTargets
     }
 
     void CheckAbility(GameObject target){
-
+        if(card.cardSoundEffect != null){
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Attack(card.cardSoundEffect);
+        }
+        
         for(int i = 0; i < card.ability.Length; i++){
 
         if(card.ability[i].dealDamage != null){

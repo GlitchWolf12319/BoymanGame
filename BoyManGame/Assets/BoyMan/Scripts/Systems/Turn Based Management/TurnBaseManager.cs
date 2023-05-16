@@ -105,6 +105,7 @@ public class TurnBaseManager : FindTargets
     public IEnumerator FinishBattle()
     {
         turns.Clear();
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayMusic("NonCombat");
         yield return new WaitForSeconds(3);
 
         for (int i = 0; i < heroesInBattle.Count; i++)

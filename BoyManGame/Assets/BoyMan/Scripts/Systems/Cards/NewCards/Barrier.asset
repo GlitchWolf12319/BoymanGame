@@ -20,5 +20,5 @@ MonoBehaviour:
   ability:
   - {fileID: 11400000, guid: 0adf03ff173a06e478554ae9478e0ed0, type: 2}
   attackMethod: 0
-  AttackEffect: {fileID: 9151050130047543809, guid: 3e968bd3180690b4bab77e42f0846e9e,
-    type: 3}
+  AttackEffect: {fileID: 0}
+  cardSoundEffect: {fileID: 8300000, guid: 358650e6bb74bb14eaf677484fe1ca72, type: 3}

@@ -27,6 +27,8 @@ public class ObjectDestroyer : MonoBehaviour
                 Move.enabled = true;
             }
         }
+
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayAmbient(transform.name);
         // Destroy the object this script is attached to
         Destroy(gameObject);
     }

@@ -19,4 +19,5 @@ public class CardTemplate : ScriptableObject
         public AttackMethod attackMethod;
 
         public GameObject AttackEffect;
+        public AudioClip cardSoundEffect;
 }

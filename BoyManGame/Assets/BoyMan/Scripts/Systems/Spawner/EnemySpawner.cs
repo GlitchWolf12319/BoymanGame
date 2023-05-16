@@ -43,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         SpawnEnemies();
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayMusic("Combat");
         tbm.StartCoroutine(tbm.EnlargeDisabledUI());
         tbm.SetTurnOrder();
         tbm.turnCounter = -1;
